@@ -1,0 +1,635 @@
+* {
+    background-color: #D6DCF2;
+}
+
+
+.ecole {
+    width: 100%;
+    position: relative;
+    background-color: #D6DCF2;
+    height: 3571px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 24px;
+    color: #4c445e;
+    font-family: Inter;
+}
+.footer {
+    position: absolute;
+    top: 2718px;
+    left: -18px;
+    width: 1779px;
+    height: 853px;
+    font-size: 32px;
+}
+.background2-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1767.9px;
+    height: 843.8px;
+    object-fit: contain;
+}
+.background-icon {
+    position: absolute;
+    top: 49px;
+    left: 29.05px;
+    width: 1750px;
+    height: 804px;
+}
+.liens-rapides {
+    position: absolute;
+    top: 330px;
+    left: 773.3px;
+    width: 219.4px;
+    height: 471px;
+}
+.accueil {
+    position: absolute;
+    top: 72px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 113.2px;
+}
+.a-propos {
+    position: absolute;
+    top: 144px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 138.2px;
+}
+.entreprises {
+    position: absolute;
+    top: 360px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 174.3px;
+}
+.lecole {
+    position: absolute;
+    top: 216px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 107.2px;
+}
+.nos-cours {
+    position: absolute;
+    top: 288px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 155.3px;
+}
+.contact {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 432px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 123.2px;
+}
+.ecole-liens-rapides {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 219.4px;
+}
+.mentions-lgales {
+    position: absolute;
+    top: 330px;
+    left: 1113.88px;
+    width: 439.7px;
+    height: 399px;
+}
+.index-galit-professionnelle {
+    position: absolute;
+    top: 72px;
+    left: 1px;
+    font-weight: 500;
+    display: inline-block;
+    width: 438.7px;
+}
+.rglement {
+    position: absolute;
+    top: 288px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 164.3px;
+}
+.donnes-personnelles {
+    position: absolute;
+    top: 144px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 340.6px;
+}
+.conditions-de-vente {
+    position: absolute;
+    top: 216px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 308.5px;
+}
+.charte-informatique {
+    position: absolute;
+    top: 360px;
+    left: 0px;
+    font-weight: 500;
+    display: inline-block;
+    width: 307.5px;
+}
+.ecole-mentions-lgales {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 277.5px;
+}
+.rseaux-sociaux {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 618px;
+    left: 260.44px;
+    width: 430.7px;
+    height: 111px;
+}
+.logos-insta-fb {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 72px;
+    left: 4.01px;
+    display: inline-block;
+    width: 426.7px;
+}
+.suivez-nous {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 228.4px;
+}
+.contacts {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 330px;
+    left: 260.44px;
+    width: 466.8px;
+    height: 255px;
+}
+.accueil-33-container {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 72px;
+    left: 0px;
+    display: inline-block;
+    width: 407.7px;
+}
+.ecole-accueil {
+    background-color: #D6DCF2;
+    font-weight: 600;
+}
+.span {
+    background-color: #D6DCF2;
+    font-weight: 500;
+}
+.admissions-33-container {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 144px;
+    left: 0px;
+    display: inline-block;
+    width: 466.8px;
+}
+.email-admissionsefreifr {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 216px;
+    left: 4.01px;
+    display: inline-block;
+    width: 415.7px;
+}
+.ecole-contacts {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 190.3px;
+}
+.ne-vous-inscrivez {
+    position: absolute;
+    top: 755px;
+    left: 693px;
+    color: #ff0d0d;
+}
+.content {
+    position: absolute;
+    top: 1138px;
+    left: 52px;
+    width: 1644px;
+    height: 1686px;
+    text-align: center;
+    font-size: 40px;
+    font-family: Poppins;
+}
+.entreprise-cards {
+    position: absolute;
+    top: 1374px;
+    left: 26px;
+    width: 1561px;
+    height: 312px;
+}
+.card-3 {
+    position: absolute;
+    top: 0px;
+    left: 1073px;
+    width: 488px;
+    height: 312px;
+}
+.card {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4.896551609039307px 4.9px rgba(0, 0, 0, 0.25);
+    border-radius: 61.21px;
+    background-color: #d0e6b9;
+    width: 478px;
+    height: 312px;
+}
+.accompagnement-carrire-et {
+    background-color : #D0E6B9;
+    position: absolute;
+    top: 58px;
+    left: 10px;
+    font-weight: 500;
+    display: inline-block;
+    width: 478px;
+    height: 186px;
+}
+.card-2 {
+    position: absolute;
+    top: 0px;
+    left: 539px;
+    width: 478px;
+    height: 312px;
+}
+.ecole-card {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4.896551609039307px 4.9px rgba(0, 0, 0, 0.25);
+    border-radius: 61.21px;
+    background-color: #d6dcf2;
+    width: 478px;
+    height: 312px;
+}
+.forums-de-recrutement {
+    position: absolute;
+    top: 42px;
+    left: 9px;
+    font-weight: 500;
+    display: inline-block;
+    width: 462px;
+    height: 180px;
+}
+.card-1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 478px;
+    height: 312px;
+}
+.partenariats-avec-plus {
+    background-color : #D0E6B9;
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    font-weight: 500;
+    display: inline-block;
+    width: 435px;
+    height: 180px;
+}
+.lien-avec-les-container {
+    position: absolute;
+    top: 1202px;
+    left: calc(50% - 815px);
+    font-size: 55px;
+    display: inline-block;
+    width: 708px;
+}
+.ecole-entreprises {
+    color: #75aa3c;
+}
+.universits-partenaires-dans-container {
+    position: absolute;
+    top: 938px;
+    left: 0px;
+    text-align: left;
+    display: inline-block;
+    width: 1287px;
+    height: 180px;
+}
+.universits-partenaires-dans-l {
+    margin: 0;
+    font-size: inherit;
+    padding-left: 53px;
+}
+.ecole-universits-partenaires-dans-l {
+    margin-bottom: 0px;
+}
+.dans-le-monde {
+    font-weight: 500;
+    font-family: Poppins;
+}
+.semestres-ltranger {
+    font-family: Poppins;
+}
+.couverture-internationnale {
+    position: absolute;
+    top: 788px;
+    left: 7px;
+    font-size: 55px;
+    display: inline-block;
+    text-align: left;
+    width: 906px;
+}
+.pourquoi-efrei {
+    position: absolute;
+    top: calc(50% - 843px);
+    left: calc(50% - 815px);
+    width: 1637px;
+    height: 677px;
+}
+.associations-vie-de-container {
+    position: absolute;
+    top: calc(50% + 82.5px);
+    left: calc(50% + 448.5px);
+    font-weight: 500;
+    display: inline-block;
+    width: 370px;
+}
+.associations {
+    margin: 0;
+}
+.image-4-icon {
+    position: absolute;
+    height: 20.43%;
+    width: 8.92%;
+    top: 31.61%;
+    right: 6.84%;
+    bottom: 47.96%;
+    left: 84.24%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.projets-concrets-stage {
+    position: absolute;
+    top: calc(50% + 98.5px);
+    left: calc(50% + 28.5px);
+    font-weight: 500;
+    display: inline-block;
+    width: 370px;
+}
+.image-3-icon {
+    position: absolute;
+    height: 22.16%;
+    width: 8.56%;
+    top: 29.84%;
+    right: 32.86%;
+    bottom: 48.01%;
+    left: 58.58%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.accrditations-et-partenariats {
+    position: absolute;
+    top: 437px;
+    left: 427px;
+    font-weight: 500;
+    display: inline-block;
+    width: 370px;
+}
+.image-2-icon {
+    position: absolute;
+    width: 9.16%;
+    top: calc(50% - 134.5px);
+    right: 58.03%;
+    left: 32.8%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 145px;
+}
+.diplms-en-activit {
+    position: absolute;
+    top: 437px;
+    left: 7px;
+    font-weight: 500;
+    display: inline-block;
+    width: 370px;
+}
+.image-1-icon {
+    position: absolute;
+    width: 9.16%;
+    top: calc(50% - 134.5px);
+    right: 83.69%;
+    left: 7.15%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 150px;
+}
+.pourquoi-sinscrire-container {
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 818.5px);
+    font-size: 55px;
+    display: inline-block;
+    width: 813px;
+}
+.header {
+    position: absolute;
+    top: -39px;
+    left: 0px;
+    width: 1898px;
+    height: 1105px;
+    font-size: 41.02px;
+}
+.section-background-2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1898px;
+    height: 1105px;
+}
+.section-background-icon {
+    position: absolute;
+    top: 34px;
+    left: 0px;
+    width: 1728px;
+    height: 1045px;
+}
+.bouton-dcouverte {
+    position: absolute;
+    top: 869px;
+    left: 688px;
+    width: 337.4px;
+    height: 130px;
+    color: #eff3fc;
+}
+.flche-bas-icon {
+    position: absolute;
+    top: 75px;
+    left: 134px;
+    width: 70px;
+    height: 55px;
+}
+.bouton-dcouverte-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 66.69px;
+    background-color: #75aa3c;
+    width: 337.4px;
+    height: 75.4px;
+}
+.en-savoir-plus {
+    color : #EFF3FC;
+    background-color: #75aa3c;
+    position: absolute;
+    top: calc(50% - 52px);
+    left: calc(50% - 129.7px);
+    font-weight: 600;
+}
+.rejoindre-lefrei-cest-container {
+    position: absolute;
+    top: 636px;
+    left: 335px;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    width: 1042px;
+}
+.vous-tes-le-container {
+    position: absolute;
+    top: 518px;
+    left: 383px;
+    font-size: 64px;
+    display: inline-block;
+    width: 1045px;
+}
+.output-onlinepngtools-1-1 {
+    position: absolute;
+    top: 219px;
+    left: 557px;
+    width: 514px;
+    height: 168px;
+    object-fit: cover;
+}
+.navbar {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 22px;
+    left: 36px;
+    width: 1654px;
+    height: 55px;
+}
+.bouton-inscription {
+    position: absolute;
+    top: 7px;
+    left: 1501px;
+    width: 153px;
+    height: 42px;
+    font-size: 20px;
+    color: #eff3fc;
+}
+.background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50px;
+    background-color: #4c445e;
+    width: 153px;
+    height: 42px;
+}
+.sinscrire {
+    color : #EFF3FC;
+    background-color: #4C445E;
+    position: absolute;
+    top: 9px;
+    left: 32px;
+    font-weight: 600;
+}
+.bouton-connexion {
+    position: absolute;
+    top: 7px;
+    left: 1317px;
+    width: 153px;
+    height: 42px;
+    font-size: 20px;
+}
+.ecole-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50px;
+    background-color: #d6dcf2;
+    border: 3px solid #4c445e;
+    box-sizing: border-box;
+    width: 153px;
+    height: 42px;
+}
+.se-connecter {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    font-weight: 600;
+}
+.prsentation {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 13px;
+    left: 99px;
+}
+.entreprises2 {
+    position: absolute;
+    top: 13px;
+    left: 521px;
+}
+.ecole2 {
+    position: absolute;
+    top: 13px;
+    left: 295px;
+    color: #75aa3c;
+}
+.cours {
+    position: absolute;
+    top: 13px;
+    left: 405px;
+}
+.ecole-contact {
+    position: absolute;
+    top: 13px;
+    left: 702px;
+}
+.logo-icon {
+    background-color: #D6DCF2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 45px;
+    height: 55px;
+    object-fit: cover;
+}
+
