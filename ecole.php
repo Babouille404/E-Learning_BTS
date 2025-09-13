@@ -9,6 +9,7 @@ $uri = get_template_directory_uri(); // base URL du thème: .../wp-content/theme
         <img class="background2-icon" alt="" src="<?php echo esc_url( $uri . '/assets/ecole/background2.png' ); ?>">
         <img class="background-icon"  alt="" src="<?php echo esc_url( $uri . '/assets/ecole/Background.png' ); ?>">
 
+
         <div class="liens-rapides">
             <a class="accueil"     href="<?php echo esc_url( home_url('/') ); ?>">Accueil</a>
             <a class="a-propos"    href="<?php echo esc_url( home_url('/a-propos/') ); ?>">A propos</a>
