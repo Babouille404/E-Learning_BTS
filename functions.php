@@ -53,13 +53,13 @@ add_action('wp_enqueue_scripts', function() {
         );
     }
 
-    // Style spécifique pour la page Entreprises
-    if (is_page_template('page-entreprises.php')) {
+    // CSS spécifique pour la page Entreprises
+    if (is_page_template('entreprises.php')) {
         wp_enqueue_style(
             'entreprises-style',
-            get_template_directory_uri() . '/css/entreprises.css',
-            ['efrei-style'],
-            filemtime(get_template_directory() . '/css/entreprises.css')
+            get_template_directory_uri() . '/style_entreprises.css',
+            ['theme-style'],
+            '1.0'
         );
     }
 });
