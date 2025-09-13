@@ -6,9 +6,9 @@ get_header();
 // Données des entreprises
 $entreprises = [
     ['image' => 'locauxEDF.png', 'nom' => 'EDF', 'personne' => 'Nour Mesbahi', 'description' => 'Société de production et de fourniture d\'électricité'],
-    ['image' => 'locauxCorum.png', 'nom' => 'Corum', 'personne' => 'Anissa Dahabi', 'description' => 'Société de gestion d\'épargne'],
+    ['image' => 'locauxCorum.png', 'nom' => 'Corum', 'personne' => 'Anissa Dahabi', 'description' => 'Société de gestion d\'épargne et d\investissement immobilier'],
     ['image' => 'locauxHachette.png', 'nom' => 'Hachette', 'personne' => 'Lina Karouche', 'description' => 'Éditeur et distributeur de jeux de société'],
-    ['image' => 'locauxApicil.png', 'nom' => 'Apicil', 'personne' => 'Bao-Long Le', 'description' => 'Leader français de la protection sociale']
+    ['image' => 'locauxApicil.png', 'nom' => 'Apicil', 'personne' => 'Bao-Long Le', 'description' => 'Leader français de la protection sociale et patrimoniale']
 ];
 ?>
 
