@@ -1,0 +1,237 @@
+/* Styles spécifiques pour la page École */
+
+.ecole-page {
+    background-color: #EFF3FC;
+}
+
+/* Section Pourquoi EFREI */
+.why-efrei-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #EFF3FC 0%, #D6DCF2 100%);
+}
+/* ==== FORCER la grid en 4 colonnes (desktop), 2 (tablette), 1 (mobile) ==== */
+.features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* 4 colonnes */
+    gap: 40px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Empiler l'image au-dessus du texte et centrer */
+.feature-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.feature-icon {
+    display: block !important;
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 0 20px 0 !important; /* espace sous l'image */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* 2 colonnes */
+    }
+}
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr !important; /* 1 colonne */
+    }
+}
+
+
+/* Section Internationale */
+.international-section {
+    padding: 80px 0;
+    background-color: #EFF3FC;
+}
+
+.international-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.international-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4C445E;
+    margin-bottom: 30px;
+    padding-left: 50px;
+}
+
+.international-list {
+    list-style: none;
+    padding-left: 50px;
+}
+
+.international-list li {
+    font-size: 1.3rem;
+    color: #4C445E;
+    margin-bottom: 15px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.international-list li::before {
+    content: '✓';
+    color: #75AA3C;
+    font-weight: bold;
+    position: absolute;
+    left: -25px;
+}
+
+/* Section Entreprises */
+.entreprises-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #D6DCF2 0%, #EFF3FC 100%);
+}
+
+.entreprises-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.entreprise-card {
+    padding: 40px 30px;
+    border-radius: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entreprise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-green {
+    background-color: #D0E6B9;
+}
+
+.card-blue {
+    background-color: #D6DCF2;
+}
+
+.entreprise-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #4C445E;
+    margin-bottom: 20px;
+}
+
+.entreprise-card p {
+    font-size: 1.1rem;
+    color: #4C445E;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Section contenu de page */
+.page-content {
+    padding: 60px 0;
+    background-color: #EFF3FC;
+}
+
+.page-content .container {
+    max-width: 900px;
+}
+
+.page-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #4C445E;
+    margin-bottom: 20px;
+}
+
+.page-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #4C445E;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .feature-item {
+        padding: 25px 15px;
+    }
+
+    .feature-item h3 {
+        font-size: 1.6rem;
+    }
+
+    .international-content h3 {
+        font-size: 2rem;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .international-list {
+        padding-left: 0;
+    }
+
+    .international-list li {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .international-list li::before {
+        left: -20px;
+    }
+
+    .entreprises-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .entreprise-card {
+        padding: 30px 20px;
+        min-height: 200px;
+    }
+
+    .entreprise-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-efrei-section,
+    .international-section,
+    .entreprises-section {
+        padding: 60px 0;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .international-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .international-list li {
+        font-size: 1rem;
+    }
+}
