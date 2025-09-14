@@ -47,8 +47,16 @@
                 <?php endif; ?>
             </nav>
 
+
+
+
             <!-- Boutons d'action -->
             <div class="header-actions">
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/moon.png"
+                     id="toggleColor"
+                     alt="Changer la couleur"
+                     style="cursor: pointer; height:40px; align-self: center;">
+
                 <?php if ($is_logged_in): ?>
                     <!-- Utilisateur connecté -->
                     <div class="user-info">

@@ -417,8 +417,8 @@ img {
 
 /* Footer */
 .site-footer {
-    background-color: #4C445E;
-    color: #EFF3FC;
+    background-color: #BAC5EC;
+    color: #4C445E;
     padding: 50px 0 20px;
     margin-top: 80px;
 }
@@ -434,7 +434,7 @@ img {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #EFF3FC;
+    color: #4C445E;
 }
 
 .footer-links {
@@ -446,7 +446,7 @@ img {
 }
 
 .footer-links a {
-    color: #D6DCF2;
+    color: #4C445E;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -457,7 +457,7 @@ img {
 
 .contact-info p {
     margin-bottom: 10px;
-    color: #D6DCF2;
+    color: #4C445E;
 }
 
 .social-links {
@@ -479,7 +479,7 @@ img {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #75AA3C;
-    color: #D6DCF2;
+    color: #6F648A;
 }
 
 .warning-text {
@@ -623,3 +623,9 @@ img {
         gap: 10px;
     }
 }
+
+
+body.alt-color {
+    background-color: #4C445E; /* couleur activée */
+}
+
