@@ -1,4 +1,5 @@
 /* Styles spécifiques pour la page Entreprises */
+
 .site-header .container,
 .site-footer .container {
     max-width: 1200px;
@@ -116,18 +117,15 @@
 }
 
 /* CARROUSEL */
-/* ======================= */
-/* CONTENEUR GLOBAL        */
-/* ======================= */
+
 .container {
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-/* ======================= */
-/* HEADER                  */
-/* ======================= */
+
+/* HEADER */
 .header {
     width: 100%;
     min-height: 100vh;
@@ -183,9 +181,8 @@
     margin-bottom: 2em;
 }
 
-/* ======================= */
-/* ALTERNANCE              */
-/* ======================= */
+
+/* ALTERNANCE */
 .alternance {
     display: flex;
     align-items: center;
@@ -223,9 +220,8 @@
     height: auto;
 }
 
-/* ======================= */
-/* CARROUSEL               */
-/* ======================= */
+
+/* CARROUSEL */
 .carousel {
     position: relative;
     text-align: center;
@@ -252,12 +248,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 0 calc((100% - 2 * 24px) / 3); /* 3 slides visibles + gaps */
+    flex: 0 0 calc((100% - 2 * 24px) / 3);
 }
 
 .slide-logo {
-    width: 80px;   /* plus gros logo */
-    height: 80px;  /* plus gros logo */
+    width: 80px;
+    height: 80px;
     margin-bottom: 15px;
     flex-shrink: 0;
 }
@@ -270,7 +266,7 @@
 
 .slide {
     width: 100%;
-    height: 320px;       /* hauteur légèrement augmentée pour uniformité */
+    height: 320px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -281,7 +277,7 @@
 
 .slide img {
     width: 100%;
-    height: 130px;       /* image de taille uniforme */
+    height: 130px;
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -292,7 +288,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100px;  /* même hauteur de contenu pour toutes les slides */
+    min-height: 100px;
 }
 
 .slide-person {
@@ -317,12 +313,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 0 calc((100% - 2 * 24px) / 3); /* 3 slides visibles + gaps */
+    flex: 0 0 calc((100% - 2 * 24px) / 3);
 }
 
 .slide-logo {
-    width: 100px;   /* logos plus gros */
-    height: 100px;  /* logos plus gros */
+    width: 100px;
+    height: 100px;
     margin-bottom: 20px;
     flex-shrink: 0;
 }
@@ -337,7 +333,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: none; /* plus de fond */
+    background: none;
     border: none;
     cursor: pointer;
     z-index: 10;
@@ -345,16 +341,16 @@
 }
 
 .arrow img {
-    width: 40px; /* taille de l'image */
+    width: 40px;
     height: 40px;
 }
 
 .left {
-    left: -50px; /* décalé sur la gauche du carousel */
+    left: -50px;
 }
 
 .right {
-    right: -50px; /* décalé sur la droite du carousel */
+    right: -50px;
 }
 
 @media (max-width: 1024px) {

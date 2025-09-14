@@ -131,8 +131,8 @@ add_action('wp_footer', function() { ?>
             const slidesContainer = document.getElementById('slides-container');
             const slides = document.getElementById('slides');
             if(slidesContainer && slides) {
-                const slideWidth = slides.querySelector('.slide').offsetWidth + 24; // gap 24px
-                slides.innerHTML += slides.innerHTML; // dupliquer pour infini
+                const slideWidth = slides.querySelector('.slide').offsetWidth + 24;
+                slides.innerHTML += slides.innerHTML;
                 let position = 0;
 
                 window.nextSlide = function() {
