@@ -33,12 +33,76 @@
 
             <!-- Boutons d'action -->
             <div class="header-actions">
-                <a href="#" class="btn btn-outline">Se connecter</a>
-                <a href="#" class="btn btn-primary">S'inscrire</a>
+                <!-- Ouvre directement le formulaire connexion -->
+                <a href="#" class="btn btn-outline" onclick="openPopup('connexion'); return false;">Se connecter</a>
+
+                <!-- Ouvre directement le formulaire inscription -->
+                <a href="#" class="btn btn-register" onclick="openPopup('inscription'); return false;">S'inscrire</a>
             </div>
         </div>
     </div>
 </header>
+
+<!-- Popup unique -->
+<div id="popupConnexion" class="popup-overlay">
+    <div class="popup-content">
+        <span class="popup-close">&times;</span>
+
+        <!-- Logo -->
+        <img src="<?php echo get_asset_url('ecole/logo.png'); ?>" class="logo-popup" alt="<?php bloginfo('name'); ?>">
+
+        <!-- Formulaire Connexion -->
+        <div class="form-connexion">
+            <div class="input-group">
+                <label>E-mail</label>
+                <input type="text" placeholder="Adresse e-mail">
+            </div>
+
+            <div class="input-group">
+                <label>Mot de passe</label>
+                <input type="password" placeholder="Mot de passe">
+            </div>
+
+            <div class="forgot-password">Mot de passe oublié ?</div>
+            <div class="switch-form">
+                Pas encore de compte ? <span class="switch-to-inscription">Inscris-toi</span>
+            </div>
+
+            <button class="btn btn-primary">Se connecter</button>
+
+
+        </div>
+
+        <!-- Formulaire Inscription -->
+        <div class="form-inscription" style="display:none;">
+            <div class="input-group">
+                <label>Prénom</label>
+                <input type="text" placeholder="Votre prénom">
+            </div>
+
+            <div class="input-group">
+                <label>E-mail</label>
+                <input type="email" placeholder="Adresse e-mail">
+            </div>
+
+            <div class="input-group">
+                <label>Mot de passe</label>
+                <input type="password" placeholder="Mot de passe">
+            </div>
+
+            <div class="input-group">
+                <label>Confirmer le mot de passe</label>
+                <input type="password" placeholder="Confirmer le mot de passe">
+            </div>
+
+            <div class="already-account">
+                Tu as déjà un compte ? <span class="connect-link">Connecte-toi</span>
+            </div>
+
+            <button class="btn btn-primary">S'inscrire</button>
+        </div>
+    </div>
+</div>
 
 <?php
 // Menu de fallback si aucun menu n'est configuré

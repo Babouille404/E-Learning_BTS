@@ -138,6 +138,214 @@ img {
     gap: 15px;
 }
 
+/* Bouton S'inscrire */
+.btn-register {
+    background-color: #4C445E;
+    color: #EFF3FC;
+    border: 2px solid #4C445E;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: transparent;
+    color: #4C445E;
+    border: 2px solid #4C445E;
+}
+
+/* Overlay popup */
+/* Overlay popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none; /* caché par défaut */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-overlay.show {
+    display: flex;
+}
+
+.popup-content {
+    background: #d6dcf2;
+    border-radius: 50px;
+    padding: 40px 30px;
+    width: 400px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Croix fermeture */
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4C445E;
+    cursor: pointer;
+}
+
+/* Logo */
+.logo-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #4C445E;
+}
+
+.input-group input {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #f0f3fc;
+    font-size: 16px;
+    color: #9589AF;
+}
+
+.popup-content input {
+    outline: none;
+    border: none;
+    background-color: #f0f3fc;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #4C445E;
+}
+
+.popup-content input::placeholder {
+    color: #9589AF;
+    opacity: 1;
+}
+
+
+/* Mot de passe oublié */
+.forgot-password {
+    align-self: center;
+
+    margin-bottom: 5px;
+    color: #4C445E;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    font-weight: bold;
+}
+
+/* Bouton Se connecter */
+.btn-primary {
+    background-color: #75aa3c;
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.btn-primary:hover {
+    background-color: #629533;
+}
+
+.logo-popup {
+    height: 3em;
+    margin-bottom: 3em;
+}
+
+/* Formulaire Connexion / Inscription */
+.form-connexion, .form-inscription {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-inscription {
+    margin-top: 10px;
+}
+
+.form-inscription .btn-register {
+    margin-top: 10px;
+}
+
+.form-inscription .input-group label {
+    margin-bottom: 2px !important;
+}
+
+.form-inscription .input-group input {
+    margin-bottom: 4px !important;
+    padding: 10px 20px !important;
+}
+
+.already-account .connect-link:hover {
+    font-weight: bold;
+}
+
+/* Liens switch */
+.switch-form, .already-account {
+    font-size: 14px;
+    color: #4C445E;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.switch-form span, .already-account .connect-link {
+    font-weight: 500;
+    cursor: pointer;
+    color: #75AA3C;
+    transition: all 0.3s ease;
+}
+
+.switch-form span:hover, .already-account .connect-link:hover {
+    font-weight: bold;
+}
+
+
+/* Input commun */
+.popup-content .input-group input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #f0f3fc;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #4C445E;
+    margin-bottom: 15px;
+}
+
+.popup-content .input-group label {
+    align-self: flex-start;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #4C445E;
+}
+
 /* Sections communes */
 .section-title {
     font-family: 'Poppins', sans-serif;

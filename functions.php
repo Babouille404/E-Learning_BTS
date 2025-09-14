@@ -115,3 +115,65 @@ add_action('wp_enqueue_scripts', function () {
         );
     }
 }, 20);
+
+// Injection du JS pour popup dans le footer
+add_action('wp_footer', function() { ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('popupConnexion');
+            const closeBtn = document.querySelector('.popup-close');
+            const formConnexion = document.querySelector('.form-connexion');
+            const formInscription = document.querySelector('.form-inscription');
+            const switchToInscription = document.querySelector('.switch-to-inscription');
+            const connectLink = document.querySelector('.connect-link');
+
+            // Fonction pour ouvrir popup
+            window.openPopup = function(type) {
+                popup.classList.add('show');
+                if(type === 'inscription') {
+                    formConnexion.style.display = 'none';
+                    formInscription.style.display = 'flex';
+                } else {
+                    formConnexion.style.display = 'flex';
+                    formInscription.style.display = 'none';
+                }
+            }
+
+            // Fonction pour fermer popup et reset
+            window.closePopup = function() {
+                popup.classList.remove('show');
+                resetForms();
+            }
+
+            // Reset des formulaires
+            function resetForms() {
+                formConnexion.querySelectorAll('input').forEach(input => input.value = '');
+                formInscription.querySelectorAll('input').forEach(input => input.value = '');
+            }
+
+            // Fermer au clic sur croix
+            closeBtn?.addEventListener('click', closePopup);
+
+            // Fermer au clic autour du popup
+            popup?.addEventListener('click', function(e) {
+                if(e.target === popup) closePopup();
+            });
+
+            // Switch vers inscription (reset les inputs avant)
+            switchToInscription?.addEventListener('click', function() {
+                resetForms();
+                formConnexion.style.display = 'none';
+                formInscription.style.display = 'flex';
+            });
+
+            // Switch vers connexion (reset les inputs avant)
+            connectLink?.addEventListener('click', function() {
+                resetForms();
+                formInscription.style.display = 'none';
+                formConnexion.style.display = 'flex';
+            });
+        });
+
+    </script>
+<?php });
+
