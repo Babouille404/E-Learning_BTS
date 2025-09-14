@@ -516,3 +516,110 @@ img {
     border-radius: 25px;
     font-weight: 600;
 }
+
+/* Info utilisateur connecté */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.welcome-text {
+    color: #4C445E;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Lien Cours dans la navigation */
+.nav-menu .cours-link {
+    color: #75AA3C !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-menu .cours-link::after {
+    content: '🎓';
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.nav-menu .cours-link:hover {
+    color: #629533 !important;
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+}
+
+/* Animation pour l'apparition du lien Cours */
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-menu li:has(.cours-link) {
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+/* Messages d'erreur/succès */
+.auth-message {
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.auth-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.auth-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Loading state pour les boutons */
+.btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.btn.loading::after {
+    content: '⟳';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Responsive pour l'info utilisateur */
+@media (max-width: 768px) {
+    .user-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .welcome-text {
+        font-size: 14px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

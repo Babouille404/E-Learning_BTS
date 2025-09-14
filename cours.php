@@ -192,7 +192,7 @@ get_header();
         
     		<i class="question-01">Question 01 : Quelle est la capital de la France?</i>
             
-            </div>
+            </main>
             </div>
 
     		<div class="rponse">
