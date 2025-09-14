@@ -28,11 +28,12 @@ add_action('after_setup_theme', function() {
 // Chargement des styles et scripts
 add_action('wp_enqueue_scripts', function() {
     // Style principal
+    $style_path = get_template_directory() . '/style.css';
     wp_enqueue_style(
         'efrei-style',
         get_template_directory_uri() . '/style.css',
         [],
-        filemtime(get_template_directory() . '/style.css')
+        file_exists($style_path) ? filemtime($style_path) : null
     );
 
     // Google Fonts
@@ -45,21 +46,23 @@ add_action('wp_enqueue_scripts', function() {
 
     // Style spécifique pour la page École
     if (is_page_template('page-ecole.php')) {
+        $ecole_path = get_template_directory() . '/style_ecole.css';
         wp_enqueue_style(
             'ecole-style',
             get_template_directory_uri() . '/style_ecole.css',
             ['efrei-style'],
-            filemtime(get_template_directory() . '/style_ecole.css')
+            file_exists($ecole_path) ? filemtime($ecole_path) : null
         );
     }
 
-    // CSS spécifique pour la page Entreprises
+    // Style spécifique pour la page Entreprises
     if (is_page_template('entreprises.php')) {
+        $entreprises_path = get_template_directory() . '/style_entreprises.css';
         wp_enqueue_style(
             'entreprises-style',
             get_template_directory_uri() . '/style_entreprises.css',
-            ['theme-style'],
-            '1.0'
+            ['efrei-style'],
+            file_exists($entreprises_path) ? filemtime($entreprises_path) : null
         );
     }
 });
@@ -85,41 +88,12 @@ function efrei_nav_menu($location = 'primary', $class = 'nav-menu') {
     ]);
 }
 
-
-add_action('after_setup_theme', function () {
-    add_theme_support('title-tag');
-    register_nav_menus(['primary' => 'Menu principal']);
-});
-
-// Charger les styles avec ordre garanti
-add_action('wp_enqueue_scripts', function () {
-    // Global
-    $global_path = get_stylesheet_directory() . '/style.css';
-    wp_enqueue_style(
-        'theme-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        [],
-        file_exists($global_path) ? filemtime($global_path) : null
-    );
-}, 10);
-
-// Spécifique au template École, après le global
-add_action('wp_enqueue_scripts', function () {
-    if (is_singular() && get_page_template_slug() === 'ecole.php') {
-        $ecole_path = get_stylesheet_directory() . '/style_ecole.css';
-        wp_enqueue_style(
-            'ecole-style',
-            get_stylesheet_directory_uri() . '/style_ecole.css',
-            ['theme-style'], // dépend de style.css -> sera chargé après
-            file_exists($ecole_path) ? filemtime($ecole_path) : null
-        );
-    }
-}, 20);
-
 // Injection du JS pour popup dans le footer
 add_action('wp_footer', function() { ?>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
+            // ---------------- Popup Connexion / Inscription ----------------
             const popup = document.getElementById('popupConnexion');
             const closeBtn = document.querySelector('.popup-close');
             const formConnexion = document.querySelector('.form-connexion');
@@ -127,7 +101,6 @@ add_action('wp_footer', function() { ?>
             const switchToInscription = document.querySelector('.switch-to-inscription');
             const connectLink = document.querySelector('.connect-link');
 
-            // Fonction pour ouvrir popup
             window.openPopup = function(type) {
                 popup.classList.add('show');
                 if(type === 'inscription') {
@@ -139,41 +112,77 @@ add_action('wp_footer', function() { ?>
                 }
             }
 
-            // Fonction pour fermer popup et reset
             window.closePopup = function() {
                 popup.classList.remove('show');
                 resetForms();
             }
 
-            // Reset des formulaires
             function resetForms() {
-                formConnexion.querySelectorAll('input').forEach(input => input.value = '');
-                formInscription.querySelectorAll('input').forEach(input => input.value = '');
+                formConnexion?.querySelectorAll('input').forEach(input => input.value = '');
+                formInscription?.querySelectorAll('input').forEach(input => input.value = '');
             }
 
-            // Fermer au clic sur croix
             closeBtn?.addEventListener('click', closePopup);
+            popup?.addEventListener('click', e => { if(e.target === popup) closePopup(); });
+            switchToInscription?.addEventListener('click', () => { resetForms(); formConnexion.style.display='none'; formInscription.style.display='flex'; });
+            connectLink?.addEventListener('click', () => { resetForms(); formInscription.style.display='none'; formConnexion.style.display='flex'; });
 
-            // Fermer au clic autour du popup
-            popup?.addEventListener('click', function(e) {
-                if(e.target === popup) closePopup();
-            });
+            // ---------------- Carousel & Popup Slides ----------------
+            const slidesContainer = document.getElementById('slides-container');
+            const slides = document.getElementById('slides');
+            if(slidesContainer && slides) {
+                const slideWidth = slides.querySelector('.slide').offsetWidth + 24; // gap 24px
+                slides.innerHTML += slides.innerHTML; // dupliquer pour infini
+                let position = 0;
 
-            // Switch vers inscription (reset les inputs avant)
-            switchToInscription?.addEventListener('click', function() {
-                resetForms();
-                formConnexion.style.display = 'none';
-                formInscription.style.display = 'flex';
-            });
+                window.nextSlide = function() {
+                    position += slideWidth;
+                    slidesContainer.scrollTo({ left: position, behavior: 'smooth' });
+                    if(position >= slides.scrollWidth/2) {
+                        setTimeout(() => { position=0; slidesContainer.scrollLeft=0; }, 300);
+                    }
+                }
+                window.prevSlide = function() {
+                    position -= slideWidth;
+                    if(position < 0) { position=slides.scrollWidth/2 - slideWidth; slidesContainer.scrollLeft=position; }
+                    slidesContainer.scrollTo({ left: position, behavior: 'smooth' });
+                }
 
-            // Switch vers connexion (reset les inputs avant)
-            connectLink?.addEventListener('click', function() {
-                resetForms();
-                formInscription.style.display = 'none';
-                formConnexion.style.display = 'flex';
-            });
+                // Popup pour chaque slide avec data-popup
+                slides.querySelectorAll('.slide-wrapper .slide').forEach(slide => {
+                    slide.addEventListener('click', () => {
+                        const popupSrc = slide.dataset.popup;
+                        if(!popupSrc) return;
+
+                        let popupDiv = document.getElementById('slidePopup');
+                        if(!popupDiv) {
+                            popupDiv = document.createElement('div');
+                            popupDiv.id = 'slidePopup';
+                            popupDiv.style.position='fixed';
+                            popupDiv.style.top='0';
+                            popupDiv.style.left='0';
+                            popupDiv.style.width='100%';
+                            popupDiv.style.height='100%';
+                            popupDiv.style.background='rgba(0,0,0,0.9)';
+                            popupDiv.style.display='flex';
+                            popupDiv.style.justifyContent='center';
+                            popupDiv.style.alignItems='center';
+                            popupDiv.style.zIndex='9999';
+                            popupDiv.innerHTML = '<img style="max-width:90%; max-height:90%;" src="" /><span id="closeSlidePopup" style="position:absolute; top:20px; right:30px; font-size:2em; color:white; cursor:pointer;">&times;</span>';
+                            document.body.appendChild(popupDiv);
+
+                            document.getElementById('closeSlidePopup').addEventListener('click', () => {
+                                popupDiv.style.display='none';
+                            });
+                            popupDiv.addEventListener('click', e => { if(e.target===popupDiv) popupDiv.style.display='none'; });
+                        }
+
+                        popupDiv.querySelector('img').src = popupSrc;
+                        popupDiv.style.display='flex';
+                    });
+                });
+            }
         });
-
     </script>
 <?php });
-
+?>

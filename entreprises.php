@@ -1,14 +1,13 @@
-
 <?php
 /* Template Name: Entreprises */
 get_header();
 
 // Données des entreprises
 $entreprises = [
-    ['image' => 'locauxEDF.png', 'nom' => 'EDF', 'personne' => 'Nour Mesbahi', 'description' => 'Société de production et de fourniture d\'électricité'],
-    ['image' => 'locauxCorum.png', 'nom' => 'Corum', 'personne' => 'Anissa Dahabi', 'description' => 'Société de gestion d\'épargne et d\'investissement immobilier'],
-    ['image' => 'locauxHachette.png', 'nom' => 'Hachette', 'personne' => 'Lina Karouche', 'description' => 'Éditeur et distributeur de jeux de société'],
-    ['image' => 'locauxApicil.png', 'nom' => 'Apicil', 'personne' => 'Bao-Long Le', 'description' => 'Leader français de la protection sociale et patrimoniale']
+    ['image' => 'locauxEDF.png', 'nom' => 'EDF', 'personne' => 'Nour Mesbahi', 'description' => 'Société de production et de fourniture d\'électricité', 'card' => 'edfCard.png'],
+    ['image' => 'locauxCorum.png', 'nom' => 'Corum', 'personne' => 'Anissa Dahabi', 'description' => 'Société de gestion d\'épargne et d\'investissement immobilier', 'card' => 'corumCard.png'],
+    ['image' => 'locauxHachette.png', 'nom' => 'Hachette', 'personne' => 'Lina Karouche', 'description' => 'Éditeur et distributeur de jeux de société', 'card' => 'hachetteCard.png'],
+    ['image' => 'locauxApicil.png', 'nom' => 'Apicil', 'personne' => 'Bao-Long Le', 'description' => 'Leader français de la protection sociale et patrimoniale', 'card' => 'apicilCard.png']
 ];
 ?>
 
@@ -45,7 +44,6 @@ $entreprises = [
         </div>
     </div>
 
-    <!-- CARROUSEL SIMPLE -->
     <div class="carousel">
         <h2>Parcourez nos entreprises:</h2>
 
@@ -60,7 +58,7 @@ $entreprises = [
                         <div class="slide-logo">
                             <img src="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/logos/<?= $e['nom'] ?>.png" alt="<?= $e['nom'] ?> Logo">
                         </div>
-                        <div class="slide">
+                        <div class="slide" data-popup="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/<?= $e['card'] ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/<?= $e['image'] ?>" alt="<?= $e['nom'] ?>">
                             <div class="slide-content">
                                 <p class="slide-person">→ <?= $e['personne'] ?></p>
@@ -73,48 +71,10 @@ $entreprises = [
             </div>
         </div>
 
-        <button class="arrow left" onclick="prevSlide()">
-            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/arrowLeft.png" alt="Précédent">
-        </button>
-
         <button class="arrow right" onclick="nextSlide()">
             <img src="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/arrowRight.png" alt="Suivant">
         </button>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const slidesContainer = document.getElementById('slides-container');
-            const slides = document.getElementById('slides');
-            const slideWidth = slides.querySelector('.slide').offsetWidth + 24; // gap 24px
-
-            // Dupliquer les slides pour l'infini
-            slides.innerHTML += slides.innerHTML;
-
-            let position = 0;
-
-            window.nextSlide = function() {
-                position += slideWidth;
-                slidesContainer.scrollTo({ left: position, behavior: 'smooth' });
-                if(position >= slides.scrollWidth / 2) {
-                    // Reset pour boucle infinie
-                    setTimeout(() => {
-                        position = 0;
-                        slidesContainer.scrollLeft = position;
-                    }, 300); // attendre la fin du scroll
-                }
-            }
-
-            window.prevSlide = function() {
-                position -= slideWidth;
-                if(position < 0) {
-                    position = slides.scrollWidth / 2 - slideWidth;
-                    slidesContainer.scrollLeft = position;
-                }
-                slidesContainer.scrollTo({ left: position, behavior: 'smooth' });
-            }
-        });
-    </script>
 
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
@@ -125,7 +85,63 @@ $entreprises = [
     <?php endif; ?>
 </main>
 
+<!-- POPUP IMAGE -->
+<div id="popupCard" class="popup-card">
+    <span class="popup-close" onclick="closeCard()">&times;</span>
+    <div class="popup-content">
+        <img id="popupImage" src="" alt="Entreprise">
+        <div class="popup-text">
+            <h3 id="popupNom"></h3>
+            <p id="popupPersonne"></p>
+            <p id="popupDescription"></p>
+        </div>
+    </div>
+</div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slidesContainer = document.getElementById('slides-container');
+        const slides = document.getElementById('slides');
+        const slideWidth = slides.querySelector('.slide').offsetWidth + 24;
 
+        slides.innerHTML += slides.innerHTML;
+        let position = 0;
+
+        window.nextSlide = function() {
+            position += slideWidth;
+            slidesContainer.scrollTo({ left: position, behavior: 'smooth' });
+            if(position >= slides.scrollWidth / 2) {
+                setTimeout(() => {
+                    position = 0;
+                    slidesContainer.scrollLeft = position;
+                }, 300);
+            }
+        }
+
+        window.prevSlide = function() {
+            position -= slideWidth;
+            if(position < 0) {
+                position = slides.scrollWidth / 2 - slideWidth;
+                slidesContainer.scrollLeft = position;
+            }
+            slidesContainer.scrollTo({ left: position, behavior: 'smooth' });
+        }
+    });
+
+    // Popup
+    function openCard(imageUrl, nom, personne, description) {
+        const popup = document.getElementById('popupCard');
+        document.getElementById('popupImage').src = imageUrl;
+        document.getElementById('popupNom').innerText = nom;
+        document.getElementById('popupPersonne').innerText = '→ ' + personne;
+        document.getElementById('popupDescription').innerText = description;
+        popup.classList.add('show');
+    }
+
+    function closeCard() {
+        const popup = document.getElementById('popupCard');
+        popup.classList.remove('show');
+    }
+</script>
 
 <?php get_footer(); ?>
