@@ -12,7 +12,7 @@ $entreprises = [
 ];
 ?>
 
-<main class="container">
+<main class="container entreprises-page">
     <div class="header">
         <div class="headerContent">
             <div class="header-left">
