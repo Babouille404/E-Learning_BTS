@@ -407,6 +407,16 @@ add_action('wp_footer', function() { ?>
             }
         }
 
+        const header = document.getElementById('siteHeader');
+
+        function updateHeaderBackground(isDark) {
+            if (!header) return;
+            header.style.background = isDark
+                ? 'url(<?php echo get_template_directory_uri(); ?>/Assets/backgroundNight.png) no-repeat center bottom'
+                : 'url(<?php echo get_template_directory_uri(); ?>/Assets/background.png) no-repeat center bottom';
+            header.style.backgroundSize = 'cover';
+        }
+        
         // Vérifier le thème sauvegardé
         const currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -414,10 +424,13 @@ add_action('wp_footer', function() { ?>
         if (currentTheme === 'dark') {
             body.setAttribute('data-theme', 'dark');
             updateLogo(true);
+            updateHeaderBackground(true);
             if (toggleColorBtn) {
                 toggleColorBtn.src = toggleColorBtn.src.replace('moon.png', 'sun.png');
                 toggleColorBtn.alt = 'Passer au mode jour';
             }
+        } else {
+            updateHeaderBackground(false);
         }
 
         // Gestionnaire de clic
@@ -430,6 +443,7 @@ add_action('wp_footer', function() { ?>
                     body.removeAttribute('data-theme');
                     localStorage.setItem('theme', 'light');
                     updateLogo(false);
+                    updateHeaderBackground(false);
                     this.src = this.src.replace('sun.png', 'moon.png');
                     this.alt = 'Passer au mode nuit';
                 } else {
@@ -437,6 +451,7 @@ add_action('wp_footer', function() { ?>
                     body.setAttribute('data-theme', 'dark');
                     localStorage.setItem('theme', 'dark');
                     updateLogo(true);
+                    updateHeaderBackground(true);
                     this.src = this.src.replace('moon.png', 'sun.png');
                     this.alt = 'Passer au mode jour';
                 }

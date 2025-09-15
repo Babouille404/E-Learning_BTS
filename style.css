@@ -435,7 +435,7 @@ img {
 
 /* Footer - CORRIGÉ */
 .site-footer {
-    background-color: var(--color-accent-blue);
+    background-color: var(--color-secondary);
     color: var(--color-text);
     padding: 50px 0 20px;
     margin-top: 80px;

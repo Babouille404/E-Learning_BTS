@@ -12,7 +12,7 @@ $entreprises = [
 ?>
 
 <main class="container entreprises-page">
-    <div class="header">
+    <div id="siteHeader" class="header">
         <div class="headerContent">
             <div class="header-left">
                 <img src="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/entrepriseIllu.png" alt="Illustration entreprise" />
