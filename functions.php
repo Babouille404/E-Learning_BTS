@@ -388,6 +388,63 @@ add_action('wp_footer', function() { ?>
                     });
                 });
             }
+
         });
+
+        // Gestion du toggle mode sombre/clair
+        const toggleColorBtn = document.getElementById('toggleColor');
+        const body = document.body;
+        const logoImg = document.querySelector('.site-logo img');
+
+        // Fonction pour changer le logo
+        function updateLogo(isDark) {
+            if (logoImg) {
+                if (isDark) {
+                    logoImg.src = logoImg.src.replace('logoViolet.png', 'logoVert.png');
+                } else {
+                    logoImg.src = logoImg.src.replace('logoVert.png', 'logoViolet.png');
+                }
+            }
+        }
+
+        // Vérifier le thème sauvegardé
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        // Appliquer le thème au chargement
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            updateLogo(true);
+            if (toggleColorBtn) {
+                toggleColorBtn.src = toggleColorBtn.src.replace('moon.png', 'sun.png');
+                toggleColorBtn.alt = 'Passer au mode jour';
+            }
+        }
+
+        // Gestionnaire de clic
+        if (toggleColorBtn) {
+            toggleColorBtn.addEventListener('click', function() {
+                const isDark = body.getAttribute('data-theme') === 'dark';
+
+                if (isDark) {
+                    // Passer au mode clair
+                    body.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    updateLogo(false);
+                    this.src = this.src.replace('sun.png', 'moon.png');
+                    this.alt = 'Passer au mode nuit';
+                } else {
+                    // Passer au mode sombre
+                    body.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    updateLogo(true);
+                    this.src = this.src.replace('moon.png', 'sun.png');
+                    this.alt = 'Passer au mode jour';
+                }
+            });
+        }
+
+
+
+
     </script>
 <?php }); ?>

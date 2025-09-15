@@ -1,4 +1,4 @@
-/* Styles spécifiques pour la page Entreprises */
+/* Styles spécifiques pour la page Entreprises avec variables CSS */
 
 .site-header .container,
 .site-footer .container {
@@ -12,6 +12,8 @@
     max-width: 100%;
     padding: 0;
     margin: 0;
+    background-color: var(--color-background);
+    transition: background-color 0.3s ease;
 }
 
 .header {
@@ -32,38 +34,48 @@
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
+    transition: background-color 0.3s ease;
 }
 
 .header-left {
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
+    transition: background-color 0.3s ease;
 }
 
 .header-left img {
     width: 35em;
     max-width: 100%;
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
+    transition: background-color 0.3s ease;
 }
 
 .header-right {
     max-width: 45%;
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
+    transition: background-color 0.3s ease;
 }
 
 .header-right h1 {
     font-size: 2.8em;
     font-weight: bold;
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .header-right h2 {
     font-size: 1.3em;
     margin: 1em 0;
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .header-right span {
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
+    color: #63B649; /* Garde la couleur verte spécifique */
+    transition: background-color 0.3s ease;
 }
 
 .header button {
@@ -76,16 +88,22 @@
     cursor: pointer;
     align-self: center;
     margin-bottom: 2em;
+    transition: background-color 0.3s ease;
 }
 
-/* CONTENT */
+.header button:hover {
+    background: #4a8f35;
+}
+
+/* CONTENT - Section alternance */
 .alternance {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10% 0 10%;
-    background-color: #EFF3FC;
+    padding: 2em 10%;
+    background-color: var(--color-background);
     gap: 2em;
+    transition: background-color 0.3s ease;
 }
 
 .content-left {
@@ -96,12 +114,18 @@
 .content-left h3 {
     font-size: 2em;
     margin-bottom: 1em;
-    color: #4C445E;
+    color: var(--color-text);
+    transition: color 0.3s ease;
 }
 
 .content-left p {
     font-size: 1.2em;
-    color: #4C445E;
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.content-left span {
+    color: #63B649; /* Garde la couleur verte spécifique */
 }
 
 .content-right {
@@ -117,122 +141,27 @@
 }
 
 /* CARROUSEL */
-
 .container {
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-
-/* HEADER */
-.header {
-    width: 100%;
-    min-height: 100vh;
-    padding: 0 5%;
-    background: url("Assets/Entreprises/Background.png") no-repeat center bottom;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 6em;
-}
-
-.headerContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-    background-color: #D6DCF2;
-}
-
-.header-left img {
-    width: 35em;
-    max-width: 100%;
-}
-
-.header-right {
-    max-width: 45%;
-}
-
-.header-right h1 {
-    font-size: 2.8em;
-    font-weight: bold;
-}
-
-.header-right h2 {
-    font-size: 1.3em;
-    margin: 1em 0;
-}
-
-.header-right span {
-    color: #63B649;
-}
-
-.header button {
-    background: #63B649;
-    border: none;
-    padding: 0.8em 1.5em;
-    font-size: 1.2em;
-    border-radius: 2em;
-    color: white;
-    cursor: pointer;
-    align-self: center;
-    margin-bottom: 2em;
-}
-
-
-/* ALTERNANCE */
-.alternance {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2em 10%;
-    background-color: #EFF3FC;
-    gap: 2em;
-}
-
-.content-left {
-    flex: 1;
-    max-width: 50%;
-}
-
-.content-left h3 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #4C445E;
-}
-
-.content-left p {
-    font-size: 1.2em;
-    color: #4C445E;
-}
-
-.content-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.content-right img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-}
-
-
-/* CARROUSEL */
 .carousel {
     position: relative;
     text-align: center;
     padding: 3em 2em;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: var(--color-background);
+    transition: background-color 0.3s ease;
 }
 
 .carousel h2 {
     font-size: 1.8rem;
     margin-bottom: 2em;
+    color: var(--color-text);
+    transition: color 0.3s ease;
 }
 
 .slides-container {
@@ -252,9 +181,9 @@
 }
 
 .slide-logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 15px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
     flex-shrink: 0;
 }
 
@@ -267,12 +196,19 @@
 .slide {
     width: 100%;
     height: 320px;
-    background: white;
+    background: var(--color-white);
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .slide img {
@@ -299,34 +235,15 @@
 
 .slide h3 {
     font-size: 1.2em;
-    color: #333;
-
+    color: var(--color-text);
+    margin-bottom: 0.5em;
+    transition: color 0.3s ease;
 }
 
 .slide-description {
-    color: #666;
+    color: var(--color-text-light);
     font-size: 1em;
-}
-
-
-.slide-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 0 calc((100% - 2 * 24px) / 3);
-}
-
-.slide-logo {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-    flex-shrink: 0;
-}
-
-.slide-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    transition: color 0.3s ease;
 }
 
 .arrow {
@@ -343,6 +260,11 @@
 .arrow img {
     width: 40px;
     height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.arrow:hover img {
+    opacity: 0.7;
 }
 
 .left {
@@ -353,20 +275,81 @@
     right: -50px;
 }
 
+/* Responsive pour carousel */
 @media (max-width: 1024px) {
-    .slide { flex: 0 0 45%; }
+    .slide-wrapper {
+        flex: 0 0 45%;
+    }
 }
 
 @media (max-width: 768px) {
-    .slide { flex: 0 0 80%; }
+    .slide-wrapper {
+        flex: 0 0 80%;
+    }
+
+    .alternance {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-left, .content-right {
+        max-width: 100%;
+    }
+
+    .header-right h1 {
+        font-size: 2.2em;
+    }
+
+    .header-right h2 {
+        font-size: 1.1em;
+    }
+
+    .headerContent {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-left img {
+        width: 25em;
+    }
+
+    .arrow.left {
+        left: 10px;
+    }
+
+    .arrow.right {
+        right: 10px;
+    }
 }
 
+@media (max-width: 480px) {
+    .carousel {
+        padding: 2em 1em;
+    }
+
+    .slide-wrapper {
+        flex: 0 0 90%;
+    }
+
+    .header {
+        padding: 0 2%;
+    }
+
+    .alternance {
+        padding: 2em 5%;
+    }
+}
+
+/* Contenu de page */
 .entreprises-page .page-content {
     max-width: 1200px;
     margin: 4em auto;
     padding: 0 2em;
     font-size: 1.1em;
     line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* POPUP IMAGE ENTREPRISES */
@@ -402,4 +385,9 @@
     font-weight: bold;
     cursor: pointer;
     z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.popup-close:hover {
+    opacity: 0.7;
 }

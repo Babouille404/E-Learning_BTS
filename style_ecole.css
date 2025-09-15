@@ -1,18 +1,21 @@
-/* Styles spécifiques pour la page École */
+/* Styles spécifiques pour la page École avec variables CSS */
 
 .ecole-page {
-    background-color: #EFF3FC;
+    background-color: var(--color-background);
+    transition: background-color 0.3s ease;
 }
 
 /* Section Pourquoi EFREI */
 .why-efrei-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #EFF3FC 0%, #D6DCF2 100%);
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-secondary) 100%);
+    transition: background 0.3s ease;
 }
-/* ==== FORCER la grid en 4 colonnes (desktop), 2 (tablette), 1 (mobile) ==== */
+
+/* ==== Grid en 4 colonnes (desktop), 2 (tablette), 1 (mobile) ==== */
 .features-grid {
     display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* 4 colonnes */
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     gap: 40px !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
@@ -24,32 +27,49 @@
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.feature-item h3 {
+    color: var(--color-text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .feature-icon {
     display: block !important;
     width: 80px !important;
     height: 80px !important;
-    margin: 0 0 20px 0 !important; /* espace sous l'image */
+    margin: 0 0 20px 0 !important;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .features-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* 2 colonnes */
-    }
-}
-@media (max-width: 600px) {
-    .features-grid {
-        grid-template-columns: 1fr !important; /* 1 colonne */
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
 }
 
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
 
 /* Section Internationale */
 .international-section {
     padding: 80px 0;
-    background-color: #EFF3FC;
+    background-color: var(--color-background);
+    transition: background-color 0.3s ease;
 }
 
 .international-content {
@@ -62,9 +82,10 @@
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
-    color: #4C445E;
+    color: var(--color-text);
     margin-bottom: 30px;
     padding-left: 50px;
+    transition: color 0.3s ease;
 }
 
 .international-list {
@@ -74,15 +95,16 @@
 
 .international-list li {
     font-size: 1.3rem;
-    color: #4C445E;
+    color: var(--color-text);
     margin-bottom: 15px;
     position: relative;
     font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
 }
 
 .international-list li::before {
     content: '✓';
-    color: #75AA3C;
+    color: var(--color-green);
     font-weight: bold;
     position: absolute;
     left: -25px;
@@ -91,7 +113,8 @@
 /* Section Entreprises */
 .entreprises-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #D6DCF2 0%, #EFF3FC 100%);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-background) 100%);
+    transition: background 0.3s ease;
 }
 
 .entreprises-cards {
@@ -107,7 +130,7 @@
     border-radius: 60px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     min-height: 250px;
     display: flex;
     flex-direction: column;
@@ -120,32 +143,35 @@
 }
 
 .card-green {
-    background-color: #D0E6B9;
+    background-color: var(--color-accent-light);
 }
 
 .card-blue {
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
 }
 
 .entreprise-card h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: #4C445E;
+    color: var(--color-text);
     margin-bottom: 20px;
+    transition: color 0.3s ease;
 }
 
 .entreprise-card p {
     font-size: 1.1rem;
-    color: #4C445E;
+    color: var(--color-text);
     font-weight: 500;
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
 /* Section contenu de page */
 .page-content {
     padding: 60px 0;
-    background-color: #EFF3FC;
+    background-color: var(--color-background);
+    transition: background-color 0.3s ease;
 }
 
 .page-content .container {
@@ -155,18 +181,20 @@
 .page-content h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
-    color: #4C445E;
+    color: var(--color-text);
     margin-bottom: 20px;
+    transition: color 0.3s ease;
 }
 
 .page-content p {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #4C445E;
+    color: var(--color-text);
+    transition: color 0.3s ease;
 }
 
-/* Responsive */
+/* Responsive pour mobile */
 @media (max-width: 768px) {
     .features-grid {
         grid-template-columns: 1fr;

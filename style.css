@@ -5,6 +5,39 @@ Version: 1.0
 Text Domain: efrei-elearn
 */
 
+/* Variables CSS pour le thème clair et sombre */
+:root {
+    /* Couleurs par défaut (mode jour) */
+    --color-primary: #4C445E;
+    --color-secondary: #D6DCF2;
+    --color-background: #EFF3FC;
+    --color-accent-light: #D0E6B9;
+    --color-accent-blue: #BAC5EC;
+    --color-green: #75AA3C;
+    --color-green-hover: #629533;
+    --color-text: #4C445E;
+    --color-text-light: #6F648A;
+    --color-white: #FFFFFF;
+    --color-input-bg: #f0f3fc;
+    --color-placeholder: #9589AF;
+}
+
+/* Mode sombre */
+[data-theme="dark"] {
+    --color-primary: #FFF;
+    --color-secondary: #2A324D;
+    --color-background: #1F232B;
+    --color-accent-light: #777F96;
+    --color-accent-blue: #777F96;
+    --color-green: #75AA3C;
+    --color-green-hover: #629533;
+    --color-text: #FFF;
+    --color-text-light: #CCC;
+    --color-white: #2A324D;
+    --color-input-bg: #3A4255;
+    --color-placeholder: #AAA;
+}
+
 /* Reset et base */
 * {
     margin: 0;
@@ -18,9 +51,10 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #EFF3FC;
-    color: #4C445E;
+    background-color: var(--color-background);
+    color: var(--color-text);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {
@@ -38,12 +72,13 @@ img {
 
 /* Header */
 .site-header {
-    background-color: #D6DCF2;
+    background-color: var(--color-secondary);
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(76, 68, 94, 0.1);
+    transition: background-color 0.3s ease;
 }
 
 .header-content {
@@ -69,7 +104,7 @@ img {
 
 .main-navigation .nav-menu a {
     text-decoration: none;
-    color: #4C445E;
+    color: var(--color-text);
     font-weight: 500;
     font-size: 18px;
     transition: color 0.3s ease;
@@ -78,7 +113,7 @@ img {
 
 .main-navigation .nav-menu a:hover,
 .main-navigation .nav-menu .current-menu-item a {
-    color: #75AA3C;
+    color: var(--color-green);
 }
 
 .main-navigation .nav-menu a::after {
@@ -88,7 +123,7 @@ img {
     height: 2px;
     bottom: -5px;
     left: 50%;
-    background-color: #75AA3C;
+    background-color: var(--color-green);
     transition: all 0.3s ease;
 }
 
@@ -114,22 +149,22 @@ img {
 
 .btn-outline {
     background-color: transparent;
-    color: #4C445E;
-    border: 2px solid #4C445E;
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
 }
 
 .btn-outline:hover {
-    background-color: #4C445E;
-    color: #EFF3FC;
+    background-color: var(--color-text);
+    color: var(--color-background);
 }
 
 .btn-primary {
-    background-color: #75AA3C;
-    color: #EFF3FC;
+    background-color: var(--color-green);
+    color: var(--color-white);
 }
 
 .btn-primary:hover {
-    background-color: #629533;
+    background-color: var(--color-green-hover);
     transform: translateY(-2px);
 }
 
@@ -140,19 +175,18 @@ img {
 
 /* Bouton S'inscrire */
 .btn-register {
-    background-color: #4C445E;
-    color: #EFF3FC;
-    border: 2px solid #4C445E;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border: 2px solid var(--color-primary);
     transition: all 0.3s ease;
 }
 
 .btn-register:hover {
     background-color: transparent;
-    color: #4C445E;
-    border: 2px solid #4C445E;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
 }
 
-/* Overlay popup */
 /* Overlay popup */
 .popup-overlay {
     position: fixed;
@@ -161,7 +195,7 @@ img {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.5);
-    display: none; /* caché par défaut */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 2000;
@@ -172,7 +206,7 @@ img {
 }
 
 .popup-content {
-    background: #d6dcf2;
+    background: var(--color-secondary);
     border-radius: 50px;
     padding: 40px 30px;
     width: 400px;
@@ -182,6 +216,7 @@ img {
     align-items: center;
     position: relative;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    transition: background-color 0.3s ease;
 }
 
 /* Croix fermeture */
@@ -191,7 +226,7 @@ img {
     right: 20px;
     font-size: 30px;
     font-weight: bold;
-    color: #4C445E;
+    color: var(--color-text);
     cursor: pointer;
 }
 
@@ -213,63 +248,45 @@ img {
 .input-group label {
     font-weight: 600;
     margin-bottom: 5px;
-    color: #4C445E;
+    color: var(--color-text);
 }
 
 .input-group input {
     padding: 12px 20px;
     border-radius: 50px;
     border: none;
-    background-color: #f0f3fc;
+    background-color: var(--color-input-bg);
     font-size: 16px;
-    color: #9589AF;
+    color: var(--color-placeholder);
 }
 
 .popup-content input {
     outline: none;
     border: none;
-    background-color: #f0f3fc;
+    background-color: var(--color-input-bg);
     padding: 12px 20px;
     border-radius: 50px;
     font-size: 16px;
-    color: #4C445E;
+    color: var(--color-text);
+    transition: background-color 0.3s ease;
 }
 
 .popup-content input::placeholder {
-    color: #9589AF;
+    color: var(--color-placeholder);
     opacity: 1;
 }
-
 
 /* Mot de passe oublié */
 .forgot-password {
     align-self: center;
-
     margin-bottom: 5px;
-    color: #4C445E;
+    color: var(--color-text);
     font-weight: 500;
     cursor: pointer;
 }
 
 .forgot-password:hover {
     font-weight: bold;
-}
-
-/* Bouton Se connecter */
-.btn-primary {
-    background-color: #75aa3c;
-    color: #fff;
-    border-radius: 50px;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    margin-top: 1em;
-}
-
-.btn-primary:hover {
-    background-color: #629533;
 }
 
 .logo-popup {
@@ -309,7 +326,7 @@ img {
 /* Liens switch */
 .switch-form, .already-account {
     font-size: 14px;
-    color: #4C445E;
+    color: var(--color-text);
     margin: 10px 0;
     text-align: center;
 }
@@ -317,7 +334,7 @@ img {
 .switch-form span, .already-account .connect-link {
     font-weight: 500;
     cursor: pointer;
-    color: #75AA3C;
+    color: var(--color-green);
     transition: all 0.3s ease;
 }
 
@@ -325,25 +342,25 @@ img {
     font-weight: bold;
 }
 
-
 /* Input commun */
 .popup-content .input-group input {
     width: 100%;
     outline: none;
     border: none;
-    background-color: #f0f3fc;
+    background-color: var(--color-input-bg);
     padding: 12px 20px;
     border-radius: 50px;
     font-size: 16px;
-    color: #4C445E;
+    color: var(--color-text);
     margin-bottom: 15px;
+    transition: background-color 0.3s ease;
 }
 
 .popup-content .input-group label {
     align-self: flex-start;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #4C445E;
+    color: var(--color-text);
 }
 
 /* Sections communes */
@@ -353,24 +370,25 @@ img {
     font-weight: 600;
     text-align: center;
     margin-bottom: 3rem;
-    color: #4C445E;
+    color: var(--color-text);
 }
 
 .highlight {
-    color: #75AA3C;
+    color: var(--color-green);
 }
 
 .highlight-green {
-    color: #75AA3C;
+    color: var(--color-green);
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #D6DCF2 0%, #EFF3FC 100%);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-background) 100%);
     padding: 80px 0;
     min-height: 70vh;
     display: flex;
     align-items: center;
+    transition: background 0.3s ease;
 }
 
 .hero-content {
@@ -389,12 +407,12 @@ img {
     font-size: 3.5rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #4C445E;
+    color: var(--color-text);
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: #4C445E;
+    color: var(--color-text);
     margin-bottom: 40px;
     opacity: 0.9;
 }
@@ -415,12 +433,13 @@ img {
     transform: translateY(3px);
 }
 
-/* Footer */
+/* Footer - CORRIGÉ */
 .site-footer {
-    background-color: #BAC5EC;
-    color: #4C445E;
+    background-color: var(--color-accent-blue);
+    color: var(--color-text);
     padding: 50px 0 20px;
     margin-top: 80px;
+    transition: background-color 0.3s ease;
 }
 
 .footer-content {
@@ -434,7 +453,7 @@ img {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #4C445E;
+    color: var(--color-text);
 }
 
 .footer-links {
@@ -446,18 +465,18 @@ img {
 }
 
 .footer-links a {
-    color: #4C445E;
+    color: var(--color-text);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #75AA3C;
+    color: var(--color-green);
 }
 
 .contact-info p {
     margin-bottom: 10px;
-    color: #4C445E;
+    color: var(--color-text);
 }
 
 .social-links {
@@ -478,8 +497,8 @@ img {
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #75AA3C;
-    color: #6F648A;
+    border-top: 1px solid var(--color-green);
+    color: var(--color-text-light);
 }
 
 .warning-text {
@@ -497,7 +516,7 @@ img {
 .home-main h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #4C445E;
+    color: var(--color-text);
 }
 
 .home-links {
@@ -510,8 +529,8 @@ img {
 .home-links a {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #75AA3C;
-    color: #EFF3FC;
+    background-color: var(--color-green);
+    color: var(--color-white);
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
@@ -525,14 +544,14 @@ img {
 }
 
 .welcome-text {
-    color: #4C445E;
+    color: var(--color-text);
     font-weight: 500;
     font-size: 16px;
 }
 
 /* Lien Cours dans la navigation */
 .nav-menu .cours-link {
-    color: #75AA3C !important;
+    color: var(--color-green) !important;
     font-weight: 600;
     position: relative;
 }
@@ -544,7 +563,7 @@ img {
 }
 
 .nav-menu .cours-link:hover {
-    color: #629533 !important;
+    color: var(--color-green-hover) !important;
     transform: translateY(-1px);
     transition: all 0.3s ease;
 }
@@ -607,6 +626,15 @@ img {
     to { transform: translateY(-50%) rotate(360deg); }
 }
 
+/* Bouton de toggle du thème */
+#toggleColor {
+    transition: transform 0.3s ease;
+}
+
+#toggleColor:hover {
+    transform: scale(1.1);
+}
+
 /* Responsive pour l'info utilisateur */
 @media (max-width: 768px) {
     .user-info {
@@ -624,8 +652,6 @@ img {
     }
 }
 
-
 body.alt-color {
-    background-color: #4C445E; /* couleur activée */
+    background-color: var(--color-primary);
 }
-
