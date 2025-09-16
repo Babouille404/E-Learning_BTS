@@ -22,7 +22,6 @@ E-Learning_BTS est une plateforme d'apprentissage en ligne conçue pour tous et 
 
 La maquette du site a été réalisée sur Figma.  
 Lien : https://www.figma.com/design/KFtywL4zQ21bmf9yMXISM5/Projet-1---Site-e-Enseignement?node-id=0-1&t=mAZBIsV04eNeZzwp-1
-*(Remplacer par le lien réel)*
 
 ## Installation locale
 
