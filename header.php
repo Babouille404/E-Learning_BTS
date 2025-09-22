@@ -138,6 +138,8 @@
     </div>
 <?php endif; ?>
 
+
+
 <?php
 // Menu de fallback si aucun menu n'est configuré
 function efrei_fallback_menu() {

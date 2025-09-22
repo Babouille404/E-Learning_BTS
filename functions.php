@@ -71,6 +71,17 @@ add_action('wp_enqueue_scripts', function() {
         );
     }
 
+    // Style spécifique pour la page Contact
+    if (is_page_template('contact.php')) {
+        $entreprises_path = get_template_directory() . '/style_contact.css';
+        wp_enqueue_style(
+                'contact-style',
+                get_template_directory_uri() . '/style_contact.css',
+                ['efrei-style'],
+                file_exists($entreprises_path) ? filemtime($entreprises_path) : null
+        );
+    }
+
     // Style spécifique pour la page Cours
     if (is_page_template('cours.php')) {
         $cours_path = get_template_directory() . '/cours.css';
@@ -332,6 +343,23 @@ add_action('wp_footer', function() { ?>
                         });
                 }
             }
+
+            // Changement du logo dans la popup inscription selon le thème
+            const logoPopup = document.querySelector('.logo-popup');
+            function updatePopupLogo() {
+                if (!logoPopup) return;
+                if (document.body.getAttribute('data-theme') === 'dark') {
+                    logoPopup.src = logoPopup.src.replace('ecole/logo.png', 'logoVert.png');
+                } else {
+                    logoPopup.src = logoPopup.src.replace('logoVert.png', 'ecole/logo.png');
+                }
+            }
+
+            // Vérification initiale et écoute du changement de thème
+            updatePopupLogo();
+            const observer = new MutationObserver(updatePopupLogo);
+            observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+
 
             // ---------------- Carousel & Popup Slides (code existant) ----------------
             const slidesContainer = document.getElementById('slides-container');
