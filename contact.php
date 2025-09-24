@@ -11,7 +11,7 @@ get_header();
                 <div class="contact-left">
                     <h2>Nous contacter:</h2>
                     <p>
-                        Vous avez une question sur nos cours, un problème technique ou une suggestion ? N'hésitez pas à nous écrire, notre équipe vous répondra rapidement
+                        Vous avez une question sur nos cours, un problème technique ou une suggestion? N'hésitez pas à nous écrire, notre équipe vous répondra rapidement
                     </p>
                     <form class="contact-form">
                         <label for="email">Adresse e-mail:</label>

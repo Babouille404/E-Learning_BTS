@@ -14,19 +14,19 @@ add_action('after_setup_theme', function() {
 
     // Support HTML5
     add_theme_support('html5', [
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-        'style',
-        'script'
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'style',
+            'script'
     ]);
 
     // Enregistrement des menus
     register_nav_menus([
-        'primary' => 'Menu principal',
-        'footer' => 'Menu footer'
+            'primary' => 'Menu principal',
+            'footer' => 'Menu footer'
     ]);
 });
 
@@ -35,61 +35,55 @@ add_action('wp_enqueue_scripts', function() {
     // Style principal
     $style_path = get_template_directory() . '/style.css';
     wp_enqueue_style(
-        'efrei-style',
-        get_template_directory_uri() . '/style.css',
-        [],
-        file_exists($style_path) ? filemtime($style_path) : null
+            'efrei-style',
+            get_template_directory_uri() . '/style.css',
+            [],
+            file_exists($style_path) ? filemtime($style_path) : null
     );
 
     // Google Fonts
     wp_enqueue_style(
-        'google-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
-        [],
-        null
+            'google-fonts',
+            'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
+            [],
+            null
     );
 
-    // Style spécifique pour la page École
+    // Styles spécifiques
     if (is_page_template('ecole.php')) {
         $ecole_path = get_template_directory() . '/style_ecole.css';
         wp_enqueue_style(
-            'ecole-style',
-            get_template_directory_uri() . '/style_ecole.css',
-            ['efrei-style'],
-            file_exists($ecole_path) ? filemtime($ecole_path) : null
+                'ecole-style',
+                get_template_directory_uri() . '/style_ecole.css',
+                ['efrei-style'],
+                file_exists($ecole_path) ? filemtime($ecole_path) : null
         );
     }
-
-    // Style spécifique pour la page Entreprises
     if (is_page_template('entreprises.php')) {
         $entreprises_path = get_template_directory() . '/style_entreprises.css';
         wp_enqueue_style(
-            'entreprises-style',
-            get_template_directory_uri() . '/style_entreprises.css',
-            ['efrei-style'],
-            file_exists($entreprises_path) ? filemtime($entreprises_path) : null
-        );
-    }
-
-    // Style spécifique pour la page Contact
-    if (is_page_template('contact.php')) {
-        $entreprises_path = get_template_directory() . '/style_contact.css';
-        wp_enqueue_style(
-                'contact-style',
-                get_template_directory_uri() . '/style_contact.css',
+                'entreprises-style',
+                get_template_directory_uri() . '/style_entreprises.css',
                 ['efrei-style'],
                 file_exists($entreprises_path) ? filemtime($entreprises_path) : null
         );
     }
-
-    // Style spécifique pour la page Cours
+    if (is_page_template('contact.php')) {
+        $contact_path = get_template_directory() . '/style_contact.css';
+        wp_enqueue_style(
+                'contact-style',
+                get_template_directory_uri() . '/style_contact.css',
+                ['efrei-style'],
+                file_exists($contact_path) ? filemtime($contact_path) : null
+        );
+    }
     if (is_page_template('cours.php')) {
         $cours_path = get_template_directory() . '/cours.css';
         wp_enqueue_style(
-            'cours-style',
-            get_template_directory_uri() . '/cours.css',
-            ['efrei-style'],
-            file_exists($cours_path) ? filemtime($cours_path) : null
+                'cours-style',
+                get_template_directory_uri() . '/cours.css',
+                ['efrei-style'],
+                file_exists($cours_path) ? filemtime($cours_path) : null
         );
     }
 });
@@ -105,7 +99,6 @@ add_action('wp_ajax_user_logout', 'handle_user_logout');
 add_action('wp_ajax_nopriv_user_logout', 'handle_user_logout');
 
 function handle_user_login() {
-    // Vérifier le nonce pour la sécurité
     if (!wp_verify_nonce($_POST['nonce'], 'user_auth_nonce')) {
         wp_die('Action non autorisée');
     }
@@ -113,22 +106,20 @@ function handle_user_login() {
     $email = sanitize_email($_POST['email']);
     $password = $_POST['password'];
 
-    // Validation simple (en production, utiliser une vraie base de données)
     $valid_users = [
-        'test@test.fr' => ['password' => 'test', 'name' => 'caca'],
-        'prout@prout.fr' => ['password' => 'prout', 'name' => 'Neuille'],
-        'bipbip@bipbip.fr' => ['password' => 'bipbip', 'name' => 'Bipbip']
+            'test@test.fr' => ['password' => 'test', 'name' => 'caca'],
+            'prout@prout.fr' => ['password' => 'prout', 'name' => 'Neuille'],
+            'bipbip@bipbip.fr' => ['password' => 'bipbip', 'name' => 'Bipbip']
     ];
 
     if (isset($valid_users[$email]) && $valid_users[$email]['password'] === $password) {
-        // Connexion réussie
         $_SESSION['user_logged_in'] = true;
         $_SESSION['user_email'] = $email;
         $_SESSION['user_name'] = $valid_users[$email]['name'];
 
         wp_send_json_success([
-            'message' => 'Connexion réussie',
-            'name' => $valid_users[$email]['name']
+                'message' => 'Connexion réussie',
+                'name' => $valid_users[$email]['name']
         ]);
     } else {
         wp_send_json_error(['message' => 'Email ou mot de passe incorrect']);
@@ -136,7 +127,6 @@ function handle_user_login() {
 }
 
 function handle_user_register() {
-    // Vérifier le nonce pour la sécurité
     if (!wp_verify_nonce($_POST['nonce'], 'user_auth_nonce')) {
         wp_die('Action non autorisée');
     }
@@ -146,7 +136,6 @@ function handle_user_register() {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Validation
     if (empty($prenom) || empty($email) || empty($password)) {
         wp_send_json_error(['message' => 'Tous les champs sont requis']);
     }
@@ -159,19 +148,17 @@ function handle_user_register() {
         wp_send_json_error(['message' => 'Le mot de passe doit contenir au moins 6 caractères']);
     }
 
-    // Simulation de l'enregistrement (en production, sauvegarder en BDD)
     $_SESSION['user_logged_in'] = true;
     $_SESSION['user_email'] = $email;
     $_SESSION['user_name'] = $prenom;
 
     wp_send_json_success([
-        'message' => 'Inscription réussie',
-        'name' => $prenom
+            'message' => 'Inscription réussie',
+            'name' => $prenom
     ]);
 }
 
 function handle_user_logout() {
-    // Détruire la session
     session_destroy();
     wp_send_json_success(['message' => 'Déconnexion réussie']);
 }
@@ -189,19 +176,19 @@ function get_asset_url($path) {
 // Fonction pour afficher le menu de navigation
 function efrei_nav_menu($location = 'primary', $class = 'nav-menu') {
     wp_nav_menu([
-        'theme_location' => $location,
-        'container' => 'nav',
-        'container_class' => $class,
-        'menu_class' => 'menu-list',
-        'fallback_cb' => false
+            'theme_location' => $location,
+            'container' => 'nav',
+            'container_class' => $class,
+            'menu_class' => 'menu-list',
+            'fallback_cb' => false
     ]);
 }
 
-// Injection du JS pour l'authentification et popup dans le footer
+// Injection du JS dans le footer
 add_action('wp_footer', function() { ?>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Variables globales
+            // --- Authentification & popup ---
             const popup = document.getElementById('popupConnexion');
             const closeBtn = document.querySelector('.popup-close');
             const formConnexion = document.querySelector('.form-connexion');
@@ -209,7 +196,6 @@ add_action('wp_footer', function() { ?>
             const switchToInscription = document.querySelector('.switch-to-inscription');
             const connectLink = document.querySelector('.connect-link');
 
-            // Fonctions popup
             window.openPopup = function(type) {
                 if (!popup) return;
                 popup.classList.add('show');
@@ -229,62 +215,44 @@ add_action('wp_footer', function() { ?>
             }
 
             function resetForms() {
-                if (formConnexion) {
-                    formConnexion.querySelectorAll('input').forEach(input => input.value = '');
-                }
-                if (formInscription) {
-                    formInscription.querySelectorAll('input').forEach(input => input.value = '');
-                }
+                if (formConnexion) formConnexion.querySelectorAll('input').forEach(input => input.value = '');
+                if (formInscription) formInscription.querySelectorAll('input').forEach(input => input.value = '');
             }
 
-            // Event listeners pour popup
             if (closeBtn) closeBtn.addEventListener('click', closePopup);
             if (popup) popup.addEventListener('click', e => { if(e.target === popup) closePopup(); });
-            if (switchToInscription) {
-                switchToInscription.addEventListener('click', () => {
-                    resetForms();
-                    formConnexion.style.display='none';
-                    formInscription.style.display='flex';
-                });
-            }
-            if (connectLink) {
-                connectLink.addEventListener('click', () => {
-                    resetForms();
-                    formInscription.style.display='none';
-                    formConnexion.style.display='flex';
-                });
-            }
+            if (switchToInscription) switchToInscription.addEventListener('click', () => {
+                resetForms();
+                formConnexion.style.display='none';
+                formInscription.style.display='flex';
+            });
+            if (connectLink) connectLink.addEventListener('click', () => {
+                resetForms();
+                formInscription.style.display='none';
+                formConnexion.style.display='flex';
+            });
 
-            // Gestion des formulaires d'authentification
             const loginForm = document.getElementById('loginForm');
             const registerForm = document.getElementById('registerForm');
 
             if (loginForm) {
                 loginForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-
                     const formData = new FormData();
                     formData.append('action', 'user_login');
                     formData.append('nonce', '<?php echo wp_create_nonce("user_auth_nonce"); ?>');
                     formData.append('email', this.email.value);
                     formData.append('password', this.password.value);
 
-                    fetch('<?php echo admin_url("admin-ajax.php"); ?>', {
-                        method: 'POST',
-                        body: formData
-                    })
-                        .then(response => response.json())
+                    fetch('<?php echo admin_url("admin-ajax.php"); ?>', { method: 'POST', body: formData })
+                        .then(r => r.json())
                         .then(data => {
                             if (data.success) {
-                                alert('Connexion réussie ! Rechargement de la page...');
+                                alert('Connexion réussie ! Rechargement...');
                                 location.reload();
                             } else {
                                 alert(data.data.message || 'Erreur de connexion');
                             }
-                        })
-                        .catch(error => {
-                            console.error('Erreur:', error);
-                            alert('Erreur de connexion');
                         });
                 });
             }
@@ -292,7 +260,6 @@ add_action('wp_footer', function() { ?>
             if (registerForm) {
                 registerForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-
                     const formData = new FormData();
                     formData.append('action', 'user_register');
                     formData.append('nonce', '<?php echo wp_create_nonce("user_auth_nonce"); ?>');
@@ -301,67 +268,35 @@ add_action('wp_footer', function() { ?>
                     formData.append('password', this.password.value);
                     formData.append('confirm_password', this.confirm_password.value);
 
-                    fetch('<?php echo admin_url("admin-ajax.php"); ?>', {
-                        method: 'POST',
-                        body: formData
-                    })
-                        .then(response => response.json())
+                    fetch('<?php echo admin_url("admin-ajax.php"); ?>', { method: 'POST', body: formData })
+                        .then(r => r.json())
                         .then(data => {
                             if (data.success) {
-                                alert('Inscription réussie ! Rechargement de la page...');
+                                alert('Inscription réussie ! Rechargement...');
                                 location.reload();
                             } else {
                                 alert(data.data.message || 'Erreur d\'inscription');
                             }
-                        })
-                        .catch(error => {
-                            console.error('Erreur:', error);
-                            alert('Erreur d\'inscription');
                         });
                 });
             }
 
-            // Fonction de déconnexion
             window.logout = function() {
                 if (confirm('Voulez-vous vraiment vous déconnecter ?')) {
                     const formData = new FormData();
                     formData.append('action', 'user_logout');
-
-                    fetch('<?php echo admin_url("admin-ajax.php"); ?>', {
-                        method: 'POST',
-                        body: formData
-                    })
-                        .then(response => response.json())
+                    fetch('<?php echo admin_url("admin-ajax.php"); ?>', { method: 'POST', body: formData })
+                        .then(r => r.json())
                         .then(data => {
                             if (data.success) {
                                 alert('Déconnexion réussie');
                                 location.reload();
                             }
-                        })
-                        .catch(error => {
-                            console.error('Erreur:', error);
                         });
                 }
             }
 
-            // Changement du logo dans la popup inscription selon le thème
-            const logoPopup = document.querySelector('.logo-popup');
-            function updatePopupLogo() {
-                if (!logoPopup) return;
-                if (document.body.getAttribute('data-theme') === 'dark') {
-                    logoPopup.src = logoPopup.src.replace('ecole/logo.png', 'logoVert.png');
-                } else {
-                    logoPopup.src = logoPopup.src.replace('logoVert.png', 'ecole/logo.png');
-                }
-            }
-
-            // Vérification initiale et écoute du changement de thème
-            updatePopupLogo();
-            const observer = new MutationObserver(updatePopupLogo);
-            observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
-
-
-            // ---------------- Carousel & Popup Slides (code existant) ----------------
+            // --- Carousel ---
             const slidesContainer = document.getElementById('slides-container');
             const slides = document.getElementById('slides');
             if(slidesContainer && slides) {
@@ -381,113 +316,79 @@ add_action('wp_footer', function() { ?>
                     if(position < 0) { position=slides.scrollWidth/2 - slideWidth; slidesContainer.scrollLeft=position; }
                     slidesContainer.scrollTo({ left: position, behavior: 'smooth' });
                 }
+            }
 
-                // Popup pour chaque slide avec data-popup
-                slides.querySelectorAll('.slide-wrapper .slide').forEach(slide => {
-                    slide.addEventListener('click', () => {
-                        const popupSrc = slide.dataset.popup;
-                        if(!popupSrc) return;
+            // --- Logos & Thème ---
+            const toggleColorBtn = document.getElementById('toggleColor');
+            const body = document.body;
+            const header = document.getElementById('siteHeader');
+            const logoImg = document.querySelector('.site-logo img');
+            const logoPopup = document.querySelector('.logo-popup');
+            const logoContact = document.querySelector('.contact-logo');
 
-                        let popupDiv = document.getElementById('slidePopup');
-                        if(!popupDiv) {
-                            popupDiv = document.createElement('div');
-                            popupDiv.id = 'slidePopup';
-                            popupDiv.style.position='fixed';
-                            popupDiv.style.top='0';
-                            popupDiv.style.left='0';
-                            popupDiv.style.width='100%';
-                            popupDiv.style.height='100%';
-                            popupDiv.style.background='rgba(0,0,0,0.9)';
-                            popupDiv.style.display='flex';
-                            popupDiv.style.justifyContent='center';
-                            popupDiv.style.alignItems='center';
-                            popupDiv.style.zIndex='9999';
-                            popupDiv.innerHTML = '<img style="max-width:90%; max-height:90%;" src="" /><span id="closeSlidePopup" style="position:absolute; top:20px; right:30px; font-size:2em; color:white; cursor:pointer;">&times;</span>';
-                            document.body.appendChild(popupDiv);
+            function changeLogoColor(isDark) {
+                if (logoImg) {
+                    logoImg.src = logoImg.src.replace(
+                        isDark ? 'logoViolet.png' : 'logoVert.png',
+                        isDark ? 'logoVert.png' : 'logoViolet.png'
+                    );
+                }
+                if (logoPopup) {
+                    logoPopup.src = logoPopup.src.replace(
+                        isDark ? 'logoViolet.png' : 'logoVert.png',
+                        isDark ? 'logoVert.png' : 'logoViolet.png'
+                    );
+                }
+                if (logoContact) {
+                    logoContact.src = logoContact.src.replace(
+                        isDark ? 'logoViolet.png' : 'logoVert.png',
+                        isDark ? 'logoVert.png' : 'logoViolet.png'
+                    );
+                }
+            }
 
-                            document.getElementById('closeSlidePopup').addEventListener('click', () => {
-                                popupDiv.style.display='none';
-                            });
-                            popupDiv.addEventListener('click', e => { if(e.target===popupDiv) popupDiv.style.display='none'; });
-                        }
+            function updateHeaderBackground(isDark) {
+                if (!header) return;
+                header.style.background = isDark
+                    ? 'url(<?php echo get_template_directory_uri(); ?>/Assets/backgroundNight.png) no-repeat center bottom'
+                    : 'url(<?php echo get_template_directory_uri(); ?>/Assets/background.png) no-repeat center bottom';
+                header.style.backgroundSize = 'cover';
+            }
 
-                        popupDiv.querySelector('img').src = popupSrc;
-                        popupDiv.style.display='flex';
-                    });
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                changeLogoColor(true);
+                updateHeaderBackground(true);
+                if (toggleColorBtn) {
+                    toggleColorBtn.src = toggleColorBtn.src.replace('moon.png', 'sun.png');
+                    toggleColorBtn.alt = 'Passer au mode jour';
+                }
+            } else {
+                changeLogoColor(false);
+                updateHeaderBackground(false);
+            }
+
+            if (toggleColorBtn) {
+                toggleColorBtn.addEventListener('click', function() {
+                    const isDark = body.getAttribute('data-theme') === 'dark';
+                    if (isDark) {
+                        body.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'light');
+                        changeLogoColor(false);
+                        updateHeaderBackground(false);
+                        this.src = this.src.replace('sun.png', 'moon.png');
+                        this.alt = 'Passer au mode nuit';
+                    } else {
+                        body.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                        changeLogoColor(true);
+                        updateHeaderBackground(true);
+                        this.src = this.src.replace('moon.png', 'sun.png');
+                        this.alt = 'Passer au mode jour';
+                    }
                 });
             }
-
         });
-
-        // Gestion du toggle mode sombre/clair
-        const toggleColorBtn = document.getElementById('toggleColor');
-        const body = document.body;
-        const logoImg = document.querySelector('.site-logo img');
-
-        // Fonction pour changer le logo
-        function updateLogo(isDark) {
-            if (logoImg) {
-                if (isDark) {
-                    logoImg.src = logoImg.src.replace('logoViolet.png', 'logoVert.png');
-                } else {
-                    logoImg.src = logoImg.src.replace('logoVert.png', 'logoViolet.png');
-                }
-            }
-        }
-
-        const header = document.getElementById('siteHeader');
-
-        function updateHeaderBackground(isDark) {
-            if (!header) return;
-            header.style.background = isDark
-                ? 'url(<?php echo get_template_directory_uri(); ?>/Assets/backgroundNight.png) no-repeat center bottom'
-                : 'url(<?php echo get_template_directory_uri(); ?>/Assets/background.png) no-repeat center bottom';
-            header.style.backgroundSize = 'cover';
-        }
-        
-        // Vérifier le thème sauvegardé
-        const currentTheme = localStorage.getItem('theme') || 'light';
-
-        // Appliquer le thème au chargement
-        if (currentTheme === 'dark') {
-            body.setAttribute('data-theme', 'dark');
-            updateLogo(true);
-            updateHeaderBackground(true);
-            if (toggleColorBtn) {
-                toggleColorBtn.src = toggleColorBtn.src.replace('moon.png', 'sun.png');
-                toggleColorBtn.alt = 'Passer au mode jour';
-            }
-        } else {
-            updateHeaderBackground(false);
-        }
-
-        // Gestionnaire de clic
-        if (toggleColorBtn) {
-            toggleColorBtn.addEventListener('click', function() {
-                const isDark = body.getAttribute('data-theme') === 'dark';
-
-                if (isDark) {
-                    // Passer au mode clair
-                    body.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                    updateLogo(false);
-                    updateHeaderBackground(false);
-                    this.src = this.src.replace('sun.png', 'moon.png');
-                    this.alt = 'Passer au mode nuit';
-                } else {
-                    // Passer au mode sombre
-                    body.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                    updateLogo(true);
-                    updateHeaderBackground(true);
-                    this.src = this.src.replace('moon.png', 'sun.png');
-                    this.alt = 'Passer au mode jour';
-                }
-            });
-        }
-
-
-
-
     </script>
-<?php }); ?>
+<?php });

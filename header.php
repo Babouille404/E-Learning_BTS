@@ -80,7 +80,7 @@
             <span class="popup-close">&times;</span>
 
             <!-- Logo -->
-            <img src="<?php echo get_asset_url('ecole/logo.png'); ?>" class="logo-popup" alt="<?php bloginfo('name'); ?>">
+            <img src="<?php echo get_asset_url('logoViolet.png'); ?>" class="logo-popup" alt="Logo">
 
             <!-- Formulaire Connexion -->
             <div class="form-connexion">
