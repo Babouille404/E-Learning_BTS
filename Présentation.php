@@ -2,8 +2,7 @@
 /* Template Name: Cours */
 get_header();
 ?>
-  	<!doctype html>
-<html lang="fr">
+  	<html lang="fr">
 <head>
 <meta charset="utf-8" />
 <title>Hero — Pixel-perfect</title>
@@ -459,6 +458,7 @@ get_header();
 
 </body>
 </html>
+
 
 <?php get_Footer();
 ?>
