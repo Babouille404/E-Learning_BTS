@@ -28,7 +28,8 @@
                 if ($is_logged_in): ?>
                     <!-- Menu pour utilisateur connecté -->
                     <ul class="nav-menu">
-                        <li><a href="<?php echo home_url('/'); ?>">Accueil</a></li>
+                        <li><a href="<?php echo home_url('/accueil'); ?>">Accueil</a></li>
+                        <li><a href="<?php echo home_url('/presentation'); ?>">Présentation</a></li>
                         <li><a href="<?php echo home_url('/ecole/'); ?>">École</a></li>
                         <li><a href="<?php echo home_url('/cours/'); ?>" class="cours-link">Cours</a></li>
                         <li><a href="<?php echo home_url('/entreprises/'); ?>">Entreprises</a></li>
@@ -144,7 +145,8 @@
 // Menu de fallback si aucun menu n'est configuré
 function efrei_fallback_menu() {
     echo '<ul class="nav-menu">';
-    echo '<li><a href="' . home_url('/') . '">Accueil</a></li>';
+    echo '<li><a href="' . home_url('/accueil') . '">Accueil</a></li>';
+    echo '<li><a href="' . home_url('/presentation') . '">Présentation</a></li>';
     echo '<li><a href="' . home_url('/ecole/') . '">École</a></li>';
     echo '<li><a href="' . home_url('/entreprises/') . '">Entreprises</a></li>';
     echo '<li><a href="' . home_url('/contact/') . '">Contact</a></li>';

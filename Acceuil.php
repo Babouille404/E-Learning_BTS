@@ -8,7 +8,7 @@ get_header();
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-left">
-                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Acceuil/illustration.png" alt="Illustration apprentissage" class="hero-illustration">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/illustration.png" alt="Illustration apprentissage" class="hero-illustration">
                     </div>
                    
 <div class="hero-right">
@@ -29,7 +29,7 @@ get_header();
                    
                     <div class="feature-bubble feature-left">
                         <div class="feature-icon-circle">
-                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Acceuil/expert.png" alt="Instructeur expert" class="feature-icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/expert.png" alt="Instructeur expert" class="feature-icon">
                         </div>
                         <div class="feature-content">
                             <h3>Instructeurs experts</h3>
@@ -40,7 +40,7 @@ get_header();
                  
                     <div class="feature-bubble feature-center">
                         <div class="feature-icon-circle">
-                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Acceuil/flexible.png" alt="Apprentissage flexible" class="feature-icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/flexible.png" alt="Apprentissage flexible" class="feature-icon">
                         </div>
                         <div class="feature-content">
                             <h3>Apprentissage flexible</h3>
@@ -51,7 +51,7 @@ get_header();
                     
                     <div class="feature-bubble feature-right">
                         <div class="feature-icon-circle">
-                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Acceuil/community.png" alt="Communauté en ligne" class="feature-icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/Assets/community.png" alt="Communauté en ligne" class="feature-icon">
                         </div>
                         <div class="feature-content">
                             <h3>Communauté en ligne</h3>
