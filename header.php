@@ -15,7 +15,7 @@
             <!-- Logo -->
             <div class="site-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php echo get_asset_url('logoViolet.png'); ?>" alt="<?php bloginfo('name'); ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Assets/logoViolet.png" alt="<?php bloginfo('name'); ?>">
                 </a>
             </div>
 
