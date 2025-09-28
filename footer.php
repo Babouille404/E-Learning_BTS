@@ -6,11 +6,11 @@
                 <h3>École</h3>
                 <ul class="footer-links">
                     <li><a href="<?php echo home_url('/'); ?>">Accueil</a></li>
-                    <li><a href="<?php echo home_url('/a-propos/'); ?>">À propos</a></li>
-                    <li><a href="<?php echo home_url('/ecole/'); ?>">L'école</a></li>
-                    <li><a href="<?php echo home_url('/nos-cours/'); ?>">Nos cours</a></li>
-                    <li><a href="<?php echo home_url('/entreprises/'); ?>">Entreprises</a></li>
-                    <li><a href="<?php echo home_url('/contact/'); ?>">Contact</a></li>
+                    <li><a href="<?php echo home_url('/presentation'); ?>">Présentation</a></li>
+                    <li><a href="<?php echo home_url('/ecole'); ?>">L'école</a></li>
+<!--                    <li><a href="--><?php //echo home_url('/nos-cours/'); ?><!--">Nos cours</a></li>-->
+                    <li><a href="<?php echo home_url('/entreprises'); ?>">Entreprises</a></li>
+                    <li><a href="<?php echo home_url('/contact'); ?>">Contact</a></li>
                 </ul>
             </div>
 
