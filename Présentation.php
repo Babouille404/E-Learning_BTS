@@ -339,10 +339,11 @@ get_header();
 
   <!-- Avatars -->
   <div class="avatars">
-    <img src="assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="">
-    <img src="assets/Presentation/Ellipse 2.svg" alt="">
-    <img src="assets/Presentation/Ellipse 5.svg" alt="">
-    <img src="assets/Presentation/Ellipse 6.svg" img src="assets/Presentation/ic_baseline-plus.svg" alt="">
+
+    <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="">
+    <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 2.svg" alt="">
+    <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 5.svg" alt="">
+    <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 6.svg" img src=<?php echo get_template_directory_uri(); ?>"/Assets/Presentation/ic_baseline-plus.svg" alt="">
     <span>Plus de 1000 joyeux apprenants</span>
   </div>
 
@@ -399,7 +400,7 @@ get_header();
 
   <div class="features" role="group" aria-label="feature-cards">
     <article class="feature-card f-left">
-      <img class="feature-illus" src="assets/Presentation/6375a3333dbc981cc31fa30953db8f5ffa5b3e12.png" alt="Illustration contenus riches">
+      <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/6375a3333dbc981cc31fa30953db8f5ffa5b3e12.png" alt="Illustration contenus riches">
       <div class="feature-inner">
         <h3>Du Contenus riches et divers</h3>
         <p>Plongez dans un univers riche de plus de 500 cours captivants, mis à jour en continu. Des mathématiques à la broderie, en passant par la programmation, les langues, l’art.</p>
@@ -407,7 +408,7 @@ get_header();
     </article>
 
     <article class="feature-card f-mid">
-      <img class="feature-illus" src="assets/Presentation/ea961de1fe87f1d89fbb465537f347b6d875e18c.png" alt="Illustration suivi personnalisé">
+      <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/ea961de1fe87f1d89fbb465537f347b6d875e18c.png" alt="Illustration suivi personnalisé">
       <div class="feature-inner">
         <h3>Un suivi personnalisé</h3>
         <p>Ton avancement est documenté et visible. Avec un planning sur mesure pour équilibrer ta charge de travail et alléger ton emploi du temps.</p>
@@ -415,7 +416,7 @@ get_header();
     </article>
 
     <article class="feature-card f-right">
-      <img class="feature-illus" src="assets/Presentation/f9ab1d8e5384e3919fdefd934f58df7749ef04ad.png" alt="Illustration professeurs">
+      <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/f9ab1d8e5384e3919fdefd934f58df7749ef04ad.png" alt="Illustration professeurs">
       <div class="feature-inner">
         <h3>Des professeurs à l’écoute</h3>
         <p>Pour mieux comprendre, les professeurs de l’équipe pédagogique sont à ta disposition. Pose tes questions par commentaires, mail ou chatbot.</p>
@@ -430,25 +431,25 @@ get_header();
 
   <div class="prof-cards">
     <article class="prof-card p01">
-      <img src="assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="Professeur 1">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="Professeur 1">
       <h3>Anissa Dahabi</h3>
       <button>En savoir +</button>
     </article>
 
     <article class="prof-card p02">
-      <img src="assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Professeur 2">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Professeur 2">
       <h3>Bao Le</h3>
       <button>En savoir +</button>
     </article>
 
     <article class="prof-card p03">
-      <img src="assets/Presentation/Capture d'écran 2024-11-12 195353 2.png" alt="Professeur 3">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Capture d'écran 2024-11-12 195353 2.png" alt="Professeur 3">
       <h3>Lina</h3>
       <button>En savoir +</button>
     </article>
 
     <article class="prof-card p04">
-      <img src="assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg" alt="Professeur 4">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg" alt="Professeur 4">
       <h3>Nour Mesbahi</h3>
       <button>En savoir +</button>
     </article>

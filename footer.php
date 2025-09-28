@@ -43,13 +43,13 @@
                 <h3>Suivez-nous</h3>
                 <div class="social-links">
                     <a href="#" class="social-link">
-                        <img src="<?php echo get_asset_url('images/facebook.svg'); ?>" alt="Facebook">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/images/facebook.svg" alt="Facebook">
                     </a>
                     <a href="#" class="social-link">
-                        <img src="<?php echo get_asset_url('images/instagram.svg'); ?>" alt="Instagram">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/images/instagram.svg" alt="Instagram">
                     </a>
                     <a href="#" class="social-link">
-                        <img src="<?php echo get_asset_url('images/linkedin.svg'); ?>" alt="LinkedIn">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/images/linkedin.svg" alt="LinkedIn">
                     </a>
                 </div>
             </div>

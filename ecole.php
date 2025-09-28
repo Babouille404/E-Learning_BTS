@@ -8,7 +8,7 @@ get_header();
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <img src="<?php echo get_asset_url('ecole/efrei logo.png'); ?>" alt="EFREI" class="hero-logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Assets/ecole/efrei logo.png" alt="EFREI" class="hero-logo">
                     <h1 class="hero-title">Vous êtes le <span class="highlight">développeur de demain</span></h1>
                     <p class="hero-subtitle">Rejoindre l'EFREI, c'est faire le choix d'une formation d'excellence dans le numérique</p>
                     <a href="#content" class="btn btn-primary btn-discover">
@@ -28,25 +28,25 @@ get_header();
 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <img src="<?php echo get_asset_url('ecole/Image 1.png'); ?>" alt="Diplômés" class="feature-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/ecole/Image 1.png" alt="Diplômés" class="feature-icon">
                         <h3>25 000+</h3>
                         <p>Diplômés en activité</p>
                     </div>
 
                     <div class="feature-item">
-                        <img src="<?php echo get_asset_url('ecole/Image 2.png'); ?>" alt="Accréditations" class="feature-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/ecole/Image 2.png" alt="Accréditations" class="feature-icon">
                         <h3>Accréditations</h3>
                         <p>Accréditations et partenariats de qualité</p>
                     </div>
 
                     <div class="feature-item">
-                        <img src="<?php echo get_asset_url('ecole/Image 3.png'); ?>" alt="Projets" class="feature-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/ecole/Image 3.png" alt="Projets" class="feature-icon">
                         <h3>Projets concrets</h3>
                         <p>Projets concrets, stages en entreprise</p>
                     </div>
 
                     <div class="feature-item">
-                        <img src="<?php echo get_asset_url('ecole/Image 4.png'); ?>" alt="Associations" class="feature-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/Assets/ecole/Image 4.png" alt="Associations" class="feature-icon">
                         <h3>30+</h3>
                         <p>Associations, vie de campus dynamique</p>
                     </div>
