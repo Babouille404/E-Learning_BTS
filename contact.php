@@ -6,7 +6,7 @@ get_header();
 <main>
     <main>
         <div class="contact-container">
-            <img src="<?php echo get_asset_url('logoViolet.png'); ?>" alt="Logo" class="contact-logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/Assets/logoViolet.png" alt="Logo" class="contact-logo">
             <div class="contact-content">
                 <div class="contact-left">
                     <h2>Nous contacter:</h2>
