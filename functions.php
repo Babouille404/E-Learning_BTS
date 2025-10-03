@@ -30,63 +30,74 @@ add_action('after_setup_theme', function() {
     ]);
 });
 
-// Chargement des styles et scripts
 add_action('wp_enqueue_scripts', function() {
+    $theme_dir = get_template_directory();
+    $theme_uri = get_template_directory_uri();
+
     // Style principal
-    $style_path = get_template_directory() . '/style.css';
-    wp_enqueue_style(
-            'efrei-style',
-            get_template_directory_uri() . '/style.css',
-            [],
-            file_exists($style_path) ? filemtime($style_path) : null
-    );
+    $style_path = $theme_dir . '/style.css';
+    wp_enqueue_style('efrei-style', $theme_uri . '/style.css', [], file_exists($style_path) ? filemtime($style_path) : null);
 
     // Google Fonts
-    wp_enqueue_style(
-            'google-fonts',
-            'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap',
-            [],
-            null
-    );
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap', [], null);
 
-    // Styles spécifiques
+    // Pages spécifiques
     if (is_page_template('ecole.php')) {
-        $ecole_path = get_template_directory() . '/style_ecole.css';
-        wp_enqueue_style(
-                'ecole-style',
-                get_template_directory_uri() . '/style_ecole.css',
-                ['efrei-style'],
-                file_exists($ecole_path) ? filemtime($ecole_path) : null
-        );
+        wp_enqueue_style('ecole-style', $theme_uri . '/style_ecole.css', ['efrei-style'], filemtime($theme_dir.'/style_ecole.css'));
     }
     if (is_page_template('entreprises.php')) {
-        $entreprises_path = get_template_directory() . '/style_entreprises.css';
-        wp_enqueue_style(
-                'entreprises-style',
-                get_template_directory_uri() . '/style_entreprises.css',
-                ['efrei-style'],
-                file_exists($entreprises_path) ? filemtime($entreprises_path) : null
-        );
+        wp_enqueue_style('entreprises-style', $theme_uri . '/style_entreprises.css', ['efrei-style'], filemtime($theme_dir.'/style_entreprises.css'));
     }
     if (is_page_template('contact.php')) {
-        $contact_path = get_template_directory() . '/style_contact.css';
-        wp_enqueue_style(
-                'contact-style',
-                get_template_directory_uri() . '/style_contact.css',
-                ['efrei-style'],
-                file_exists($contact_path) ? filemtime($contact_path) : null
-        );
+        wp_enqueue_style('contact-style', $theme_uri . '/style_contact.css', ['efrei-style'], filemtime($theme_dir.'/style_contact.css'));
     }
+
+    // === Cours, Exos, Dashboard, Calendrier, Ressources, Commentaires
+    if (
+        is_page_template('cours.php') ||
+        is_page_template('coursexo.php') ||
+        is_page_template('cours-dashboard.php') ||
+        is_page_template('calendrier.php') ||
+        is_page_template('ressources.php') ||
+        is_page_template('commentaires.php')
+    ) {
+        wp_enqueue_style('elearning-cours', $theme_uri . '/cours.css', ['efrei-style'], filemtime($theme_dir.'/cours.css'));
+    }
+
     if (is_page_template('cours.php')) {
-        $cours_path = get_template_directory() . '/cours.css';
-        wp_enqueue_style(
-                'cours-style',
-                get_template_directory_uri() . '/cours.css',
-                ['efrei-style'],
-                file_exists($cours_path) ? filemtime($cours_path) : null
-        );
+        wp_enqueue_script('elearning-quiz', $theme_uri . '/assets/js/quiz.js', [], filemtime($theme_dir.'/assets/js/quiz.js'), true);
     }
+    if (is_page_template('coursexo.php')) {
+        wp_enqueue_script('elearning-coursexo', $theme_uri . '/assets/js/coursexo.js', [], filemtime($theme_dir.'/assets/js/coursexo.js'), true);
+    }
+    if (is_page_template('cours-dashboard.php')) {
+        wp_enqueue_script('elearning-coursdash', $theme_uri . '/assets/js/coursdash.js', [], filemtime($theme_dir.'/assets/js/coursdash.js'), true);
+    }
+    if (is_page_template('calendrier.php')) {
+        wp_enqueue_script('elearning-calendrier', $theme_uri . '/assets/js/calendrier.js', [], filemtime($theme_dir.'/assets/js/calendrier.js'), true);
+    }
+    if (is_page_template('ressources.php')) {
+        wp_enqueue_script('elearning-ressources', $theme_uri . '/assets/js/ressources.js', [], filemtime($theme_dir.'/assets/js/ressources.js'), true);
+    }
+
+    // JS commun
+    $header_js = $theme_dir . '/assets/js/header-ui.js';
+    if (file_exists($header_js)) {
+        wp_enqueue_script('elearning-header-ui', $theme_uri . '/assets/js/header-ui.js', [], filemtime($header_js), true);
+    }
+}, 20);
+
+// =======================
+// Injection JS inline (popup, darkmode, carousel…)
+// =======================
+add_action('wp_footer', function() { ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // JS pour popup / login / logout / theme / carousel ici
 });
+</script>
+<?php });
+
 
 // Gestion de l'authentification via AJAX
 add_action('wp_ajax_user_login', 'handle_user_login');
@@ -391,4 +402,4 @@ add_action('wp_footer', function() { ?>
             }
         });
     </script>
-<?php });
+<?php }); ?>

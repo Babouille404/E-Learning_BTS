@@ -1,439 +1,504 @@
-/* Styles spécifiques pour la page Cours avec variables CSS */
-
-.ecole-page {
-    background-color: var(--color-background);
-    transition: background-color 0.3s ease;
+:root {
+  --bg: #F0F3FC;
+  --card: #FFFFFF;
+  --text: #4C445E;
+  --accent: #75AA3C;
+  --accent-light: #BED7A3;
+  --shadow: 0 2px 6px rgba(0,0,0,.08);
+  --radius: 12px;
 }
 
-/* Conteneur principal des cours */
-.chapitre-de-lecon {
-    background-color: var(--color-background);
-    transition: background-color 0.3s ease;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.cours-chapitre {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background-color: var(--color-background);
-    transition: background-color 0.3s ease;
+/* ==== Layout général ==== */
+.cours-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  gap: 20px;
+  padding: 20px;
+  min-height: calc(100vh - 120px);
 }
 
-/* Chapitres individuels */
-.property-1default,
-.property-1variant2,
-.property-1variant3,
-.property-1variant4,
-.property-1variant5,
-.property-1variant6,
-.property-1variant7 {
-    background-color: var(--color-white);
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
+/* ==== Sidebar gauche ==== */
+.sidebar-left {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.menu-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-categories li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.menu-categories li.active {
+  background: rgba(117,170,60,0.3);
+  font-weight: 600;
+}
+.menu-categories li:hover:not(.active) {
+  background: rgba(117,170,60,0.1);
 }
 
-.property-1default:hover,
-.property-1variant2:hover,
-.property-1variant3:hover,
-.property-1variant4:hover,
-.property-1variant5:hover,
-.property-1variant6:hover,
-.property-1variant7:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+/* ==== Zone centrale ==== */
+.cours-main {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+.cours-main h1 {
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.progress-bar {
+  background: rgba(190,215,163,0.43);
+  height: 12px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+.progress-bar.thin { height: 6px; }
+.progress-bar .progress {
+  background: var(--accent-light);
+  height: 100%;
+  border-radius: 25px;
 }
 
-/* Texte des chapitres */
-.introduction-larithmtique,
-.rsolution-dquation {
-    color: var(--color-text);
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-    transition: color 0.3s ease;
+/* ==== Sidebar droite ==== */
+.sidebar-right {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.sidebar-right h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.chapitres {
+  list-style: none;
+	display:none;
+  padding: 0;
+  margin: 0;
+}
+.chapitres li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F8F9FD;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+list-style:none;
+}
+.chapitres li.active {
+  background: var(--accent);
+  color: white;
+}
+.chapitres li.done {
+  background: rgba(117,170,60,0.2);
+}
+.chapitres li .badge {
+  font-size: 12px;
+  font-weight: 600;
+}
+.chapitres li a {
+  color: inherit;
+  text-decoration: none;
+  flex: 1;
+}
+.chapitres li:hover a {
+  color: #fff; /* même couleur que texte sur hover */
+}
+.chapitres li .badge {
+  background: rgba(0,0,0,0.05);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.sidebar-right ul li {
+  margin-bottom: 8px;
+  list-style: none;
 }
 
-.introduction-larithmtique ol,
-.rsolution-dquation ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.sidebar-right ul li a {
+  text-decoration: none;
+  color: var(--text, #4C445E);
+  font-weight: 500;
+  display: block;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
 }
 
-/* Progression des chapitres */
-.i {
-    color: var(--color-text-light);
-    font-size: 14px;
-    font-weight: 400;
-    transition: color 0.3s ease;
+.sidebar-right ul li a:hover {
+  background: #75AA3C;
+  color: #fff;
+}
+.sidebar-right .chapitres {
+  display: block; /* toujours visible ici */
 }
 
-/* Images des livres */
-.image-7-icon,
-.image-10-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+
+
+
+/* ==== Exercice / Compilateur ==== */
+.exo-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: var(--text);
+}
+.code-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.code-tabs .tab {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-weight: 600;
+}
+.code-tabs .tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.code-block { display: none; }
+.code-block.active { display: block; }
+.editor {
+  width: 100%;
+  min-height: 200px;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.run-btn {
+  padding: 8px 16px;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.run-btn:hover { filter: brightness(0.9); }
+.output {
+  background: #111;
+  color: #0f0;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  margin-top: 8px;
+}
+.exo-block { display: none; }
+.exo-block.active { display: block; }
+
+
+/* Description */
+.exo-description {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+.exo-description h3 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.exo-description p {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  color: #4C445E;
+}
+/* ===== Dashboard Sections ===== */
+.dashboard-section {
+  background: var(--card, #fff);
+  border: 1px dashed var(--dash, #8A38F5);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
-/* Section leçon */
-.lecon-intitul {
-    background-color: var(--color-secondary);
-    padding: 15px 30px;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px;
-    transition: background-color 0.3s ease;
+.dashboard-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text, #4C445E);
 }
 
-.leon-1 {
-    color: var(--color-text);
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    transition: color 0.3s ease;
+.cards {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap; /* pour responsive */
 }
 
-/* Section catégorie */
-.categorie-section {
-    background-color: var(--color-background);
-    padding: 20px 0;
-    transition: background-color 0.3s ease;
+.card {
+  background: #F8F9FD;
+  border-radius: 10px;
+  width: 100px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.card:hover {
+  background: rgba(117,170,60,0.2);
+}
+.card.active {
+  background: rgba(117,170,60,0.6);
+  color: #fff;
+}
+.card.done {
+  background: rgba(117,170,60,0.2);
 }
 
-.bouton-cat {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 0 20px;
+.card-index {
+  font-size: 22px;
+  font-weight: 700;
 }
 
-/* Boutons de catégorie */
-.cours-property-1default,
-.cours-property-1variant2,
-.cours-property-1variant3,
-.cours-property-1variant4,
-.cours-property-1variant5,
-.cours-property-1variant6 {
-    background-color: var(--color-white);
-    border-radius: 20px;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.card-title {
+  font-size: 14px;
+  margin-top: 6px;
 }
 
-.cours-property-1default:hover,
-.cours-property-1variant2:hover,
-.cours-property-1variant3:hover,
-.cours-property-1variant4:hover,
-.cours-property-1variant5:hover,
-.cours-property-1variant6:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* ===== Sidebar Droite Accordéons ===== */
+.accordion {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 15px 0 5px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Texte des boutons de catégorie */
-.dashboard,
-.cours-et-lecon,
-.exercices-et-quizz,
-.calendrier {
-    color: var(--color-text);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.accordion::after {
+  content: "▸";
+  transition: transform 0.2s;
 }
 
-/* Active state pour cours et lecon */
-.cours-property-1variant2 {
-    background-color: var(--color-green);
+.accordion.open::after {
+  transform: rotate(90deg);
 }
 
-.cours-property-1variant2 .cours-et-lecon {
-    color: white;
+.accordion.open + .chapitres {
+  display: block;
+}
+.chapitres {
+  display: none;
 }
 
-/* Cadre de réponse */
-.cadre-rep {
-    background-color: var(--color-white);
-    border-radius: 20px;
-    margin: 20px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+/* ==== Calendrier ==== */
+.calendar-container {
+  background: var(--card, #fff);
+  border: 1px dashed var(--dash, #8A38F5);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  min-height: 600px;
 }
 
-/* Bouton commencer/valider */
-.bouton-commencer {
-    text-align: center;
-    margin: 30px 0;
+#calendar {
+  width: 100%;
+  height: 550px;
+}
+/* ==== Calendrier statique ==== */
+.calendar-container {
+  background: var(--card, #fff);
+  border: 1px dashed var(--dash, #8A38F5);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  min-height: 400px;
 }
 
-.cours-bouton-inscription {
-    display: inline-block;
-    background-color: var(--color-green);
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 14px;
 }
 
-.cours-bouton-inscription:hover {
-    background-color: var(--color-green-hover);
+.calendar-table th {
+  background: rgba(117,170,60,0.6);
+  color: #fff;
+  padding: 8px;
 }
 
-.valider {
-    background: none;
-    border: none;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 15px 30px;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+.calendar-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  height: 80px;
+  vertical-align: top;
 }
 
-.valider:hover {
-    transform: translateY(-2px);
+.calendar-table td.event {
+  background: rgba(117,170,60,0.15);
+  font-weight: 600;
+  color: var(--text);
+  border: 2px solid var(--accent, #75AA3C);
 }
 
-/* Titre exercice */
-.titre-exo {
-    background-color: var(--color-white);
-    border-radius: 20px;
-    padding: 25px;
-    margin: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+.calendar-table td small {
+  display: block;
+  font-size: 12px;
+  color: #333;
+  margin-top: 5px;
+}
+/* ==== Ressources ==== */
+.ressource-container {
+  background: var(--card, #fff);
+  border: 1px dashed var(--dash, #8A38F5);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-.rsolution-dquation2 {
-    color: var(--color-text);
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.rsolution-dquation3 {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+/* ==== Commentaires ==== */
+.comments-container {
+  background: var(--card, #fff);
+  border: 1px dashed var(--dash, #8A38F5);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-/* Jauge de progrès */
-.jauge-progres {
-    margin-top: 20px;
+.comments-container h2 {
+  margin-bottom: 15px;
 }
 
-.jauge-base {
-    background-color: var(--color-secondary);
-    height: 8px;
-    border-radius: 10px;
-    position: relative;
-    transition: background-color 0.3s ease;
+.comment-list {
+  list-style: none;
+  padding: 0;
 }
 
-.jauge-avancement {
-    background-color: var(--color-green);
-    height: 100%;
-    border-radius: 10px;
-    width: 20%; /* Par défaut */
-    transition: width 0.3s ease;
+.comment-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Question */
-.question-01 {
-    color: var(--color-text);
-    font-family: 'Inter', sans-serif;
-    font-size: 22px;
-    font-weight: 500;
-    margin: 30px 20px;
-    display: block;
-    transition: color 0.3s ease;
+.comment-respond {
+  margin-top: 20px;
 }
 
-/* Section réponses */
-.rponse {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px;
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
 }
 
-/* Propositions individuelles */
-.proposition-a {
-    background-color: var(--color-white);
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.comment-form input[type=submit] {
+  background: #75AA3C;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.proposition-a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-color: var(--color-green);
+.comment-form input[type=submit]:hover {
+  background: #5c8a2f;
+}
+.sidebar-left ul {
+  padding: 0;
+  margin: 0;
 }
 
-.proposition-a.selected {
-    background-color: var(--color-accent-light);
-    border-color: var(--color-green);
-    transform: translateY(-2px);
+.sidebar-left ul li {
+  list-style: none;
+  margin-bottom: 8px;
 }
 
-/* Lettres des propositions */
-.a {
-    background-color: var(--color-green);
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 16px;
-    flex-shrink: 0;
+.sidebar-left ul li a {
+  display: block;              /* ✅ toute la zone devient cliquable */
+  padding: 12px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text, #4C445E);
+  font-weight: 600;
+  background: #fff;
+  transition: 0.2s;
 }
 
-/* Texte des propositions */
-.fondation-of-the {
-    color: var(--color-text);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    transition: color 0.3s ease;
-    flex: 1;
+.sidebar-left ul li a:hover {
+  background: #75AA3C;
+  color: #fff;
 }
 
-/* Animation shake pour erreur */
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+.sidebar-left ul li a.active {
+  background: #75AA3C;
+  color: #fff;
 }
 
-/* Timer display */
-#timer-display {
-    position: fixed !important;
-    top: 120px !important;
-    right: 30px !important;
-    background: var(--color-primary) !important;
-    color: var(--color-white) !important;
-    padding: 10px 20px !important;
-    border-radius: 25px !important;
-    font-family: 'Inter' !important;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    z-index: 1000 !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-/* Responsive */
+
+
+/* ==== Responsive ==== */
+@media (max-width: 1200px) {
+  .cours-layout { grid-template-columns: 220px 1fr; }
+  .sidebar-right { display: none; }
+}
 @media (max-width: 768px) {
-    .cours-chapitre {
-        padding: 10px;
-        gap: 15px;
-    }
-
-    .property-1default,
-    .property-1variant2,
-    .property-1variant3,
-    .property-1variant4,
-    .property-1variant5,
-    .property-1variant6,
-    .property-1variant7 {
-        padding: 15px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .bouton-cat {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cours-property-1default,
-    .cours-property-1variant2,
-    .cours-property-1variant3,
-    .cours-property-1variant4,
-    .cours-property-1variant5,
-    .cours-property-1variant6 {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .proposition-a {
-        padding: 15px;
-    }
-
-    .question-01 {
-        font-size: 18px;
-        margin: 20px 10px;
-    }
-
-    #timer-display {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        margin: 10px auto !important;
-        display: block !important;
-        text-align: center !important;
-        width: fit-content !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .lecon-intitul {
-        margin: 10px;
-        padding: 12px 20px;
-    }
-
-    .titre-exo {
-        margin: 10px;
-        padding: 20px;
-    }
-
-    .rsolution-dquation2 {
-        font-size: 20px;
-    }
-
-    .question-01 {
-        font-size: 16px;
-        margin: 15px 10px;
-    }
-
-    .rponse {
-        margin: 10px;
-        gap: 10px;
-    }
-
-    .proposition-a {
-        padding: 12px;
-    }
-
-    .fondation-of-the {
-        font-size: 14px;
-    }
+  .cours-layout { grid-template-columns: 1fr; }
+  .sidebar-left { order: -1; }
 }
