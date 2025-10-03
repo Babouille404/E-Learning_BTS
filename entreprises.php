@@ -13,6 +13,7 @@ $entreprises = [
 
 <main class="container entreprises-page">
     <div id="siteHeader" class="header">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Background.png" class="background" alt="Background" />
         <div class="headerContent">
             <div class="header-left">
                 <img src="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/entrepriseIllu.png" alt="Illustration entreprise" />
@@ -25,10 +26,10 @@ $entreprises = [
                 </h2>
             </div>
         </div>
-        <button>Les découvrir</button>
+        <a href="#alternance">Les découvrir</a>
     </div>
 
-    <div class="alternance">
+    <div class="alternance" id="alternance">
         <div class="content-left">
             <h3>
                 A la recherche d'un <span style="color:#63B649;">stage</span> ou d'une
