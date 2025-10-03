@@ -17,15 +17,17 @@ $asset = function (string $rel) use ($asset_base) {
     <div class="bg1"></div>
 
     <div class="avatars">
-      <img src="<?php echo $asset('Presentation/images/509168e3f8567075175f446d6183839f69edff84.jpg'); ?>" alt="">
-      <img src="<?php echo $asset('Presentation/images/Ellipse2.png'); ?>" alt="">
-      <img src="<?php echo $asset('Presentation/images/Ellipse5.png'); ?>" alt="">
-      <img src="<?php echo $asset('Presentation/images/Ellipse6.png'); ?>" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 2.svg" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 5.svg" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 6.svg" alt="">
+
 
       <span>Plus de 1000 joyeux apprenants</span>
     </div>
     <div class="avatars1">
-      <img src="<?php echo $asset('Presentation/images/ic_baseline-plus.svg'); ?>" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/ic_baseline-plus.svg" alt="">
+
     </div>
 
     <div class="hero-text">
@@ -58,7 +60,7 @@ $asset = function (string $rel) use ($asset_base) {
 <section id="apprendre" class="apprendre">
   <div class="container">
     <div class="apprendre-illustration"
-         style="background-image:url('<?php echo esc_url( get_asset_url('Presentation/images/37aa405fc6659cd44a46df86b5096d03606f32dd.png') ); ?>')">
+         style="background-image:url('<?php echo esc_url( get_asset_url('Presentation/37aa405fc6659cd44a46df86b5096d03606f32dd.png') ); ?>')">
     </div>
 
     <div class="apprendre-text">
@@ -85,7 +87,8 @@ $asset = function (string $rel) use ($asset_base) {
     <h2 class="section-title">Une meilleure façon d’apprendre</h2>
     <div class="features">
       <article class="feature-card f-left">
-        <img class="feature-illus" src="<?php echo $asset('Presentation/images/6375a3333dbc981cc31fa30953db8f5ffa5b3e12.png'); ?>" alt="">
+        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/6375a3333dbc981cc31fa30953db8f5ffa5b3e12.jpg" alt="">
+
         <div class="feature-inner">
           <h3>Des contenus riches et divers</h3>
           <p>Plongez dans un univers riche de plus de 500 cours captivants, mis à jour en continu...</p>
@@ -93,7 +96,8 @@ $asset = function (string $rel) use ($asset_base) {
       </article>
 
       <article class="feature-card f-mid">
-        <img class="feature-illus" src="<?php echo $asset('Presentation/images/ea961de1fe87f1d89fbb465537f347b6d875e18c.png'); ?>" alt="">
+        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/ea961de1fe87f1d89fbb465537f347b6d875e18c.jpg" alt="">
+
         <div class="feature-inner">
           <h3>Un suivi personnalisé</h3>
           <p>Ton avancement est documenté et visible avec un planning sur mesure...</p>
@@ -101,7 +105,8 @@ $asset = function (string $rel) use ($asset_base) {
       </article>
 
       <article class="feature-card f-right">
-        <img class="feature-illus" src="<?php echo $asset('Presentation/images/f9ab1d8e5384e3919fdefd934f58df7749ef04ad.png'); ?>" alt="">
+        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/f9ab1d8e5384e3919fdefd934f58df7749ef04ad.jpg" alt="">
+
         <div class="feature-inner">
           <h3>Des professeurs à l’écoute</h3>
           <p>Les professeurs sont disponibles pour répondre à tes questions par commentaire, mail ou chatbot.</p>
@@ -117,41 +122,44 @@ $asset = function (string $rel) use ($asset_base) {
     <div class="prof-cards">
 
       <article class="prof-card">
-        <img src="<?php echo $asset('Presentation/images/509168e3f8567075175f446d6183839f69edff84.jpg'); ?>" alt="Photo de Anissa Dahabi">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="Photo de Anissa Dahabi">
+
         <h3>Anissa Dahabi</h3>
         <button class="prof-card__btn"
                 data-name="Anissa Dahabi"
-                data-cv="<?php echo $asset('Presentation/cv/Anissa_Dahabi_CV (1).pdf'); ?>">
+                data-cv="<?php echo $asset('Assets/cv/Anissa_Dahabi_CV (1).pdf'); ?>">
           Voir le CV
         </button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Photo de Bao Le">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Photo de Bao Le">
         <h3>Bao Le</h3>
         <button class="prof-card__btn"
                 data-name="Bao Le"
-                data-cv="<?php echo $asset('Presentation/cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">
+                data-cv="<?php echo $asset('Assets/cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">
           Voir le CV
         </button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo $asset('Presentation/images/Capture.png'); ?>" alt="Photo de Lina">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Capture.png" alt="Photo de Lina">
+
         <h3>Lina</h3>
         <button class="prof-card__btn"
                 data-name="Lina"
-                data-cv="<?php echo $asset('Presentation/cv/CV_LINA_KAR_(1).pdf'); ?>">
+                data-cv="<?php echo $asset('Assets/cv/CV_LINA_KAR_(1).pdf'); ?>">
           Voir le CV
         </button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo $asset('Presentation/images/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg'); ?>" alt="Photo de Nour Mesbahi">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg" alt="Photo de Nour Mesbahi">
+
         <h3>Nour Mesbahi</h3>
         <button class="prof-card__btn"
                 data-name="Nour Mesbahi"
-                data-cv="<?php echo $asset('Presentation/cv/CVN.MESBAHIDI_(1).pdf'); ?>">
+                data-cv="<?php echo $asset('Assets/cv/CVN.MESBAHIDI_(1).pdf'); ?>">
           Voir le CV
         </button>
       </article>
