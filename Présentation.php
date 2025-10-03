@@ -10,6 +10,7 @@ $asset = function (string $rel) use ($asset_base) {
 ?>
 
 <main class="container presentation-page">
+    <img src="<?php echo get_template_directory_uri(); ?>/Assets/Background.png" class="background" alt="Background" />
 
   <!-- HERO -->
   <section class="hero">
