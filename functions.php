@@ -45,6 +45,9 @@ add_action('wp_enqueue_scripts', function() {
     if (is_page_template('ecole.php')) {
         wp_enqueue_style('ecole-style', $theme_uri . '/style_ecole.css', ['efrei-style'], filemtime($theme_dir.'/style_ecole.css'));
     }
+    if (is_page_template('Présentation.php')) {
+        wp_enqueue_style('presentation-style', $theme_uri . '/style_presentation.css', ['efrei-style'], filemtime($theme_dir.'/style_presentation.css'));
+    }
     if (is_page_template('entreprises.php')) {
         wp_enqueue_style('entreprises-style', $theme_uri . '/style_entreprises.css', ['efrei-style'], filemtime($theme_dir.'/style_entreprises.css'));
     }
