@@ -2,7 +2,7 @@
 /* Template Name: Présentation */
 get_header();
 
-$asset_base = trailingslashit( get_stylesheet_directory_uri() ) . 'assets/';
+$asset_base = trailingslashit( get_stylesheet_directory_uri() ) . 'Assets/';
 $asset = function (string $rel) use ($asset_base) {
   $rel = ltrim($rel, '/');
   return esc_url($asset_base . $rel);
@@ -160,7 +160,7 @@ $asset = function (string $rel) use ($asset_base) {
         <h3>Nour Mesbahi</h3>
         <button class="prof-card__btn"
                 data-name="Nour Mesbahi"
-                data-cv="<?php echo $asset('Assets/cv/CVN.MESBAHIDI_(1).pdf'); ?>">
+                data-cv="<?php echo $asset('cv/CVN.MESBAHIDI_(1).pdf'); ?>">
           Voir le CV
         </button>
       </article>
