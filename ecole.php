@@ -104,6 +104,18 @@ get_header();
                 ?>
             </div>
         </section>
+
+        <section class="video-section" style="text-align:center; padding:40px 0;">
+            <h2>Découvrez l'EFREI en vidéo</h2>
+            <br/>
+            <iframe width="800" height="450"
+                    src="https://www.youtube.com/embed/vF6k1ht1D8s?si=NO-M4zr6v4Nr94fw"
+                    title="Présentation EFREI"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </section>
     </main>
 
 <?php get_footer(); ?>
