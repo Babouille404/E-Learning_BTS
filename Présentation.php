@@ -21,15 +21,11 @@ $asset = function (string $rel) use ($asset_base) {
       <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="">
       <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 2.svg" alt="">
       <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 5.svg" alt="">
-      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 6.svg" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 6.png" alt="">
 
 
       <span>Plus de 1000 joyeux apprenants</span>
-    </div>
-    <div class="avatars1">
-      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/ic_baseline-plus.svg" alt="">
-
-    </div>
+    </div>   
 
     <div class="hero-text">
       <h1 class="hero-title">Apprenez, <span class="accent">progressez</span>, réussissez !</h1>
