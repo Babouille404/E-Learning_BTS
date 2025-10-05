@@ -1,5 +1,5 @@
 <?php
-/* Template Name: École */
+/* Template Name: Accueil */
 get_header();
 ?>
  <main class="accueil-page">

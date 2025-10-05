@@ -54,6 +54,9 @@ add_action('wp_enqueue_scripts', function() {
     if (is_page_template('contact.php')) {
         wp_enqueue_style('contact-style', $theme_uri . '/style_contact.css', ['efrei-style'], filemtime($theme_dir.'/style_contact.css'));
     }
+    if (is_page_template('index.php')) {
+        wp_enqueue_style('accueil-style', $theme_uri . '/style_Acceuil.css', ['efrei-style'], filemtime($theme_dir.'/style_Acceuil.css'));
+    }
 
     // === Cours, Exos, Dashboard, Calendrier, Ressources, Commentaires
     if (
