@@ -231,7 +231,7 @@ $asset = function (string $rel) use ($asset_base) {
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.jpg" alt="Photo de Bao Le">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Photo de Bao Le">
 
         <h3>Bao Le</h3>
         <button class="prof-card__btn" data-type="pdf" data-name="Bao Le" data-cv="<?php echo $asset('cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">Voir le CV</button>
