@@ -120,7 +120,8 @@ $asset = function (string $rel) use ($asset_base) {
   <div class="carousel-container">
     <!-- Bouton précédent -->
     <button class="carousel-btn prev">
-      <img src="<?php echo $asset('Assets/Presentation/arrow left.svg'); ?>" alt="Précédent">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Arrow left.svg" alt="Précédent">
+
     </button>
 
     <!-- La track du carrousel -->
@@ -128,7 +129,8 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 1 : Anissa Dahabi === -->
       <div class="cv-slide active">
         <div class="cv-profile">
-          <img src="<?php echo $asset('Assets/etudiant_anissa.jpg'); ?>" alt="Anissa Dahabi">
+          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/etudiant_anissa.jpg" alt="Anissa Dahabi">
+
           <div class="cv-info">
             <h3>Anissa Dahabi</h3>
             <p class="role">Apprentie en Cybersécurité – Corum l’Épargne</p>
@@ -208,7 +210,8 @@ $asset = function (string $rel) use ($asset_base) {
 
     <!-- Bouton suivant -->
     <button class="carousel-btn next">
-      <img src="<?php echo $asset('Assets/Presentation/arrow right.svg'); ?>" alt="Suivant">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Arrow right.svg" alt="Suivant">
+
     </button>
   </div>
 
@@ -220,25 +223,31 @@ $asset = function (string $rel) use ($asset_base) {
     <div class="prof-cards">
 
       <article class="prof-card">
-        <img src="<?php echo $asset('Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg'); ?>" alt="Photo de Anissa Dahabi">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg"
+             alt="Photo de Anissa Dahabi">
+
         <h3>Anissa Dahabi</h3>
         <button class="prof-card__btn" data-type="pdf" data-name="Anissa Dahabi" data-cv="<?php echo $asset('cv/Anissa_Dahabi_CV (1).pdf'); ?>">Voir le CV</button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo $asset('Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png'); ?>" alt="Photo de Bao Le">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.jpg" alt="Photo de Bao Le">
+
         <h3>Bao Le</h3>
         <button class="prof-card__btn" data-type="pdf" data-name="Bao Le" data-cv="<?php echo $asset('cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">Voir le CV</button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo $asset('Assets/Presentation/Capture.png'); ?>" alt="Photo de Lina">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Capture.png" alt="Photo de Lina">
+
         <h3>Lina</h3>
         <button class="prof-card__btn" data-name="Lina" data-cv="<?php echo $asset('cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo $asset('Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg'); ?>" alt="Photo de Nour Mesbahi">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg" alt="Photo de Nour Mesbahi">
+
+
         <h3>Nour Mesbahi</h3>
         <button class="prof-card__btn" data-name="Nour Mesbahi" data-cv="<?php echo $asset('cv/CVN.MESBAHIDI_(1).pdf'); ?>">Voir le CV</button>
       </article>
