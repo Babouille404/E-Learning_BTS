@@ -60,8 +60,8 @@ $asset = function (string $rel) use ($asset_base) {
   <!-- APPRNDRE -->
 <section id="apprendre" class="apprendre">
   <div class="container">
-    <div class="apprendre-illustration"
-         style="background-image:url('<?php echo esc_url( get_asset_url('Presentation/37aa405fc6659cd44a46df86b5096d03606f32dd.png') ); ?>')">
+    <div class="apprendre-illustration" 
+         style="background-image:url('<?php echo esc_url(get_asset_url('Presentation/37aa405fc6659cd44a46df86b5096d03606f32dd.png')); ?>')">
     </div>
 
     <div class="apprendre-text">
@@ -116,71 +116,152 @@ $asset = function (string $rel) use ($asset_base) {
     </div>
   </section>
 
+<!-- ================= CV CAROUSEL INTERACTIF ================= -->
+<section class="cv-carousel-section full">
+  <h2 class="cv-carousel-title">Présentation des étudiants</h2>
+  <p class="cv-carousel-subtitle">Découvrez les talents d’EFREI Paris</p>
 
- <!-- PROFESSEURS -->
+  <div class="carousel-container">
+    <!-- Bouton précédent -->
+    <button class="carousel-btn prev">
+      <img src="<?php echo $asset('Assets/Presentation/arrow left.svg'); ?>" alt="Précédent">
+    </button>
+
+    <!-- La track du carrousel -->
+    <div class="carousel-track">
+      <!-- === SLIDE 1 : Anissa Dahabi === -->
+      <div class="cv-slide active">
+        <div class="cv-profile">
+          <img src="<?php echo $asset('Assets/etudiant_anissa.jpg'); ?>" alt="Anissa Dahabi">
+          <div class="cv-info">
+            <h3>Anissa Dahabi</h3>
+            <p class="role">Apprentie en Cybersécurité – Corum l’Épargne</p>
+            <p class="desc">
+              Étudiante à l’EFREI Paris en BTS SIO, Anissa est passionnée par la cybersécurité et le développement d’applications 
+              sécurisées. Elle a acquis une solide expérience en support IT et en analyse d’alertes SIEM.
+            </p>
+            <h4>Compétences</h4>
+            <div class="progress-item"><span>Java / Spring</span><div class="progress"><div style="width:85%"></div></div></div>
+            <div class="progress-item"><span>Python / C / PHP</span><div class="progress"><div style="width:80%"></div></div></div>
+            <div class="progress-item"><span>Cybersécurité</span><div class="progress"><div style="width:70%"></div></div></div>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/Anissa_Dahabi_CV (1).pdf'); ?>">Voir le CV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- === SLIDE 2 : Lina Karouche === -->
+      <div class="cv-slide">
+        <div class="cv-profile">
+          <img src="<?php echo $asset('Assets/etudiant_lina.jpg'); ?>" alt="Lina Karouche">
+          <div class="cv-info">
+            <h3>Lina Karouche</h3>
+            <p class="role">Développeuse Full-Stack – EFREI Paris</p>
+            <p class="desc">
+              Étudiante en BTS SIO SLAM, Lina maîtrise le développement web et mobile, la gestion de bases de données, 
+              ainsi que les méthodes agiles (Scrum, Kanban). Elle aime la conception de solutions innovantes.
+            </p>
+            <h4>Compétences</h4>
+            <div class="progress-item"><span>Java / Python / PHP</span><div class="progress"><div style="width:85%"></div></div></div>
+            <div class="progress-item"><span>React / Node.js / HTML-CSS</span><div class="progress"><div style="width:80%"></div></div></div>
+            <div class="progress-item"><span>MySQL / JIRA / Trello</span><div class="progress"><div style="width:75%"></div></div></div>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- === SLIDE 3 : Nour Mesbahi === -->
+      <div class="cv-slide">
+        <div class="cv-profile">
+          <img src="<?php echo $asset('Assets/etudiant_nour.jpg'); ?>" alt="Nour Mesbahi">
+          <div class="cv-info">
+            <h3>Nour Mesbahi</h3>
+            <p class="role">Apprentie Développeuse – EDF</p>
+            <p class="desc">
+              Nour est développeuse en alternance chez EDF. Passionnée par la programmation orientée objet, 
+              elle a réalisé des projets tels qu’un réseau social en PHP/MySQL et des jeux vidéo en Java et Python.
+            </p>
+            <h4>Compétences</h4>
+            <div class="progress-item"><span>Java / Python / Swift</span><div class="progress"><div style="width:80%"></div></div></div>
+            <div class="progress-item"><span>PHP / HTML / CSS / JS</span><div class="progress"><div style="width:75%"></div></div></div>
+            <div class="progress-item"><span>Power BI / Bash</span><div class="progress"><div style="width:70%"></div></div></div>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CVN.MESBAHIDI_(1).pdf'); ?>">Voir le CV</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- === SLIDE 4 : Bao-Long Le === -->
+      <div class="cv-slide">
+        <div class="cv-profile">
+          <img src="<?php echo $asset('Assets/etudiant_baolong.jpg'); ?>" alt="Bao-Long Le">
+          <div class="cv-info">
+            <h3>Bao-Long Le</h3>
+            <p class="role">Étudiant en BTS SIO – Développement & Support IT</p>
+            <p class="desc">
+              Bao-Long est passionné par la fintech et le développement full-stack. 
+              Il a conçu une application Java/MySQL de gestion de stock et automatisé des scripts Linux en Bash.
+            </p>
+            <h4>Compétences</h4>
+            <div class="progress-item"><span>Java / Spring Boot</span><div class="progress"><div style="width:85%"></div></div></div>
+            <div class="progress-item"><span>React / JavaScript</span><div class="progress"><div style="width:80%"></div></div></div>
+            <div class="progress-item"><span>Linux / Azure / MySQL</span><div class="progress"><div style="width:75%"></div></div></div>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CV_Alternance_Bao_Long_LE.pdf'); ?>">Voir le CV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bouton suivant -->
+    <button class="carousel-btn next">
+      <img src="<?php echo $asset('Assets/Presentation/arrow right.svg'); ?>" alt="Suivant">
+    </button>
+  </div>
+
+  <div class="carousel-dots"></div>
+</section>
+<!-- ================= PROFESSEURS ================= -->
   <section class="professeurs-section">
     <h2 class="prof-title">Des professeurs <span>investis</span> et <span>qualifiés</span></h2>
     <div class="prof-cards">
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="Photo de Anissa Dahabi">
-
+        <img src="<?php echo $asset('Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg'); ?>" alt="Photo de Anissa Dahabi">
         <h3>Anissa Dahabi</h3>
-        <button class="prof-card__btn"
-                data-name="Anissa Dahabi"
-                data-cv="<?php echo $asset('Assets/cv/Anissa_Dahabi_CV (1).pdf'); ?>">
-          Voir le CV
-        </button>
+        <button class="prof-card__btn" data-type="pdf" data-name="Anissa Dahabi" data-cv="<?php echo $asset('cv/Anissa_Dahabi_CV (1).pdf'); ?>">Voir le CV</button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Photo de Bao Le">
+        <img src="<?php echo $asset('Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png'); ?>" alt="Photo de Bao Le">
         <h3>Bao Le</h3>
-        <button class="prof-card__btn"
-                data-name="Bao Le"
-                data-cv="<?php echo $asset('Assets/cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">
-          Voir le CV
-        </button>
+        <button class="prof-card__btn" data-type="pdf" data-name="Bao Le" data-cv="<?php echo $asset('cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">Voir le CV</button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Capture.png" alt="Photo de Lina">
-
+        <img src="<?php echo $asset('Assets/Presentation/Capture.png'); ?>" alt="Photo de Lina">
         <h3>Lina</h3>
-        <button class="prof-card__btn"
-                data-name="Lina"
-                data-cv="<?php echo $asset('Assets/cv/CV_LINA_KAR_(1).pdf'); ?>">
-          Voir le CV
-        </button>
+        <button class="prof-card__btn" data-name="Lina" data-cv="<?php echo $asset('cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg" alt="Photo de Nour Mesbahi">
-
+        <img src="<?php echo $asset('Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg'); ?>" alt="Photo de Nour Mesbahi">
         <h3>Nour Mesbahi</h3>
-        <button class="prof-card__btn"
-                data-name="Nour Mesbahi"
-                data-cv="<?php echo $asset('cv/CVN.MESBAHIDI_(1).pdf'); ?>">
-          Voir le CV
-        </button>
+        <button class="prof-card__btn" data-name="Nour Mesbahi" data-cv="<?php echo $asset('cv/CVN.MESBAHIDI_(1).pdf'); ?>">Voir le CV</button>
       </article>
-
     </div>
   </section>
-<!-- ===== MODAL CV ===== -->
-<div id="cv-modal" class="cv-modal" aria-hidden="true">
-  <div class="cv-modal__backdrop" data-close-modal></div>
-  <div class="cv-modal__dialog">
-    <button class="cv-modal__close" type="button" aria-label="Fermer" data-close-modal>&times;</button>
 
-    <iframe id="cv-frame" title="Visionneuse du CV" loading="lazy"></iframe>
-
-    <a id="cv-download" class="cv-download-btn" href="#" download>Télécharger le CV</a>
+  <!-- ================= MODAL CV ================= -->
+  <div id="cv-modal" class="cv-modal" aria-hidden="true">
+    <div class="cv-modal__backdrop" data-close-modal></div>
+    <div class="cv-modal__dialog">
+      <button class="cv-modal__close" type="button" aria-label="Fermer" data-close-modal>&times;</button>
+      <iframe id="cv-frame" title="Visionneuse du CV" loading="lazy"></iframe>
+      <div id="cv-html" style="display:none;"></div>
+      <a id="cv-download" class="cv-download-btn" href="#" download>Télécharger le CV</a>
+    </div>
   </div>
-</div>
-<!-- ===== /MODAL CV ===== -->
-
 
 </main>
+<script src="presentation.js"></script>
+
 
 <?php get_footer(); ?>

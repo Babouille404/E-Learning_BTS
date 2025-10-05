@@ -350,12 +350,231 @@
 
 .prof-card button:hover { filter: brightness(1.05); }
 
-/* ================= RESPONSIVE ================= */
+
+/* ======================= CV CAROUSEL APPLE-LIKE ======================= */
+.cv-carousel-section.full {
+  padding: 120px 20px;
+  position: relative;
+  text-align: center;
+  background: radial-gradient(circle at 30% 30%, #f7f9fc, #eef1f6);
+  overflow: hidden;
+}
+.cv-carousel-section.full::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  background-position: 20% 20%, 70% 70%, 50% 90%;
+  animation: moveGradient 20s ease-in-out infinite alternate;
+  z-index: 0;
+  filter: blur(90px);
+}
+@keyframes moveGradient {
+  0% { background-position: 20% 20%, 70% 70%, 50% 90%; }
+  50% { background-position: 60% 30%, 40% 80%, 80% 40%; }
+  100% { background-position: 30% 70%, 70% 40%, 20% 50%; }
+}
+.cv-carousel-section.full > * { position: relative; z-index: 1; }
+
+.cv-carousel-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #4C445E;
+  margin-bottom: 12px;
+}
+.cv-carousel-subtitle {
+  color: #6e6e73;
+  margin-bottom: 60px;
+  font-size: 1.05rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.cv-slide {
+  flex: 0 0 100%; /* chaque slide occupe 100% de la largeur du container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cv-slide.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.cv-profile {
+  background: rgba(255,255,255,0.75);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 900px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+.cv-profile:hover { transform: translateY(-6px); }
+
+.cv-profile img {
+  width: 280px;
+  height: 280px;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.cv-profile img:hover { transform: scale(1.03); }
+
+.cv-info h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4C445E;
+  margin-bottom: 10px;
+}
+.cv-info .role {
+  font-weight: 600;
+  color: #75AA3C;
+  margin-bottom: 20px;
+}
+.cv-info .desc {
+  font-size: 1rem;
+  color: #4C445E;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+.cv-info h4 {
+  font-weight: 700;
+  color: #4C445E;
+  margin-bottom: 12px;
+  border-left: 4px solid #75AA3C;
+  padding-left: 10px;
+}
+
+/* --- Progress bars --- */
+.progress-item { margin-bottom: 12px; }
+.progress-item span {
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 4px;
+  color: #4C445E;
+}
+.progress {
+  background: #e6e6e6;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 10px;
+}
+.progress div {
+  background: linear-gradient(90deg, #750101, #75AA3C);
+  height: 100%;
+  border-radius: 12px;
+  transition: width 1s ease;
+}
+
+/* --- Buttons --- */
+.carousel-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-btn img {
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+.carousel-btn:hover {
+  background: #4C445E;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+/* Forcer l'affichage du popup CV */
+.cv-modal[aria-hidden="false"] {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+}
+.cv-modal__dialog {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border-radius: 12px;
+  width: min(90vw, 900px);
+  height: min(85vh, 700px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modal-pop 0.4s ease;
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ======================= RESPONSIVE ======================= */
 @media (max-width: 1024px) {
   .hero-title { font-size: 48px; }
   .hero-sub { font-size: 24px; }
   .cta { width: 240px; height: 60px; font-size: 20px; }
-  .postit { display: none; } /* masque les post-its sur tablette/mobile */
+  .postit { display: none; }
+}
+
+@media (max-width: 900px) {
+  .cv-profile {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .cv-profile img {
+    width: 200px;
+    height: 200px;
+  }
+  .cv-info h3 { font-size: 1.5rem; }
+  .cv-info .desc { font-size: 0.95rem; }
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
 }
 
 @media (max-width: 640px) {
@@ -363,51 +582,128 @@
   .hero-title { font-size: 32px; line-height: 1.2; }
   .hero-sub { font-size: 18px; }
   .apprendre .container { flex-direction: column; }
-  .apprendre-text p { font-size: 20px; }
   .features { grid-template-columns: 1fr; }
-  .feature-inner p { font-size: 16px; }
   .prof-card img { width: 140px; height: 140px; }
 }
-/* Empêcher le scroll de page quand le modal est ouvert */
-html.no-scroll, html.no-scroll body { overflow: hidden; }
+/* ======================= POPUP CV (AMÉLIORATION) ======================= */
 
-/* Modal CV */
-.cv-modal[aria-hidden="true"] { display: none; }
-.cv-modal[aria-hidden="false"] { display: flex; }
-
-.cv-modal {
-  position: fixed; inset: 0; z-index: 9999;
-  display: flex; align-items: center; justify-content: center;
-}
-
-.cv-modal__backdrop {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,.5);
-}
-
-.cv-modal__dialog {
-  position: relative; z-index: 1;
-  width: min(90vw, 900px);
-  height: min(85vh, 700px);
-  background: #fff;
-  border-radius: 12px;
-  display: flex; flex-direction: column;
+/* Empêcher le scroll derrière le popup */
+html.no-scroll,
+body.no-scroll {
   overflow: hidden;
 }
 
+/* Arrière-plan du modal */
+.cv-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Animation de fermeture */
+.cv-modal.closing .cv-modal__dialog {
+  animation: modal-fade-out 0.3s ease forwards;
+}
+.cv-modal.closing .cv-modal__backdrop {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes modal-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Bouton de fermeture */
 .cv-modal__close {
-  position: absolute; top: 10px; right: 10px;
-  background: transparent; border: 0; font-size: 28px; cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
   color: #333;
+  transition: color 0.2s ease;
+}
+.cv-modal__close:hover {
+  color: #75AA3C;
+}
+/* ======================= POPUP CV FIX ======================= */
+.cv-modal {
+  position: fixed;
+  inset: 0;
+  display: none; /* caché par défaut */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
 }
 
-#cv-frame {
+/* Lorsqu’il est actif */
+.cv-modal[aria-hidden="false"] {
+  display: flex !important;
+}
+
+/* Fenêtre principale */
+.cv-modal__dialog {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  width: min(90vw, 900px);
+  height: min(85vh, 700px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  animation: modal-pop 0.3s ease;
+}
+
+/* Bouton de fermeture */
+.cv-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s ease;
+}
+.cv-modal__close:hover {
+  color: #75AA3C;
+}
+
+/* Iframe ou HTML affiché dans le CV */
+#cv-frame, #cv-html {
   flex: 1;
-  border: 0;
   width: 100%;
-  background: #f9f9f9;
+  border: none;
+  background: #fafafa;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
+/* Bouton Télécharger */
 .cv-download-btn {
   display: block;
   padding: 12px;
@@ -419,14 +715,18 @@ html.no-scroll, html.no-scroll body { overflow: hidden; }
   font-size: 16px;
   text-decoration: none;
 }
-.cv-download-btn:hover { filter: brightness(1.1); }
-/* Fallback: si Swiper pas initialisé, montre les slides en ligne */
-.apprendre-slider:not(.swiper-initialized) .swiper-wrapper {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+.cv-download-btn:hover {
+  filter: brightness(1.15);
 }
-.apprendre-slider:not(.swiper-initialized) .swiper-slide {
-  display: inline-block;
+
+/* Animation d'apparition */
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
