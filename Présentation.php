@@ -56,8 +56,9 @@ $asset = function (string $rel) use ($asset_base) {
   <!-- APPRNDRE -->
 <section id="apprendre" class="apprendre">
   <div class="container">
-    <div class="apprendre-illustration" 
-         style="background-image:url('<?php echo esc_url(get_asset_url('Presentation/37aa405fc6659cd44a46df86b5096d03606f32dd.png')); ?>')">
+    <div class="apprendre-illustration"
+         style="background-image:url('<?php echo get_template_directory_uri(); ?>/Assets/Presentation/37aa405fc6659cd44a46df86b5096d03606f32dd.png')">
+
     </div>
 
     <div class="apprendre-text">
