@@ -266,7 +266,8 @@ $asset = function (string $rel) use ($asset_base) {
   </div>
 
 </main>
-<script src="presentation.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/Assets/js/presentation.js"></script>
+
 
 
 <?php get_footer(); ?>
