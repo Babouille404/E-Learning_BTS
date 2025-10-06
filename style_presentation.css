@@ -86,30 +86,21 @@
   align-items: center;
   justify-content: center;
   margin: 40px auto 0;
-  width: 250px;
+  margin-bottom: 5em;
+  width: 200px;
   height: 50px;
-  background: #4C445E;
+  background: var(--color-green);
   border-radius: 50px;
   font-family: 'Inter';
   font-weight: 600;
   font-size: 24px;
-  color: var(--color-text);
+  color: var(--color-white);
   text-decoration: none;
 }
 
 .cta:hover { filter: brightness(1.05); }
 
-.cta-arrow {
-  position: relative;
-  z-index: 6;
-  margin-top: 5px;
-}
 
-.cta-arrow svg {
-  width: 60px;
-  height: auto;
-  max-width: 10vw;
-}
 /* Post-its décoratifs */
 .postit {
   position: absolute;
@@ -138,7 +129,7 @@
 .p2 {right: 85%;top: 55%;transform: rotate(-10deg);background: #9A7ED9;color:#fff;}
 
 .postit.p2 {}
-.p1 {right: 5%;top: 67%;background: #FFF;transform: rotate( 25deg)}
+.p1 {right: 5%;top: 67%;background: #BB393C;transform: rotate( 25deg); color:#fff;}
 
 /* En responsive : masquer les post-its */
 @media (max-width: 1280px) {

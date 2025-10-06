@@ -36,11 +36,6 @@ $asset = function (string $rel) use ($asset_base) {
     </div>
 
     <a href="#apprendre" class="cta">Commencer</a>
-    <div class="cta-arrow">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M6 9l6 6 6-6" fill="none" stroke="#4C445E" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
 
     <!-- Post-its -->
     <div class="postit p8">Mathématiques</div>
@@ -115,7 +110,7 @@ $asset = function (string $rel) use ($asset_base) {
 
 <!-- ================= CV CAROUSEL INTERACTIF ================= -->
 <section class="cv-carousel-section full">
-  <h2 class="cv-carousel-title">Présentation des étudiants</h2>
+    <h2 class="cv-carousel-title">Présentation des <span style="color:#63B649;">professeurs</span></h2>
   <p class="cv-carousel-subtitle">Découvrez les talents d’EFREI Paris</p>
 
   <div class="carousel-container">
@@ -159,7 +154,7 @@ $asset = function (string $rel) use ($asset_base) {
             <h3>Lina Karouche</h3>
             <p class="role">Développeuse Full-Stack – Hachette</p>
             <p class="desc">
-              Étudiante en BTS SIO SLAM, Lina maîtrise le développement web et mobile, la gestion de bases de données, 
+              Lina maîtrise le développement web et mobile, la gestion de bases de données,
               ainsi que les méthodes agiles (Scrum, Kanban). Elle aime la conception de solutions innovantes.
             </p>
             <h4>Compétences</h4>
@@ -203,7 +198,7 @@ $asset = function (string $rel) use ($asset_base) {
             <h3>Bao-Long Le</h3>
             <p class="role">Développeur & Support IT - Apicil</p>
             <p class="desc">
-              Bao-Long est passionné par la fintech et le développement full-stack. 
+              Bao est passionné par la fintech et le développement full-stack.
               Il a conçu une application Java/MySQL de gestion de stock et automatisé des scripts Linux en Bash.
             </p>
             <h4>Compétences</h4>

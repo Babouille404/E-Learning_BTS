@@ -11,11 +11,8 @@ get_header();
                     <img src="<?php echo get_template_directory_uri(); ?>/Assets/ecole/efrei logo.png" alt="EFREI" class="hero-logo">
                     <h1 class="hero-title">Vous êtes le <span class="highlight">développeur de demain</span></h1>
                     <p class="hero-subtitle">Rejoindre l'EFREI, c'est faire le choix d'une formation d'excellence dans le numérique</p>
-                    <a href="#content" class="btn btn-primary btn-discover">
+                    <a href="#content" class="cta">
                         En savoir plus
-                        <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
                     </a>
                 </div>
             </div>
