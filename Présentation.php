@@ -134,7 +134,7 @@ $asset = function (string $rel) use ($asset_base) {
 
           <div class="cv-info">
             <h3>Anissa Dahabi</h3>
-            <p class="role">Apprentie en Cybersécurité – Corum l’Épargne</p>
+            <p class="role">Analyste Cybersécurité – Corum l’Épargne</p>
             <p class="desc">
               Anissa est passionnée par le développement logiciel et souhaite se spécialiser en Java. Suite à une
                 solide expérience en support IT, elle est à présent passée au pôle cybersécurité de son entreprise.
@@ -157,7 +157,7 @@ $asset = function (string $rel) use ($asset_base) {
           <img src="<?php echo $asset('Assets/etudiant_lina.jpg'); ?>" alt="Lina Karouche">
           <div class="cv-info">
             <h3>Lina Karouche</h3>
-            <p class="role">Développeuse Full-Stack – EFREI Paris</p>
+            <p class="role">Développeuse Full-Stack – Hachette</p>
             <p class="desc">
               Étudiante en BTS SIO SLAM, Lina maîtrise le développement web et mobile, la gestion de bases de données, 
               ainsi que les méthodes agiles (Scrum, Kanban). Elle aime la conception de solutions innovantes.
@@ -179,9 +179,9 @@ $asset = function (string $rel) use ($asset_base) {
           <img src="<?php echo $asset('Assets/etudiant_nour.jpg'); ?>" alt="Nour Mesbahi">
           <div class="cv-info">
             <h3>Nour Mesbahi</h3>
-            <p class="role">Apprentie Développeuse – EDF</p>
+            <p class="role">Développeuse Logiciel – EDF</p>
             <p class="desc">
-              Nour est développeuse en alternance chez EDF. Passionnée par la programmation orientée objet, 
+              Nour est développeuse chez EDF. Passionnée par la programmation orientée objet,
               elle a réalisé des projets tels qu’un réseau social en PHP/MySQL et des jeux vidéo en Java et Python.
             </p>
             <h4>Compétences</h4>
@@ -201,7 +201,7 @@ $asset = function (string $rel) use ($asset_base) {
           <img src="<?php echo $asset('Assets/etudiant_baolong.jpg'); ?>" alt="Bao-Long Le">
           <div class="cv-info">
             <h3>Bao-Long Le</h3>
-            <p class="role">Étudiant en BTS SIO – Développement & Support IT</p>
+            <p class="role">Développeur & Support IT - Apicil</p>
             <p class="desc">
               Bao-Long est passionné par la fintech et le développement full-stack. 
               Il a conçu une application Java/MySQL de gestion de stock et automatisé des scripts Linux en Bash.
