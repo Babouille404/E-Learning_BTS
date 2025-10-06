@@ -5,10 +5,10 @@ $chapitre = isset($_GET['chapitre']) ? strtolower($_GET['chapitre']) : 'variable
 
 // Définition des chapitres + fichiers PDF associés
 $chapitres = [
-  'variables'   => ['titre' => "Chapitre 1 : Variables",   'pdf' => 'Variables.pdf'],
-  'conditions'  => ['titre' => "Chapitre 2 : Conditions",  'pdf' => 'Conditions.pdf'],
-  'boucles'     => ['titre' => "Chapitre 3 : Boucles",     'pdf' => 'Boucles.pdf'],
-  'fonctions'   => ['titre' => "Chapitre 4 : Fonctions",   'pdf' => 'Fonctions.pdf']
+  'variables'   => ['titre' => "Chapitre 1 : Variables",   'pdf' => 'Cours_04_09.pdf'],
+  'conditions'  => ['titre' => "Chapitre 2 : Conditions",  'pdf' => 'Cours-javascript.pdf'],
+  'boucles'     => ['titre' => "Chapitre 3 : Boucles",     'pdf' => 'Cours_18_09.pdf'],
+  'fonctions'   => ['titre' => "Chapitre 4 : Fonctions",   'pdf' => 'EXOCORR_18_09.pdf']
 ];
 ?>
 
