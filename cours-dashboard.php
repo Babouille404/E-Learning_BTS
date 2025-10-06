@@ -12,20 +12,20 @@ get_header();
       <li class="active">
         <span>📊</span> Dashboard
       </a></li>
-      <li><a href="<?php echo home_url('/cours'); ?>"> class="<?php if (is_page_template('cours.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours'); ?>" class="<?php if (is_page_template('cours.php')) echo 'active'; ?>">
         <span>📚</span> Cours et Leçon
 
       </a></li>
-      <li><a href="<?php echo home_url('/cours-exo'); ?>"> class="<?php if (is_page_template('cours-exo.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-exo'); ?>" class="<?php if (is_page_template('cours-exo.php')) echo 'active'; ?>">
         <span>📝</span> Exercices et Quiz
       </a></li>
-      <li><a href="<?php echo home_url('/cours-cal'); ?>"> class="<?php if (is_page_template('calendrier.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-cal'); ?>" class="<?php if (is_page_template('calendrier.php')) echo 'active'; ?>">
         <span>📅</span> Calendrier
       </a></li>
-      <li><a href="<?php echo home_url('/ressources'); ?>"> class="<?php if (is_page_template('cours-ressources.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/ressources'); ?>" class="<?php if (is_page_template('cours-ressources.php')) echo 'active'; ?>">
         <span>📖</span> Ressources Supplémentaires
       </a></li>
-      <li><a href="<?php echo home_url('/commentaire'); ?>"> class="<?php if (is_page_template('cours-commentaires.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/commentaire'); ?>" class="<?php if (is_page_template('cours-commentaires.php')) echo 'active'; ?>">
         <span>💬</span> Commentaires
       </a></li>
     </ul>

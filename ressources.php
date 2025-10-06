@@ -8,21 +8,21 @@ get_header();
   <!-- Sidebar gauche -->
   <aside class="sidebar-left">
     <ul class="menu-categories panel-dashed">
-      <li><a href="http://localhost/wordpress/cours-dashboard/" class="<?php if (is_page_template('cours-dashboard.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-dashboard'); ?>" class="<?php if (is_page_template('cours-dashboard.php')) echo 'active'; ?>">
         <span>📊</span> Dashboard
       </a></li>
-      <li><a href="http://localhost/wordpress/cours/" class="<?php if (is_page_template('cours.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours'); ?>" class="<?php if (is_page_template('cours.php')) echo 'active'; ?>">
         <span>📚</span> Cours et Leçon
       </a></li>
-      <li><a href="http://localhost/wordpress/cours-exo/" class="<?php if (is_page_template('cours-exo.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-exo'); ?>" class="<?php if (is_page_template('cours-exo.php')) echo 'active'; ?>">
         <span>📝</span> Exercices et Quiz
       </a></li>
-      <li><a href="http://localhost/wordpress/cours-cal/" class="<?php if (is_page_template('calendrier.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-cal'); ?>" class="<?php if (is_page_template('calendrier.php')) echo 'active'; ?>">
         <span>📅</span> Calendrier
       </a></li>
       <li class="active"> <span>📖</span> Ressources Supplémentaires
       </a></li>
-      <li><a href="http://localhost/wordpress/commentaire/" class="<?php if (is_page_template('cours-commentaires.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/commentaire'); ?>" class="<?php if (is_page_template('cours-commentaires.php')) echo 'active'; ?>">
         <span>💬</span> Commentaires
       </a></li>
     </ul>

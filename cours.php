@@ -17,22 +17,22 @@ $chapitres = [
   <!-- Sidebar gauche -->
   <aside class="sidebar-left">
     <ul class="menu-categories panel-dashed">
-      <li><a href="<?php echo home_url('/cours-dashboard'); ?>"> class="<?php if (is_page_template('cours-dashboard.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-dashboard'); ?>" class="<?php if (is_page_template('cours-dashboard.php')) echo 'active'; ?>">
         <span>📊</span> Dashboard
       </a></li>
       <li class="active"><span>📚</span> Cours et Leçon
       </a></li>
-      <li><a href="<?php echo home_url('/cours-exo'); ?>"> class="<?php if (is_page_template('cours-exo.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-exo'); ?>" class="<?php if (is_page_template('cours-exo.php')) echo 'active'; ?>">
         <span>📝</span> Exercices et Quiz
       </a></li>
-      <li><a href="<?php echo home_url('/cours-cal'); ?>"> class="<?php if (is_page_template('calendrier.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/cours-cal'); ?>" class="<?php if (is_page_template('calendrier.php')) echo 'active'; ?>">
         <span>📅</span> Calendrier
 
       </a></li>
-      <li><a href="<?php echo home_url('/ressources'); ?>"> class="<?php if (is_page_template('cours-ressources.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/ressources'); ?>" class="<?php if (is_page_template('cours-ressources.php')) echo 'active'; ?>">
         <span>📖</span> Ressources Supplémentaires
       </a></li>
-      <li><a href="<?php echo home_url('/commentaire'); ?>"> class="<?php if (is_page_template('cours-commentaires.php')) echo 'active'; ?>">
+      <li><a href="<?php echo home_url('/commentaire'); ?>" class="<?php if (is_page_template('cours-commentaires.php')) echo 'active'; ?>">
         <span>💬</span> Commentaires
 
       </a></li>
