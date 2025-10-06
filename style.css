@@ -20,6 +20,7 @@ Text Domain: efrei-elearn
     --color-white: #FFFFFF;
     --color-input-bg: #f0f3fc;
     --color-placeholder: #9589AF;
+    --color-card-bg: #FFF;
 }
 
 /* Mode sombre */
@@ -36,6 +37,7 @@ Text Domain: efrei-elearn
     --color-white: #2A324D;
     --color-input-bg: #3A4255;
     --color-placeholder: #AAA;
+    --color-card-bg: #3A4255;
 }
 
 /* Reset et base */
