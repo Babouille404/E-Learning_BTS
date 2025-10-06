@@ -170,7 +170,7 @@
 
 /* ================= SECTION APPRENDRE ================= */
 .apprendre {
-  background: var(--bg);
+  /*background: var(--bg);*/
   padding: 80px 20px;
 }
 
@@ -351,8 +351,8 @@
   padding: 120px 20px;
   position: relative;
   text-align: center;
-  background: radial-gradient(circle at 30% 30%, #f7f9fc, #eef1f6);
-  overflow: hidden;
+  /*background: radial-gradient(circle at 30% 30%, #f7f9fc, #eef1f6);*/
+  /*overflow: hidden;*/
 }
 .cv-carousel-section.full::before {
   content: "";
