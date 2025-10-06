@@ -136,14 +136,17 @@ $asset = function (string $rel) use ($asset_base) {
             <h3>Anissa Dahabi</h3>
             <p class="role">Apprentie en Cybersécurité – Corum l’Épargne</p>
             <p class="desc">
-              Étudiante à l’EFREI Paris en BTS SIO, Anissa est passionnée par la cybersécurité et le développement d’applications 
-              sécurisées. Elle a acquis une solide expérience en support IT et en analyse d’alertes SIEM.
+              Anissa est passionnée par le développement logiciel et souhaite se spécialiser en Java. Suite à une
+                solide expérience en support IT, elle est à présent passée au pôle cybersécurité de son entreprise.
             </p>
             <h4>Compétences</h4>
-            <div class="progress-item"><span>Java / Spring</span><div class="progress"><div style="width:85%"></div></div></div>
-            <div class="progress-item"><span>Python / C / PHP</span><div class="progress"><div style="width:80%"></div></div></div>
-            <div class="progress-item"><span>Cybersécurité</span><div class="progress"><div style="width:70%"></div></div></div>
+            <div class="progress-item"><span>Java/Spring</span><div class="progress"><div style="width:85%"></div></div></div>
+            <div class="progress-item"><span>UI/UX</span><div class="progress"><div style="width:70%"></div></div></div>
+            <div class="progress-item"><span>Cybersécurité</span><div class="progress"><div style="width:55%"></div></div></div>
             <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/Anissa_Dahabi_CV (1).pdf'); ?>">Voir le CV</button>
+              <a class="btn-social" href="https://github.com/AnissaDahabi" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn-social" href="https://www.linkedin.com/in/anissa-dahabi/" target="_blank" rel="noopener">LinkedIn</a>
+
           </div>
         </div>
       </div>
@@ -160,10 +163,12 @@ $asset = function (string $rel) use ($asset_base) {
               ainsi que les méthodes agiles (Scrum, Kanban). Elle aime la conception de solutions innovantes.
             </p>
             <h4>Compétences</h4>
-            <div class="progress-item"><span>Java / Python / PHP</span><div class="progress"><div style="width:85%"></div></div></div>
-            <div class="progress-item"><span>React / Node.js / HTML-CSS</span><div class="progress"><div style="width:80%"></div></div></div>
-            <div class="progress-item"><span>MySQL / JIRA / Trello</span><div class="progress"><div style="width:75%"></div></div></div>
+            <div class="progress-item"><span>WordPress/Elementor/Astra</span><div class="progress"><div style="width:85%"></div></div></div>
+            <div class="progress-item"><span>React / Node.js / HTML-CSS</span><div class="progress"><div style="width:70%"></div></div></div>
+            <div class="progress-item"><span>Méthodes agiles</span><div class="progress"><div style="width:75%"></div></div></div>
             <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
+              <a class="btn-social" href="https://github.com/lina-karouche" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn-social" href="https://www.linkedin.com/in/linakarouche/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -184,6 +189,8 @@ $asset = function (string $rel) use ($asset_base) {
             <div class="progress-item"><span>PHP / HTML / CSS / JS</span><div class="progress"><div style="width:75%"></div></div></div>
             <div class="progress-item"><span>Power BI / Bash</span><div class="progress"><div style="width:70%"></div></div></div>
             <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CVN.MESBAHIDI_(1).pdf'); ?>">Voir le CV</button>
+              <a class="btn-social" href="https://github.com/Misskine" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn-social" href="https://www.linkedin.com/in/nour-mesbahi-9b0851296/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -204,6 +211,8 @@ $asset = function (string $rel) use ($asset_base) {
             <div class="progress-item"><span>React / JavaScript</span><div class="progress"><div style="width:80%"></div></div></div>
             <div class="progress-item"><span>Linux / Azure / MySQL</span><div class="progress"><div style="width:75%"></div></div></div>
             <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CV_Alternance_Bao_Long_LE.pdf'); ?>">Voir le CV</button>
+              <a class="btn-social" href="https://github.com/Babouille404" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn-social" href="https://www.linkedin.com/in/bao-long-le/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>

@@ -714,6 +714,15 @@ body.no-scroll {
   filter: brightness(1.15);
 }
 
+.btn-social {
+   text-decoration: none;
+    color: #1F232B;
+    background-color: #EEEEEE;
+    font-weight: bold;
+    padding: 12px 12px;
+    border-radius: 30px;
+}
+
 /* Animation d'apparition */
 @keyframes modal-pop {
   from {
