@@ -125,7 +125,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 1 : Anissa Dahabi === -->
       <div class="cv-slide active">
         <div class="cv-profile">
-          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/etudiant_anissa.jpg" alt="Anissa Dahabi">
+          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg" alt="Anissa Dahabi">
 
           <div class="cv-info">
             <h3>Anissa Dahabi</h3>
@@ -171,7 +171,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 3 : Nour Mesbahi === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo $asset('Assets/etudiant_nour.jpg'); ?>" alt="Nour Mesbahi">
+          <img src="<?php echo $asset('/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg'); ?>" alt="Nour Mesbahi">
           <div class="cv-info">
             <h3>Nour Mesbahi</h3>
             <p class="role">Développeuse Logiciel – EDF</p>
@@ -228,7 +228,7 @@ $asset = function (string $rel) use ($asset_base) {
     <div class="prof-cards">
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg"
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg"
              alt="Photo de Anissa Dahabi">
 
         <h3>Anissa Dahabi</h3>
