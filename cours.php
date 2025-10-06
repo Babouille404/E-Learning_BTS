@@ -51,7 +51,7 @@ $chapitres = [
 
         <!-- PDF intégré -->
         <iframe 
-          src="<?php echo get_stylesheet_directory_uri(); ?>/pdf/<?php echo $chapitres[$chapitre]['pdf']; ?>" 
+          src="<?php echo get_stylesheet_directory_uri(); ?>/Assets/pdf/<?php echo $chapitres[$chapitre]['pdf']; ?>"
           width="100%" 
           height="600px" 
           style="border: none; border-radius: 10px;">
@@ -59,7 +59,7 @@ $chapitres = [
 
         <!-- Lien de téléchargement -->
         <p style="margin-top:10px;">
-          <a href="<?php echo get_stylesheet_directory_uri(); ?>/pdf/<?php echo $chapitres[$chapitre]['pdf']; ?>" target="_blank">
+          <a href="<?php echo get_stylesheet_directory_uri(); ?>/Assets/pdf/<?php echo $chapitres[$chapitre]['pdf']; ?>" target="_blank">
             📥 Télécharger le PDF
           </a>
         </p>

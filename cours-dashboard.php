@@ -3,7 +3,7 @@
 get_header();
 ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/cours.css?ver=<?php echo time(); ?>">
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/coursdash.js?ver=<?php echo time(); ?>" defer></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/Assets/js/coursdash.js?ver=<?php echo time(); ?>" defer></script>
 <main class="cours-layout">
 
   <!-- Sidebar gauche -->
