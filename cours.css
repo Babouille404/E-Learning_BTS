@@ -11,8 +11,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--color-background);
+  color: var(--color-primary);
 }
 
 /* ==== Layout général ==== */
@@ -26,7 +26,7 @@ body {
 
 /* ==== Sidebar gauche ==== */
 .sidebar-left {
-  background: var(--card);
+  background: var(--color-secondary);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow);
@@ -56,7 +56,7 @@ body {
 
 /* ==== Zone centrale ==== */
 .cours-main {
-  background: var(--card);
+  background: var(--color-secondary);
   border-radius: var(--radius);
   padding: 30px;
   box-shadow: var(--shadow);
@@ -82,7 +82,7 @@ body {
 
 /* ==== Sidebar droite ==== */
 .sidebar-right {
-  background: var(--card);
+  background: var(--color-secondary);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow);
@@ -102,7 +102,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #F8F9FD;
+  background: var(--color-secondary);
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -112,7 +112,7 @@ body {
 list-style:none;
 }
 .chapitres li.active {
-  background: var(--accent);
+  background: var(--color-green);
   color: white;
 }
 .chapitres li.done {
@@ -144,7 +144,7 @@ list-style:none;
 
 .sidebar-right ul li a {
   text-decoration: none;
-  color: var(--text, #4C445E);
+  color: var(--color-primary);
   font-weight: 500;
   display: block;
   padding: 6px 8px;
@@ -168,7 +168,7 @@ list-style:none;
   font-size: 20px;
   font-weight: 600;
   margin: 20px 0 10px;
-  color: var(--text);
+  color: var(--color-primary);
 }
 .code-tabs {
   display: flex;
@@ -233,18 +233,18 @@ list-style:none;
   font-size: 18px;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
-  color: var(--text);
+  color: var(--color-primary);
   margin-bottom: 6px;
 }
 .exo-description p {
   font-style: italic;
   font-weight: 400;
   font-size: 14px;
-  color: #4C445E;
+  color: var(--color-primary);
 }
 /* ===== Dashboard Sections ===== */
 .dashboard-section {
-  background: var(--card, #fff);
+  background: var(--color-input-bg);
   border: 1px dashed var(--dash, #8A38F5);
   border-radius: 10px;
   padding: 20px;
@@ -255,7 +255,7 @@ list-style:none;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--text, #4C445E);
+  color: var(--color-primary);
 }
 
 .cards {
@@ -266,7 +266,7 @@ list-style:none;
 }
 
 .card {
-  background: #F8F9FD;
+  background: var(--color-accent-blue);
   border-radius: 10px;
   width: 100px;
   height: 120px;
@@ -331,7 +331,7 @@ list-style:none;
 /* ==== Calendrier ==== */
 .calendar-container {
   background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -344,8 +344,8 @@ list-style:none;
 }
 /* ==== Calendrier statique ==== */
 .calendar-container {
-  background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  background: var(--color-secondary, #fff);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
