@@ -22,6 +22,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comment'])) {
         $error_message = 'Veuillez remplir tous les champs correctement.';
     }
 }
+
+$log_file = get_template_directory() . '/commentaires_cours.txt';
+$recent_comments = [];
+
+if (file_exists($log_file)) {
+    $content = file_get_contents($log_file);
+
+    $blocks = explode('========== NOUVEAU COMMENTAIRE ==========', $content);
+
+    foreach (array_slice($blocks, 1) as $block) {
+        // Extraire les infos avec regex
+        preg_match('/Date: (.+)/', $block, $date);
+        preg_match('/Auteur: (.+)/', $block, $author);
+        preg_match('/Commentaire:\n(.+)/s', $block, $comment);
+
+        if (!empty($date) && !empty($author) && !empty($comment)) {
+            $recent_comments[] = [
+                    'date' => trim($date[1]),
+                    'author' => trim($author[1]),
+                    'comment' => trim($comment[1])
+            ];
+        }
+    }
+
+    $recent_comments = array_reverse($recent_comments);
+
+    $recent_comments = array_slice($recent_comments, 0, 5);
+}
 ?>
 
 <main class="cours-layout">
@@ -89,30 +117,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comment'])) {
                 </button>
             </form>
 
-            <p style="margin-top: 30px; color: #666; font-style: italic;">Les commentaires sont enregistrés dans le fichier commentaires_cours.txt de votre thème.</p>
         </div>
     </section>
 
-  <!-- Sidebar droite -->
-  <aside class="sidebar-right">
-    <h2>Derniers commentaires</h2>
-    <ul class="chapitres panel-dashed">
-      <?php
-        $recent_comments = get_comments([
-          'number' => 5,
-          'status' => 'approve'
-        ]);
-        if ($recent_comments) {
-          foreach ($recent_comments as $comment) {
-            echo "<li><strong>" . esc_html($comment->comment_author) . ":</strong> ";
-            echo wp_trim_words($comment->comment_content, 10, '...') . "</li>";
-          }
-        } else {
-          echo "<li>Aucun commentaire pour l’instant.</li>";
-        }
-      ?>
-    </ul>
-  </aside>
+    <!-- Sidebar droite -->
+    <aside class="sidebar-right">
+        <h2>Derniers commentaires</h2>
+        <ul class="chapitres panel-dashed">
+            <?php if (!empty($recent_comments)): ?>
+                <?php foreach ($recent_comments as $comment): ?>
+                    <li>
+                        <strong style="color: var(--color-green);"><?php echo esc_html($comment['author']); ?>:</strong>
+                        <span style="display: block; margin-top: 5px; font-size: 13px; color: var(--color-text-light);">
+              <?php echo esc_html(wp_trim_words($comment['comment'], 10, '...')); ?>
+            </span>
+                        <span class="badge" style="display: block; margin-top: 5px; font-size: 11px;">
+              <?php echo date('d/m/Y H:i', strtotime($comment['date'])); ?>
+            </span>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li>Aucun commentaire pour l'instant.</li>
+            <?php endif; ?>
+        </ul>
+    </aside>
 
 </main>
 
