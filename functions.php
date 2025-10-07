@@ -99,7 +99,42 @@ add_action('wp_enqueue_scripts', function() {
 add_action('wp_footer', function() { ?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // JS pour popup / login / logout / theme / carousel ici
+    if (document.querySelector('.ecole-page')) {
+        const efreiImages = [
+            { selector: '.feature-item:nth-child(1) .feature-icon', light: 'Image 1.png', dark: 'Image 1_dark.png' },
+            { selector: '.feature-item:nth-child(2) .feature-icon', light: 'Image 2.png', dark: 'Image 2_dark.png' },
+            { selector: '.feature-item:nth-child(3) .feature-icon', light: 'Image 3.png', dark: 'Image 3_dark.png' },
+            { selector: '.feature-item:nth-child(4) .feature-icon', light: 'Image 4.png', dark: 'Image 4_dark.png' }
+        ];
+
+        function updateEfreiImages(isDark) {
+            efreiImages.forEach(img => {
+                const element = document.querySelector(img.selector);
+                if (element) {
+                    const imageName = isDark ? img.dark : img.light;
+                    element.src = element.src.replace(/(Image \d)(_dark)?\.png/, imageName);
+                }
+            });
+        }
+
+        // Appliquer au chargement
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            updateEfreiImages(true);
+        }
+
+        // Écouter les changements
+        const toggleColorBtn = document.getElementById('toggleColor');
+        if (toggleColorBtn) {
+            const originalClick = toggleColorBtn.onclick;
+            toggleColorBtn.addEventListener('click', function() {
+                setTimeout(() => {
+                    const isDark = document.body.getAttribute('data-theme') === 'dark';
+                    updateEfreiImages(isDark);
+                }, 100);
+            });
+        }
+    }
 });
 </script>
 <?php });
@@ -342,6 +377,7 @@ add_action('wp_footer', function() { ?>
             const logoImg = document.querySelector('.site-logo img');
             const logoPopup = document.querySelector('.logo-popup');
             const logoContact = document.querySelector('.contact-logo');
+
 
             function changeLogoColor(isDark) {
                 if (logoImg) {
