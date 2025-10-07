@@ -205,7 +205,7 @@ $asset = function (string $rel) use ($asset_base) {
             <div class="progress-item"><span>Java / Spring Boot</span><div class="progress"><div style="width:85%"></div></div></div>
             <div class="progress-item"><span>React / JavaScript</span><div class="progress"><div style="width:80%"></div></div></div>
             <div class="progress-item"><span>Linux / Azure / MySQL</span><div class="progress"><div style="width:75%"></div></div></div>
-            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('cv/CV_Alternance_Bao_Long_LE.pdf'); ?>">Voir le CV</button>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">Voir le CV</button>
               <a class="btn-social" href="https://github.com/Babouille404" target="_blank" rel="noopener">GitHub</a>
               <a class="btn-social" href="https://www.linkedin.com/in/bao-long-le/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
