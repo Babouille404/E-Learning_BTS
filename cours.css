@@ -11,8 +11,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--color-background);
+  color: var(--color-primary);
 }
 
 /* ==== Layout général ==== */
@@ -26,7 +26,7 @@ body {
 
 /* ==== Sidebar gauche ==== */
 .sidebar-left {
-  background: var(--card);
+  background: var(--color-secondary);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow);
@@ -56,7 +56,7 @@ body {
 
 /* ==== Zone centrale ==== */
 .cours-main {
-  background: var(--card);
+  background: var(--color-secondary);
   border-radius: var(--radius);
   padding: 30px;
   box-shadow: var(--shadow);
@@ -82,7 +82,7 @@ body {
 
 /* ==== Sidebar droite ==== */
 .sidebar-right {
-  background: var(--card);
+  background: var(--color-secondary);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow);
@@ -102,7 +102,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #F8F9FD;
+  background: var(--color-secondary);
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -112,7 +112,7 @@ body {
 list-style:none;
 }
 .chapitres li.active {
-  background: var(--accent);
+  background: var(--color-green);
   color: white;
 }
 .chapitres li.done {
@@ -144,7 +144,7 @@ list-style:none;
 
 .sidebar-right ul li a {
   text-decoration: none;
-  color: var(--text, #4C445E);
+  color: var(--color-primary);
   font-weight: 500;
   display: block;
   padding: 6px 8px;
@@ -168,7 +168,7 @@ list-style:none;
   font-size: 20px;
   font-weight: 600;
   margin: 20px 0 10px;
-  color: var(--text);
+  color: var(--color-primary);
 }
 .code-tabs {
   display: flex;
@@ -196,6 +196,8 @@ list-style:none;
   font-family: monospace;
   font-size: 14px;
   padding: 12px;
+  background-color: var(--color-card-bg);
+    color: var(--color-primary);
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
@@ -233,19 +235,19 @@ list-style:none;
   font-size: 18px;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
-  color: var(--text);
+  color: var(--color-primary);
   margin-bottom: 6px;
 }
 .exo-description p {
   font-style: italic;
   font-weight: 400;
   font-size: 14px;
-  color: #4C445E;
+  color: var(--color-primary);
 }
 /* ===== Dashboard Sections ===== */
 .dashboard-section {
-  background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  background: var(--color-input-bg);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 30px;
@@ -255,7 +257,7 @@ list-style:none;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--text, #4C445E);
+  color: var(--color-primary);
 }
 
 .cards {
@@ -266,7 +268,7 @@ list-style:none;
 }
 
 .card {
-  background: #F8F9FD;
+  background: var(--color-input);
   border-radius: 10px;
   width: 100px;
   height: 120px;
@@ -331,7 +333,7 @@ list-style:none;
 /* ==== Calendrier ==== */
 .calendar-container {
   background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -344,8 +346,8 @@ list-style:none;
 }
 /* ==== Calendrier statique ==== */
 .calendar-container {
-  background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  background: var(--color-card-bg);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -388,7 +390,7 @@ list-style:none;
 /* ==== Ressources ==== */
 .ressource-container {
   background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -414,8 +416,8 @@ list-style:none;
 }
 /* ==== Commentaires ==== */
 .comments-container {
-  background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  background: var(--color-input-bg);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -423,6 +425,7 @@ list-style:none;
 
 .comments-container h2 {
   margin-bottom: 15px;
+  color: var(--color-primary);
 }
 
 .comment-list {
@@ -443,14 +446,16 @@ list-style:none;
 .comment-form textarea {
   width: 100%;
   padding: 10px;
+  background-color: var(--color-input);
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
+  color: var(--color-primary);
 }
 
 .comment-form input[type=submit] {
   background: #75AA3C;
-  color: #fff;
+  color: var(--color-primary);
   border: none;
   cursor: pointer;
   transition: 0.2s;

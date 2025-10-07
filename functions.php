@@ -97,11 +97,64 @@ add_action('wp_enqueue_scripts', function() {
 // Injection JS inline (popup, darkmode, carousel…)
 // =======================
 add_action('wp_footer', function() { ?>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // JS pour popup / login / logout / theme / carousel ici
-});
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isEcolePage = document.querySelector('.ecole-page');
+            const isPresentationPage = document.querySelector('.presentation-page');
+
+            if (isEcolePage || isPresentationPage) {
+                const efreiImages = [
+                    { selector: '.feature-item:nth-child(1) .feature-icon', light: 'Image 1.png', dark: 'Image 1_dark.png' },
+                    { selector: '.feature-item:nth-child(2) .feature-icon', light: 'Image 2.png', dark: 'Image 2_dark.png' },
+                    { selector: '.feature-item:nth-child(3) .feature-icon', light: 'Image 3.png', dark: 'Image 3_dark.png' },
+                    { selector: '.feature-item:nth-child(4) .feature-icon', light: 'Image 4.png', dark: 'Image 4_dark.png' }
+                ];
+
+                const backgroundPresentation = {
+                    selector: '.background',
+                    light: 'Background.png',
+                    dark: 'backgroundNight.png'
+                };
+
+                function updateEfreiImages(isDark) {
+                    efreiImages.forEach(img => {
+                        const element = document.querySelector(img.selector);
+                        if (element) {
+                            const themePath = '<?php echo get_template_directory_uri(); ?>/Assets/ecole/';
+                            const imageName = isDark ? img.dark : img.light;
+                            element.src = themePath + imageName;
+                        }
+                    });
+                }
+
+                function updateBackgroundPresentation(isDark) {
+                    const element = document.querySelector(backgroundPresentation.selector);
+                    if (element) {
+                        const themePath = '<?php echo get_template_directory_uri(); ?>/Assets/';
+                        const imageName = isDark ? backgroundPresentation.dark : backgroundPresentation.light;
+                        element.src = themePath + imageName;
+                    }
+                }
+
+                const currentTheme = localStorage.getItem('theme') || 'light';
+                if (currentTheme === 'dark') {
+                    if (isEcolePage) updateEfreiImages(true);
+                    if (isPresentationPage) updateBackgroundPresentation(true);
+                }
+
+                const toggleColorBtn = document.getElementById('toggleColor');
+                if (toggleColorBtn) {
+                    toggleColorBtn.addEventListener('click', function() {
+                        setTimeout(() => {
+                            const isDark = document.body.getAttribute('data-theme') === 'dark';
+                            if (isEcolePage) updateEfreiImages(isDark);
+                            if (isPresentationPage) updateBackgroundPresentation(isDark);
+                        }, 100);
+                    });
+                }
+            }
+        });
+    </script>
 <?php });
 
 
@@ -343,6 +396,7 @@ add_action('wp_footer', function() { ?>
             const logoPopup = document.querySelector('.logo-popup');
             const logoContact = document.querySelector('.contact-logo');
 
+
             function changeLogoColor(isDark) {
                 if (logoImg) {
                     logoImg.src = logoImg.src.replace(
@@ -368,7 +422,7 @@ add_action('wp_footer', function() { ?>
                 if (!header) return;
                 header.style.background = isDark
                     ? 'url(<?php echo get_template_directory_uri(); ?>/Assets/backgroundNight.png) no-repeat center bottom'
-                    : 'url(<?php echo get_template_directory_uri(); ?>/Assets/background.png) no-repeat center bottom';
+                    : 'url(<?php echo get_template_directory_uri(); ?>/Assets/Background.png) no-repeat center bottom';
                 header.style.backgroundSize = 'cover';
             }
 

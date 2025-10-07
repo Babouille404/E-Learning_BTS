@@ -125,9 +125,11 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 1 : Anissa Dahabi === -->
       <div class="cv-slide active">
         <div class="cv-profile">
-          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg" alt="Anissa Dahabi">
-
-          <div class="cv-info">
+            <div class="hover-image-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg" alt="Anissa Dahabi">
+                <img class="hover" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/anissa.jpg" alt="Anissa hover">
+            </div>
+                <div class="cv-info">
             <h3>Anissa Dahabi</h3>
             <p class="role">Analyste Cybersécurité – Corum l’Épargne</p>
             <p class="desc">
@@ -138,7 +140,7 @@ $asset = function (string $rel) use ($asset_base) {
             <div class="progress-item"><span>Java/Spring</span><div class="progress"><div style="width:85%"></div></div></div>
             <div class="progress-item"><span>UI/UX</span><div class="progress"><div style="width:70%"></div></div></div>
             <div class="progress-item"><span>Cybersécurité</span><div class="progress"><div style="width:55%"></div></div></div>
-            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/Anissa_Dahabi_CV (1).pdf'); ?>">Voir le CV</button>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('cv/Anissa_Dahabi_CV (1).pdf'); ?>">Voir le CV</button>
               <a class="btn-social" href="https://github.com/AnissaDahabi" target="_blank" rel="noopener">GitHub</a>
               <a class="btn-social" href="https://www.linkedin.com/in/anissa-dahabi/" target="_blank" rel="noopener">LinkedIn</a>
 
@@ -149,7 +151,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 2 : Lina Karouche === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo $asset('Assets/etudiant_lina.jpg'); ?>" alt="Lina Karouche">
+            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/lina.jpg" alt="Anissa Dahabi">
           <div class="cv-info">
             <h3>Lina Karouche</h3>
             <p class="role">Développeuse Full-Stack – Hachette</p>
@@ -161,7 +163,7 @@ $asset = function (string $rel) use ($asset_base) {
             <div class="progress-item"><span>WordPress/Elementor/Astra</span><div class="progress"><div style="width:85%"></div></div></div>
             <div class="progress-item"><span>React / Node.js / HTML-CSS</span><div class="progress"><div style="width:70%"></div></div></div>
             <div class="progress-item"><span>Méthodes agiles</span><div class="progress"><div style="width:75%"></div></div></div>
-            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
               <a class="btn-social" href="https://github.com/lina-karouche" target="_blank" rel="noopener">GitHub</a>
               <a class="btn-social" href="https://www.linkedin.com/in/linakarouche/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
@@ -183,7 +185,7 @@ $asset = function (string $rel) use ($asset_base) {
             <div class="progress-item"><span>Java / Python / Swift</span><div class="progress"><div style="width:80%"></div></div></div>
             <div class="progress-item"><span>PHP / HTML / CSS / JS</span><div class="progress"><div style="width:75%"></div></div></div>
             <div class="progress-item"><span>Power BI / Bash</span><div class="progress"><div style="width:70%"></div></div></div>
-            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CVN.MESBAHIDI_(1).pdf'); ?>">Voir le CV</button>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('cv/CVN.MESBAHIDI_(1).pdf'); ?>">Voir le CV</button>
               <a class="btn-social" href="https://github.com/Misskine" target="_blank" rel="noopener">GitHub</a>
               <a class="btn-social" href="https://www.linkedin.com/in/nour-mesbahi-9b0851296/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
@@ -193,7 +195,8 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 4 : Bao-Long Le === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_bao.png" alt="Bao-Long Le">
+            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_bao.png" alt="Bao-Long Le">
+            </div>
           <div class="cv-info">
             <h3>Bao-Long Le</h3>
             <p class="role">Développeur & Support IT - Apicil</p>
@@ -205,7 +208,7 @@ $asset = function (string $rel) use ($asset_base) {
             <div class="progress-item"><span>Java / Spring Boot</span><div class="progress"><div style="width:85%"></div></div></div>
             <div class="progress-item"><span>React / JavaScript</span><div class="progress"><div style="width:80%"></div></div></div>
             <div class="progress-item"><span>Linux / Azure / MySQL</span><div class="progress"><div style="width:75%"></div></div></div>
-            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('Assets/cv/CV_Alternance_Bao_Long_LE.pdf'); ?>">Voir le CV</button>
+            <button class="btn cv-btn" data-type="pdf" data-cv="<?php echo $asset('cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">Voir le CV</button>
               <a class="btn-social" href="https://github.com/Babouille404" target="_blank" rel="noopener">GitHub</a>
               <a class="btn-social" href="https://www.linkedin.com/in/bao-long-le/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
@@ -243,7 +246,7 @@ $asset = function (string $rel) use ($asset_base) {
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Capture.png" alt="Photo de Lina">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/lina.jpg" alt="Photo de Lina">
 
         <h3>Lina</h3>
         <button class="prof-card__btn" data-name="Lina" data-cv="<?php echo $asset('cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
