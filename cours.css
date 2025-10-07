@@ -197,6 +197,7 @@ list-style:none;
   font-size: 14px;
   padding: 12px;
   background-color: var(--color-card-bg);
+    color: var(--color-primary);
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
