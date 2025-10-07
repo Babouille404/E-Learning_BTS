@@ -126,13 +126,19 @@ if (file_exists($log_file)) {
         <ul class="chapitres panel-dashed">
             <?php if (!empty($recent_comments)): ?>
                 <?php foreach ($recent_comments as $comment): ?>
-                    <li>
-                        <strong style="color: var(--color-green);"><?php echo esc_html($comment['author']); ?>:</strong>
-                        <span style="display: block; margin-top: 5px; font-size: 13px; color: var(--color-text-light);">
-              <?php echo esc_html(wp_trim_words($comment['comment'], 10, '...')); ?>
+                    <li style="display: flex; flex-direction: column; gap: 5px; padding: 12px; word-wrap: break-word; overflow-wrap: break-word;">
+                        <strong style="color: var(--color-green); font-size: 14px; word-break: break-word;">
+                            <?php echo esc_html($comment['author']); ?>
+                        </strong>
+                        <span style="font-size: 12px; color: var(--color-text); line-height: 1.4; word-break: break-word; max-width: 100%;">
+              <?php
+              // Limiter à 15 mots
+              $text = wp_trim_words($comment['comment'], 15, '...');
+              echo esc_html($text);
+              ?>
             </span>
-                        <span class="badge" style="display: block; margin-top: 5px; font-size: 11px;">
-              <?php echo date('d/m/Y H:i', strtotime($comment['date'])); ?>
+                        <span class="badge" style="font-size: 10px; align-self: flex-start;">
+              <?php echo date('d/m H:i', strtotime($comment['date'])); ?>
             </span>
                     </li>
                 <?php endforeach; ?>
@@ -141,7 +147,6 @@ if (file_exists($log_file)) {
             <?php endif; ?>
         </ul>
     </aside>
-
 </main>
 
 
