@@ -267,7 +267,7 @@ list-style:none;
 }
 
 .card {
-  background: var(--color-accent-blue);
+  background: var(--color-input);
   border-radius: 10px;
   width: 100px;
   height: 120px;
