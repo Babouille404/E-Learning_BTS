@@ -28,26 +28,26 @@ $recent_comments = [];
 
 if (file_exists($log_file)) {
     $content = file_get_contents($log_file);
-
     $blocks = explode('========== NOUVEAU COMMENTAIRE ==========', $content);
 
-    foreach (array_slice($blocks, 1) as $block) {
-        // Extraire les infos avec regex
+    foreach (array_slice($blocks, 1) as $block) {  // ⬅️ ICI
         preg_match('/Date: (.+)/', $block, $date);
         preg_match('/Auteur: (.+)/', $block, $author);
         preg_match('/Commentaire:\n(.+)/s', $block, $comment);
 
         if (!empty($date) && !empty($author) && !empty($comment)) {
+            $clean_comment = trim($comment[1]);
+            $clean_comment = str_replace('=========================================', '', $clean_comment);
+
             $recent_comments[] = [
                     'date' => trim($date[1]),
                     'author' => trim($author[1]),
-                    'comment' => trim($comment[1])
+                    'comment' => trim($clean_comment)
             ];
         }
     }
 
     $recent_comments = array_reverse($recent_comments);
-
     $recent_comments = array_slice($recent_comments, 0, 5);
 }
 ?>
