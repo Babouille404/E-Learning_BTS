@@ -444,6 +444,27 @@
   padding-left: 10px;
 }
 
+.hover-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-image-wrapper img.hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-image-wrapper:hover img.hover {
+    opacity: 1;
+}
+
+.hover-image-wrapper:hover img.default {
+    opacity: 0;
+}
+
 /* --- Progress bars --- */
 .progress-item { margin-bottom: 12px; }
 .progress-item span {

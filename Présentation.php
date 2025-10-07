@@ -125,9 +125,11 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 1 : Anissa Dahabi === -->
       <div class="cv-slide active">
         <div class="cv-profile">
-          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg" alt="Anissa Dahabi">
-
-          <div class="cv-info">
+            <div class="hover-image-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg" alt="Anissa Dahabi">
+                <img class="hover" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/anissa.jpg" alt="Anissa hover">
+            </div>
+                <div class="cv-info">
             <h3>Anissa Dahabi</h3>
             <p class="role">Analyste Cybersécurité – Corum l’Épargne</p>
             <p class="desc">
@@ -149,7 +151,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 2 : Lina Karouche === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo $asset('Assets/etudiant_lina.jpg'); ?>" alt="Lina Karouche">
+            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/lina.jpg" alt="Anissa Dahabi">
           <div class="cv-info">
             <h3>Lina Karouche</h3>
             <p class="role">Développeuse Full-Stack – Hachette</p>
@@ -193,7 +195,10 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 4 : Bao-Long Le === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Bao-Long Le">
+            <div class="hover-image-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Bao-Long Le">
+                <img class="hover" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/bao.jpg" alt="Bao hover">
+            </div>
           <div class="cv-info">
             <h3>Bao-Long Le</h3>
             <p class="role">Développeur & Support IT - Apicil</p>
@@ -243,7 +248,7 @@ $asset = function (string $rel) use ($asset_base) {
       </article>
 
       <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Capture.png" alt="Photo de Lina">
+        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/lina.jpg" alt="Photo de Lina">
 
         <h3>Lina</h3>
         <button class="prof-card__btn" data-name="Lina" data-cv="<?php echo $asset('cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
