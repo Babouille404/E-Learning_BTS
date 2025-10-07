@@ -368,7 +368,7 @@ add_action('wp_footer', function() { ?>
                 if (!header) return;
                 header.style.background = isDark
                     ? 'url(<?php echo get_template_directory_uri(); ?>/Assets/backgroundNight.png) no-repeat center bottom'
-                    : 'url(<?php echo get_template_directory_uri(); ?>/Assets/background.png) no-repeat center bottom';
+                    : 'url(<?php echo get_template_directory_uri(); ?>/Assets/Background.png) no-repeat center bottom';
                 header.style.backgroundSize = 'cover';
             }
 
