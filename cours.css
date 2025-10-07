@@ -196,6 +196,7 @@ list-style:none;
   font-family: monospace;
   font-size: 14px;
   padding: 12px;
+  background-color: var(--color-card-bg);
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
@@ -245,7 +246,7 @@ list-style:none;
 /* ===== Dashboard Sections ===== */
 .dashboard-section {
   background: var(--color-input-bg);
-  border: 1px dashed var(--dash, #8A38F5);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 30px;
@@ -344,7 +345,7 @@ list-style:none;
 }
 /* ==== Calendrier statique ==== */
 .calendar-container {
-  background: var(--color-secondary, #fff);
+  background: var(--color-card-bg);
   border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
@@ -388,7 +389,7 @@ list-style:none;
 /* ==== Ressources ==== */
 .ressource-container {
   background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -414,8 +415,8 @@ list-style:none;
 }
 /* ==== Commentaires ==== */
 .comments-container {
-  background: var(--card, #fff);
-  border: 1px dashed var(--dash, #8A38F5);
+  background: var(--color-input-bg);
+  border: 1px dashed var(--color-green);
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -423,6 +424,7 @@ list-style:none;
 
 .comments-container h2 {
   margin-bottom: 15px;
+  color: var(--color-primary);
 }
 
 .comment-list {
@@ -443,14 +445,16 @@ list-style:none;
 .comment-form textarea {
   width: 100%;
   padding: 10px;
+  background-color: var(--color-input);
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
+  color: var(--color-primary);
 }
 
 .comment-form input[type=submit] {
   background: #75AA3C;
-  color: #fff;
+  color: var(--color-primary);
   border: none;
   cursor: pointer;
   transition: 0.2s;
