@@ -18,7 +18,7 @@ $asset = function (string $rel) use ($asset_base) {
     <div class="bg1"></div>
 
     <div class="avatars">
-      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/509168e3f8567075175f446d6183839f69edff84.jpg" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg" alt="">
       <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 2.svg" alt="">
       <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 5.svg" alt="">
       <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/Ellipse 6.png" alt="">
@@ -52,7 +52,7 @@ $asset = function (string $rel) use ($asset_base) {
 <section id="apprendre" class="apprendre">
   <div class="container">
     <div class="apprendre-illustration"
-         style="background-image:url('<?php echo get_template_directory_uri(); ?>/Assets/Presentation/37aa405fc6659cd44a46df86b5096d03606f32dd.png')">
+         style="background-image:url('<?php echo get_template_directory_uri(); ?>/Assets/Presentation/illusApprendre.png');">
 
     </div>
 
@@ -80,7 +80,7 @@ $asset = function (string $rel) use ($asset_base) {
     <h2 class="section-title">Une meilleure façon d’apprendre</h2>
     <div class="features">
       <article class="feature-card f-left">
-        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/6375a3333dbc981cc31fa30953db8f5ffa5b3e12.jpg" alt="">
+        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/illusViolet.png" alt="">
 
         <div class="feature-inner">
           <h3>Des contenus riches et divers</h3>
@@ -89,7 +89,7 @@ $asset = function (string $rel) use ($asset_base) {
       </article>
 
       <article class="feature-card f-mid">
-        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/ea961de1fe87f1d89fbb465537f347b6d875e18c.jpg" alt="">
+        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/illusRouge.png" alt="">
 
         <div class="feature-inner">
           <h3>Un suivi personnalisé</h3>
@@ -98,7 +98,7 @@ $asset = function (string $rel) use ($asset_base) {
       </article>
 
       <article class="feature-card f-right">
-        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/f9ab1d8e5384e3919fdefd934f58df7749ef04ad.jpg" alt="">
+        <img class="feature-illus" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/illusBleu.png" alt="">
 
         <div class="feature-inner">
           <h3>Des professeurs à l’écoute</h3>
@@ -171,7 +171,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 3 : Nour Mesbahi === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg" alt="Nour Mesbahi">
+          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_nour.jpg" alt="Nour Mesbahi">
           <div class="cv-info">
             <h3>Nour Mesbahi</h3>
             <p class="role">Développeuse Logiciel – EDF</p>
@@ -193,7 +193,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 4 : Bao-Long Le === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Bao-Long Le">
+          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_bao.png" alt="Bao-Long Le">
           <div class="cv-info">
             <h3>Bao-Long Le</h3>
             <p class="role">Développeur & Support IT - Apicil</p>
