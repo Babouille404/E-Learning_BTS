@@ -171,7 +171,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 3 : Nour Mesbahi === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo $asset('/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg'); ?>" alt="Nour Mesbahi">
+          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/cffd4f3a8d7af99377faab2f253240b8cae2653f.jpg" alt="Nour Mesbahi">
           <div class="cv-info">
             <h3>Nour Mesbahi</h3>
             <p class="role">Développeuse Logiciel – EDF</p>
@@ -193,7 +193,7 @@ $asset = function (string $rel) use ($asset_base) {
       <!-- === SLIDE 4 : Bao-Long Le === -->
       <div class="cv-slide">
         <div class="cv-profile">
-          <img src="<?php echo $asset('Assets/etudiant_baolong.jpg'); ?>" alt="Bao-Long Le">
+          <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/08f0dd77bd88c3d36e393c040a90bee0ff69a82b.png" alt="Bao-Long Le">
           <div class="cv-info">
             <h3>Bao-Long Le</h3>
             <p class="role">Développeur & Support IT - Apicil</p>
