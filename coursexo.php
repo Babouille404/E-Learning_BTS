@@ -45,15 +45,15 @@ get_header();
     </div>
     <div id="code1-c" class="code-block active">
       <textarea class="editor">
-// C : surface et périmètre d’un rectangle
-#include <stdio.h>
-int main() {
-    int L, l;
-    scanf("%d %d", &L, &l);
-    printf("Surface = %d\n", L*l);
-    printf("Perimetre = %d\n", 2*(L+l));
-    return 0;
-}
+<!--// C : surface et périmètre d’un rectangle-->
+<!--#include <stdio.h>-->
+<!--int main() {-->
+<!--    int L, l;-->
+<!--    scanf("%d %d", &L, &l);-->
+<!--    printf("Surface = %d\n", L*l);-->
+<!--    printf("Perimetre = %d\n", 2*(L+l));-->
+<!--    return 0;-->
+<!--}-->
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 5 3">
       <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
@@ -61,9 +61,9 @@ int main() {
     </div>
     <div id="code1-php" class="code-block">
       <textarea class="editor">&lt;?php
-$L = 5; $l = 3;
-echo "Surface = ".($L*$l)."\n";
-echo "Perimetre = ".(2*($L+$l))."\n";
+<!--$L = 5; $l = 3;-->
+<!--echo "Surface = ".($L*$l)."\n";-->
+<!--echo "Perimetre = ".(2*($L+$l))."\n";-->
 ?&gt;</textarea>
       <input type="text" class="stdin" placeholder="Entrée optionnelle">
       <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
@@ -81,15 +81,15 @@ echo "Perimetre = ".(2*($L+$l))."\n";
     </div>
     <div id="code2-c" class="code-block active">
       <textarea class="editor">
-// C : calculer prix TTC
-#include <stdio.h>
-int main() {
-    float prixHT, tva;
-    scanf("%f %f", &prixHT, &tva);
-    float prixTTC = prixHT + (prixHT * tva / 100);
-    printf("Prix TTC = %.2f\n", prixTTC);
-    return 0;
-}
+<!--// C : calculer prix TTC-->
+<!--#include <stdio.h>-->
+<!--int main() {-->
+<!--    float prixHT, tva;-->
+<!--    scanf("%f %f", &prixHT, &tva);-->
+<!--    float prixTTC = prixHT + (prixHT * tva / 100);-->
+<!--    printf("Prix TTC = %.2f\n", prixTTC);-->
+<!--    return 0;-->
+<!--}-->
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 100 20">
       <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
@@ -97,9 +97,9 @@ int main() {
     </div>
     <div id="code2-php" class="code-block">
       <textarea class="editor">&lt;?php
-$prixHT = 100; $tva = 20;
-$prixTTC = $prixHT + ($prixHT * $tva / 100);
-echo "Prix TTC = $prixTTC\n";
+<!--$prixHT = 100; $tva = 20;-->
+<!--$prixTTC = $prixHT + ($prixHT * $tva / 100);-->
+<!--echo "Prix TTC = $prixTTC\n";-->
 ?&gt;</textarea>
       <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
       <pre class="output"></pre>
@@ -116,19 +116,19 @@ echo "Prix TTC = $prixTTC\n";
     </div>
     <div id="code3-c" class="code-block active">
       <textarea class="editor">
-// C : résoudre ax + b = 0
-#include <stdio.h>
-int main() {
-    float a, b;
-    scanf("%f %f", &a, &b);
-    if (a == 0) {
-        if (b == 0) printf("Solutions: R\n");
-        else printf("Pas de solution\n");
-    } else {
-        printf("x = %.2f\n", -b/a);
-    }
-    return 0;
-}
+<!--// C : résoudre ax + b = 0-->
+<!--#include <stdio.h>-->
+<!--int main() {-->
+<!--    float a, b;-->
+<!--    scanf("%f %f", &a, &b);-->
+<!--    if (a == 0) {-->
+<!--        if (b == 0) printf("Solutions: R\n");-->
+<!--        else printf("Pas de solution\n");-->
+<!--    } else {-->
+<!--        printf("x = %.2f\n", -b/a);-->
+<!--    }-->
+<!--    return 0;-->
+<!--}-->
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 2 -4">
       <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
@@ -136,13 +136,13 @@ int main() {
     </div>
     <div id="code3-php" class="code-block">
       <textarea class="editor">&lt;?php
-$a = 2; $b = -4;
-if ($a == 0) {
-    if ($b == 0) echo "Solutions: R\n";
-    else echo "Pas de solution\n";
-} else {
-    echo "x = ".(-$b/$a)."\n";
-}
+<!--$a = 2; $b = -4;-->
+<!--if ($a == 0) {-->
+<!--    if ($b == 0) echo "Solutions: R\n";-->
+<!--    else echo "Pas de solution\n";-->
+<!--} else {-->
+<!--    echo "x = ".(-$b/$a)."\n";-->
+<!--}-->
 ?&gt;</textarea>
       <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
       <pre class="output"></pre>
@@ -159,18 +159,18 @@ if ($a == 0) {
     </div>
     <div id="code4-c" class="code-block active">
       <textarea class="editor">
-// C : vérifier si une date est valide
-#include <stdio.h>
-int main() {
-    int j, m, a;
-    scanf("%d %d %d", &j, &m, &a);
-    if (m<1 || m>12 || j<1 || j>31) {
-        printf("Date invalide\n");
-    } else {
-        printf("Date valide : %02d/%02d/%d\n", j,m,a);
-    }
-    return 0;
-}
+<!--// C : vérifier si une date est valide-->
+<!--#include <stdio.h>-->
+<!--int main() {-->
+<!--    int j, m, a;-->
+<!--    scanf("%d %d %d", &j, &m, &a);-->
+<!--    if (m<1 || m>12 || j<1 || j>31) {-->
+<!--        printf("Date invalide\n");-->
+<!--    } else {-->
+<!--        printf("Date valide : %02d/%02d/%d\n", j,m,a);-->
+<!--    }-->
+<!--    return 0;-->
+<!--}-->
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 28 02 2024">
       <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
@@ -178,12 +178,12 @@ int main() {
     </div>
     <div id="code4-php" class="code-block">
       <textarea class="editor">&lt;?php
-$j=28; $m=2; $a=2024;
-if (!checkdate($m, $j, $a)) {
-    echo "Date invalide\n";
-} else {
-    echo "Date valide: $j/$m/$a\n";
-}
+<!--$j=28; $m=2; $a=2024;-->
+<!--if (!checkdate($m, $j, $a)) {-->
+<!--    echo "Date invalide\n";-->
+<!--} else {-->
+<!--    echo "Date valide: $j/$m/$a\n";-->
+<!--}-->
 ?&gt;</textarea>
       <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
       <pre class="output"></pre>
@@ -209,5 +209,5 @@ if (!checkdate($m, $j, $a)) {
 
 
 </main>
-
+<script src="<?php echo get_template_directory_uri(); ?>/Assets/js/coursexo.js?ver=<?php echo time(); ?>"></script>
 <?php get_footer(); ?>
