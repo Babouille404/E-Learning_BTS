@@ -12,8 +12,9 @@ $entreprises = [
 ?>
 
 <main class="container entreprises-page">
+    <img src="<?php echo get_template_directory_uri(); ?>/Assets/Background.png" class="background" alt="Background" />
+
     <div id="siteHeader" class="header">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Background.png" class="background" alt="Background" />
         <div class="headerContent">
             <div class="header-left">
                 <img src="<?php echo get_template_directory_uri(); ?>/Assets/Entreprises/entrepriseIllu.png" alt="Illustration entreprise" />
