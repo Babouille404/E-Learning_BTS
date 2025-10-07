@@ -14,15 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("click", () => {
       const chapitre = card.querySelector(".card-title").innerText.toLowerCase();
       // redirige vers page cours avec un paramètre GET
-      window.location.href = "http://localhost/wordpress/cours/?chapitre=" + encodeURIComponent(chapitre);
-    });
+      const baseUrl = window.location.origin + (window.location.pathname.split('/')[1] ? `/` + window.location.pathname.split('/')[1] : '');
+      window.location.href = `${baseUrl}/cours/?chapitre=${encodeURIComponent(chapitre)}`;
+
+          });
   });
 
   // Navigation via la sidebar
   document.querySelectorAll(".sidebar-right .chapitres li").forEach(li => {
     li.addEventListener("click", () => {
-      const chapitre = li.innerText.split(":")[1].trim().toLowerCase();
-      window.location.href = "http://localhost/wordpress/cours/?chapitre" + encodeURIComponent(chapitre);
+      const baseUrl = window.location.origin + (window.location.pathname.split('/')[1] ? `/` + window.location.pathname.split('/')[1] : '');
+      window.location.href = `${baseUrl}/cours/?chapitre=${encodeURIComponent(chapitre)}`;
+
     });
   });
 });

@@ -66,10 +66,10 @@ get_header();
   <aside class="sidebar-right">
     <h2 class="accordion open">Programmation</h2>
     <ul class="chapitres panel-dashed">
-      <li class="active"><span>Chapitre 1 : Variables</span><span class="badge">0/5</span></li>
-      <li><span>Chapitre 2 : Conditions</span><span class="badge">0/5</span></li>
-      <li><span>Chapitre 3 : Boucles</span><span class="badge">0/5</span></li>
-      <li><span>Chapitre 4 : Fonctions</span><span class="badge">0/5</span></li>
+      <li class="active"><span>Chapitre 1 : 04/09</span><span class="badge">0/5</span></li>
+      <li><span>Chapitre 2 : 18/09</span><span class="badge">0/5</span></li>
+      <li><span>Chapitre 3 : 25/09</span><span class="badge">0/5</span></li>
+      <li><span>Chapitre 4 : 02/10</span><span class="badge">0/5</span></li>
     </ul>
   </aside>
 
