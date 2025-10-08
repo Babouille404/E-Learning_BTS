@@ -7,46 +7,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comment'])) {
     $email = sanitize_email($_POST['email']);
     $comment_content = sanitize_textarea_field($_POST['comment']);
 
-    // DEBUG : Afficher les valeurs reçues
-    $debug_info = [];
-    $debug_info[] = "Auteur: " . (!empty($author) ? 'OK' : 'VIDE');
-    $debug_info[] = "Email: " . (!empty($email) ? 'OK' : 'VIDE') . " - Valide: " . (is_email($email) ? 'OUI' : 'NON');
-    $debug_info[] = "Commentaire: " . (!empty($comment_content) ? 'OK' : 'VIDE');
-
     if (!empty($author) && !empty($email) && !empty($comment_content) && is_email($email)) {
         $log_file = get_template_directory() . '/commentaires_cours.txt';
-
-        // DEBUG : Vérifier le chemin du fichier
-        $debug_info[] = "Chemin fichier: " . $log_file;
-        $debug_info[] = "Fichier existe: " . (file_exists($log_file) ? 'OUI' : 'NON');
-        $debug_info[] = "Dossier parent existe: " . (is_dir(dirname($log_file)) ? 'OUI' : 'NON');
-        $debug_info[] = "Permissions dossier: " . (is_writable(dirname($log_file)) ? 'ÉCRITURE OK' : 'PAS D\'ÉCRITURE');
-
-        if (file_exists($log_file)) {
-            $debug_info[] = "Permissions fichier: " . (is_writable($log_file) ? 'ÉCRITURE OK' : 'PAS D\'ÉCRITURE');
-        }
-
         $date = date('Y-m-d H:i:s');
         $content = "\n\n========== NOUVEAU COMMENTAIRE ==========\n";
         $content .= "Date: $date\nAuteur: $author\nEmail: $email\nCommentaire:\n$comment_content\n";
         $content .= "=========================================\n";
 
-        $result = @file_put_contents($log_file, $content, FILE_APPEND);
-
-        if ($result !== false) {
+        if (file_put_contents($log_file, $content, FILE_APPEND)) {
             $success_message = 'Votre commentaire a été enregistré avec succès !';
-            $debug_info[] = "Écriture réussie: " . $result . " octets";
         } else {
             $error_message = 'Erreur lors de l\'enregistrement.';
-            $debug_info[] = "Écriture ÉCHOUÉE";
-            $debug_info[] = "Erreur PHP: " . (error_get_last()['message'] ?? 'Aucune erreur capturée');
         }
     } else {
         $error_message = 'Veuillez remplir tous les champs correctement.';
     }
-
-    // Stocker les infos de debug
-    $debug_message = implode('<br>', $debug_info);
 }
 
 // Lecture des commentaires récents
@@ -117,13 +92,6 @@ if (file_exists($log_file)) {
             <?php if (isset($error_message)): ?>
                 <div class="alert alert-error" style="padding: 15px; background: #f8d7da; color: #721c24; margin-bottom: 20px; border-radius: 8px;">
                     <?php echo $error_message; ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if (isset($debug_message)): ?>
-                <div class="alert alert-info" style="padding: 15px; background: #d1ecf1; color: #0c5460; margin-bottom: 20px; border-radius: 8px; font-size: 12px; font-family: monospace;">
-                    <strong>DEBUG INFO:</strong><br>
-                    <?php echo $debug_message; ?>
                 </div>
             <?php endif; ?>
 
