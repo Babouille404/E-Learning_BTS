@@ -124,12 +124,12 @@
 .feature-bubble {
     background: white;
     border-radius: 50%;
-    border: 6px solid #75AA3C;
-    padding: 25px 20px; /* Plus d'espace */
+    border: 5px solid #75AA3C;
+    padding: 30px 25px;
     box-shadow: 0 8px 25px rgba(44, 62, 80, 0.1);
     text-align: center;
-    width: 240px; /* Augmenté de 220px */
-    height: 240px; /* Augmenté de 220px */
+    width: 260px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,28 +137,32 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 2;
-    overflow: hidden; /* Empêche le débordement */
+}
+
+.feature-bubble:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(44, 62, 80, 0.15);
 }
 
 /* Cercles pour les icônes */
 .feature-icon-circle {
-    width: 70px; /* Réduit de 75px */
-    height: 70px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background: white;
-    border: 4px solid #75AA3C;
+    border: 3px solid #75AA3C;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px; /* Réduit de 15px */
+    margin-bottom: 15px;
     transition: transform 0.3s ease;
     position: relative;
-    flex-shrink: 0; /* Empêche la compression */
+    flex-shrink: 0;
 }
 
 .feature-icon {
-    width: 35px; /* Réduit de 40px */
-    height: 35px;
+    width: 32px;
+    height: 32px;
 }
 
 /* Contenu des caractéristiques */
@@ -167,18 +171,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    gap: 8px;
 }
 
 .feature-content h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem; /* Réduit de 1.6rem */
+    font-size: 1.2rem;
     font-weight: 700;
     color: #2c3e50;
-    margin-bottom: 8px; /* Réduit de 12px */
-    line-height: 1.2;
+    margin: 0;
+    line-height: 1.3;
     text-align: center;
-    word-wrap: break-word;
 }
 
 .feature-center .feature-content h3 {
@@ -186,13 +191,13 @@
 }
 
 .feature-content p {
-    font-size: 0.95rem; /* Réduit de 1.1rem */
+    font-size: 0.9rem;
     color: #5a6c7d;
     font-weight: 500;
-    line-height: 1.3;
+    line-height: 1.4;
     text-align: center;
-    word-wrap: break-word;
     margin: 0;
+    max-width: 180px;
 }
 
 .feature-center .feature-content p {
