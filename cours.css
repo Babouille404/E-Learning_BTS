@@ -507,3 +507,16 @@ list-style:none;
   .cours-layout { grid-template-columns: 1fr; }
   .sidebar-left { order: -1; }
 }
+
+
+.comment-form input,
+.comment-form textarea {
+    background-color: var(--color-input);
+    color: var(--color-text);
+    border: 1px solid #ccc;
+}
+
+.comment-form button {
+    background: var(--color-green);
+    color: var(--color-white);
+}

@@ -1,6 +1,7 @@
 <?php
 /* Template Name: Commentaires */
 get_header();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comment'])) {
     $author = sanitize_text_field($_POST['author']);
     $email = sanitize_email($_POST['email']);
@@ -30,7 +31,7 @@ if (file_exists($log_file)) {
     $content = file_get_contents($log_file);
     $blocks = explode('========== NOUVEAU COMMENTAIRE ==========', $content);
 
-    foreach (array_slice($blocks, 1) as $block) {  // ⬅️ ICI
+    foreach (array_slice($blocks, 1) as $block) {
         preg_match('/Date: (.+)/', $block, $date);
         preg_match('/Auteur: (.+)/', $block, $author);
         preg_match('/Commentaire:\n(.+)/s', $block, $comment);
