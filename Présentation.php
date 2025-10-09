@@ -126,8 +126,7 @@ $asset = function (string $rel) use ($asset_base) {
       <div class="cv-slide active">
         <div class="cv-profile">
             <div class="hover-image-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg" alt="Anissa Dahabi">
-                <img class="hover" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/anissa.jpg" alt="Anissa hover">
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/anissa.jpg" alt="Anissa Dahabi">
             </div>
                 <div class="cv-info">
             <h3>Anissa Dahabi</h3>
@@ -174,8 +173,7 @@ $asset = function (string $rel) use ($asset_base) {
       <div class="cv-slide">
         <div class="cv-profile">
           <div class="hover-image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_nour.gif" alt="Nour Mesbahi">
-            <img class="hover" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/nour.png" alt="Nour hover">
+            <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/nour.png" alt="Nour Mesbahi">
             </div>
             <div class="cv-info">
               <h3>Nour Mesbahi</h3>
@@ -199,8 +197,7 @@ $asset = function (string $rel) use ($asset_base) {
       <div class="cv-slide">
         <div class="cv-profile">
             <div class="hover-image-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_bao.png" alt="Bao-Long Le">
-                <img class="hover" src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/bao.jpg" alt="Bao hover">
+                <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/bao.jpg" alt="Bao-Long Le">
             </div>
           <div class="cv-info">
             <h3>Bao-Long Le</h3>
@@ -231,52 +228,52 @@ $asset = function (string $rel) use ($asset_base) {
   <div class="carousel-dots"></div>
 </section>
 <!-- ================= PROFESSEURS ================= -->
-  <section class="professeurs-section">
-    <h2 class="prof-title">Des professeurs <span>investis</span> et <span>qualifiés</span></h2>
-    <div class="prof-cards">
-
-      <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_anissa.jpg"
-             alt="Photo de Anissa Dahabi">
-
-        <h3>Anissa Dahabi</h3>
-        <button class="prof-card__btn" data-type="pdf" data-name="Anissa Dahabi" data-cv="<?php echo $asset('cv/Anissa_Dahabi_CV (1).pdf'); ?>">Voir le CV</button>
-      </article>
-
-      <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_bao.png" alt="Photo de Bao Le">
-
-        <h3>Bao Le</h3>
-        <button class="prof-card__btn" data-type="pdf" data-name="Bao Le" data-cv="<?php echo $asset('cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?>">Voir le CV</button>
-      </article>
-
-      <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/lina.jpg" alt="Photo de Lina">
-
-        <h3>Lina</h3>
-        <button class="prof-card__btn" data-name="Lina" data-cv="<?php echo $asset('cv/CV_LINA_KAR_(1).pdf'); ?>">Voir le CV</button>
-      </article>
-
-      <article class="prof-card">
-        <img src="<?php echo get_template_directory_uri(); ?>/Assets/Presentation/pp_nour.gif" alt="Photo de Nour Mesbahi">
-
-
-        <h3>Nour Mesbahi</h3>
-        <button class="prof-card__btn" data-name="Nour Mesbahi" data-cv="<?php echo $asset('cv/CVN.MESBAHIDI_(1).pdf'); ?>">Voir le CV</button>
-      </article>
-    </div>
-  </section>
-
-  <!-- ================= MODAL CV ================= -->
-  <div id="cv-modal" class="cv-modal" aria-hidden="true">
-    <div class="cv-modal__backdrop" data-close-modal></div>
-    <div class="cv-modal__dialog">
-      <button class="cv-modal__close" type="button" aria-label="Fermer" data-close-modal>&times;</button>
-      <iframe id="cv-frame" title="Visionneuse du CV" loading="lazy"></iframe>
-      <div id="cv-html" style="display:none;"></div>
-      <a id="cv-download" class="cv-download-btn" href="#" download>Télécharger le CV</a>
-    </div>
-  </div>
+<!--  <section class="professeurs-section">-->
+<!--    <h2 class="prof-title">Des professeurs <span>investis</span> et <span>qualifiés</span></h2>-->
+<!--    <div class="prof-cards">-->
+<!---->
+<!--      <article class="prof-card">-->
+<!--        <img src="--><?php //echo get_template_directory_uri(); ?><!--/Assets/Presentation/pp_anissa.jpg"-->
+<!--             alt="Photo de Anissa Dahabi">-->
+<!---->
+<!--        <h3>Anissa Dahabi</h3>-->
+<!--        <button class="prof-card__btn" data-type="pdf" data-name="Anissa Dahabi" data-cv="--><?php //echo $asset('cv/Anissa_Dahabi_CV (1).pdf'); ?><!--">Voir le CV</button>-->
+<!--      </article>-->
+<!---->
+<!--      <article class="prof-card">-->
+<!--        <img src="--><?php //echo get_template_directory_uri(); ?><!--/Assets/Presentation/pp_bao.png" alt="Photo de Bao Le">-->
+<!---->
+<!--        <h3>Bao Le</h3>-->
+<!--        <button class="prof-card__btn" data-type="pdf" data-name="Bao Le" data-cv="--><?php //echo $asset('cv/CV_Alternance_Bao_Long_LE (1).pdf'); ?><!--">Voir le CV</button>-->
+<!--      </article>-->
+<!---->
+<!--      <article class="prof-card">-->
+<!--        <img src="--><?php //echo get_template_directory_uri(); ?><!--/Assets/Presentation/lina.jpg" alt="Photo de Lina">-->
+<!---->
+<!--        <h3>Lina</h3>-->
+<!--        <button class="prof-card__btn" data-name="Lina" data-cv="--><?php //echo $asset('cv/CV_LINA_KAR_(1).pdf'); ?><!--">Voir le CV</button>-->
+<!--      </article>-->
+<!---->
+<!--      <article class="prof-card">-->
+<!--        <img src="--><?php //echo get_template_directory_uri(); ?><!--/Assets/Presentation/pp_nour.gif" alt="Photo de Nour Mesbahi">-->
+<!---->
+<!---->
+<!--        <h3>Nour Mesbahi</h3>-->
+<!--        <button class="prof-card__btn" data-name="Nour Mesbahi" data-cv="--><?php //echo $asset('cv/CVN.MESBAHIDI_(1).pdf'); ?><!--">Voir le CV</button>-->
+<!--      </article>-->
+<!--    </div>-->
+<!--  </section>-->
+<!---->
+<!--  <-- ================= MODAL CV ================= -->
+<!--  <div id="cv-modal" class="cv-modal" aria-hidden="true">-->
+<!--    <div class="cv-modal__backdrop" data-close-modal></div>-->
+<!--    <div class="cv-modal__dialog">-->
+<!--      <button class="cv-modal__close" type="button" aria-label="Fermer" data-close-modal>&times;</button>-->
+<!--      <iframe id="cv-frame" title="Visionneuse du CV" loading="lazy"></iframe>-->
+<!--      <div id="cv-html" style="display:none;"></div>-->
+<!--      <a id="cv-download" class="cv-download-btn" href="#" download>Télécharger le CV</a>-->
+<!--    </div>-->
+<!--  </div>-->
 
 </main>
 <script src="<?php echo get_template_directory_uri(); ?>/Assets/js/presentation.js"></script>
