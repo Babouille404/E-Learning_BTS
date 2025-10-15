@@ -263,17 +263,17 @@ $asset = function (string $rel) use ($asset_base) {
 <!--      </article>-->
 <!--    </div>-->
 <!--  </section>-->
-<!---->
-<!--  <-- ================= MODAL CV ================= -->
-<!--  <div id="cv-modal" class="cv-modal" aria-hidden="true">-->
-<!--    <div class="cv-modal__backdrop" data-close-modal></div>-->
-<!--    <div class="cv-modal__dialog">-->
-<!--      <button class="cv-modal__close" type="button" aria-label="Fermer" data-close-modal>&times;</button>-->
-<!--      <iframe id="cv-frame" title="Visionneuse du CV" loading="lazy"></iframe>-->
-<!--      <div id="cv-html" style="display:none;"></div>-->
-<!--      <a id="cv-download" class="cv-download-btn" href="#" download>Télécharger le CV</a>-->
-<!--    </div>-->
-<!--  </div>-->
+
+  <!-- ================= MODAL CV ================= -->
+  <div id="cv-modal" class="cv-modal" aria-hidden="true">
+    <div class="cv-modal__backdrop" data-close-modal></div>
+    <div class="cv-modal__dialog">
+      <button class="cv-modal__close" type="button" aria-label="Fermer" data-close-modal>&times;</button>
+      <iframe id="cv-frame" title="Visionneuse du CV" loading="lazy"></iframe>
+      <div id="cv-html" style="display:none;"></div>
+      <a id="cv-download" class="cv-download-btn" href="#" download>Télécharger le CV</a>
+    </div>
+  </div>
 
 </main>
 <script src="<?php echo get_template_directory_uri(); ?>/Assets/js/presentation.js"></script>
