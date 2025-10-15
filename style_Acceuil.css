@@ -48,12 +48,12 @@
 }
 
 .hero-right h1 span {
-    color: #63B649;
+    color: var(--color-green);
 }
 
 .hero-right h2 {
     font-size: 1.2rem;
-    color: #5a6c7d;
+    color: var(--color-primary);
     line-height: 1.6;
     font-weight: 400;
 }
@@ -62,7 +62,7 @@
 .features-section {
     padding: 80px 0;
     position: relative;
-    background-color: #f9fafc;
+    background-color: var(--color-background);
 }
 
 .features-wrapper {
@@ -99,7 +99,7 @@
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background: white;
+    background: var(--color-background);
     border: 3px solid #75AA3C;
     display: flex;
     align-items: center;
@@ -115,13 +115,13 @@
 .feature-content h3 {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--color-primary);
     margin-bottom: 8px;
 }
 
 .feature-content p {
     font-size: 0.95rem;
-    color: #5a6c7d;
+    color: var(--color-primary);
     font-weight: 500;
     line-height: 1.4;
 }
