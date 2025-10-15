@@ -2,8 +2,6 @@
 /* Template Name: Cours */
 ?>
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>cours.css>">
-
 <?php
 $chapitre = isset($_GET['chapitre']) ? strtolower($_GET['chapitre']) : 'variables';
 
