@@ -71,25 +71,25 @@ add_action('wp_enqueue_scripts', function() {
     }
 
     if (is_page_template('cours.php')) {
-        wp_enqueue_script('elearning-quiz', $theme_uri . '/assets/js/quiz.js', [], filemtime($theme_dir.'/assets/js/quiz.js'), true);
+        wp_enqueue_script('elearning-quiz', $theme_uri . '/assets/js/quiz.js', [], filemtime($theme_dir.'/Assets/js/quiz.js'), true);
     }
     if (is_page_template('coursexo.php')) {
-        wp_enqueue_script('elearning-coursexo', $theme_uri . '/assets/js/coursexo.js', [], filemtime($theme_dir.'/assets/js/coursexo.js'), true);
+        wp_enqueue_script('elearning-coursexo', $theme_uri . '/assets/js/coursexo.js', [], filemtime($theme_dir.'/Assets/js/coursexo.js'), true);
     }
     if (is_page_template('cours-dashboard.php')) {
-        wp_enqueue_script('elearning-coursdash', $theme_uri . '/assets/js/coursdash.js', [], filemtime($theme_dir.'/assets/js/coursdash.js'), true);
+        wp_enqueue_script('elearning-coursdash', $theme_uri . '/assets/js/coursdash.js', [], filemtime($theme_dir.'/Assets/js/coursdash.js'), true);
     }
     if (is_page_template('calendrier.php')) {
-        wp_enqueue_script('elearning-calendrier', $theme_uri . '/assets/js/calendrier.js', [], filemtime($theme_dir.'/assets/js/calendrier.js'), true);
+        wp_enqueue_script('elearning-calendrier', $theme_uri . '/assets/js/calendrier.js', [], filemtime($theme_dir.'/Assets/js/calendrier.js'), true);
     }
     if (is_page_template('ressources.php')) {
-        wp_enqueue_script('elearning-ressources', $theme_uri . '/assets/js/ressources.js', [], filemtime($theme_dir.'/assets/js/ressources.js'), true);
+        wp_enqueue_script('elearning-ressources', $theme_uri . '/assets/js/ressources.js', [], filemtime($theme_dir.'/Assets/js/ressources.js'), true);
     }
 
     // JS commun
-    $header_js = $theme_dir . '/assets/js/header-ui.js';
+    $header_js = $theme_dir . '/Assets/js/header-ui.js';
     if (file_exists($header_js)) {
-        wp_enqueue_script('elearning-header-ui', $theme_uri . '/assets/js/header-ui.js', [], filemtime($header_js), true);
+        wp_enqueue_script('elearning-header-ui', $theme_uri . '/Assets/js/header-ui.js', [], filemtime($header_js), true);
     }
 }, 20);
 
@@ -240,7 +240,7 @@ remove_action('wp_head', 'rsd_link');
 
 // Fonction utilitaire pour obtenir l'URL des assets
 function get_asset_url($path) {
-    return get_template_directory_uri() . '/assets/' . ltrim($path, '/');
+    return get_template_directory_uri() . '/Assets/' . ltrim($path, '/');
 }
 
 // Fonction pour afficher le menu de navigation
