@@ -82,9 +82,9 @@ add_action('wp_enqueue_scripts', function() {
     if (is_page_template('calendrier.php')) {
         wp_enqueue_script('elearning-calendrier', $theme_uri . '/assets/js/calendrier.js', [], filemtime($theme_dir.'/Assets/js/calendrier.js'), true);
     }
-    if (is_page_template('ressources.php')) {
-        wp_enqueue_script('elearning-ressources', $theme_uri . '/assets/js/ressources.js', [], filemtime($theme_dir.'/Assets/js/ressources.js'), true);
-    }
+//    if (is_page_template('ressources.php')) {
+//        wp_enqueue_script('elearning-ressources', $theme_uri . '/assets/js/ressources.js', [], filemtime($theme_dir.'/Assets/js/ressources.js'), true);
+//    }
 
     // JS commun
     $header_js = $theme_dir . '/Assets/js/header-ui.js';
