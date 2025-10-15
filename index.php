@@ -60,7 +60,7 @@ get_header();
         </div>
     </section>
 
-    <!-- Contenu de page WordPress -->
+    <!-- Contenu WordPress -->
     <section class="page-content">
         <div class="container">
             <?php
