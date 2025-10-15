@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Cours */
+get_headers();
 ?>
 
 <?php
