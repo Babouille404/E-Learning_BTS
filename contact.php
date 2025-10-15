@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Contact */
+get_header();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
     $email = sanitize_email($_POST['email']);
     $message = sanitize_textarea_field($_POST['message']);
@@ -26,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_submit'])) {
     }
 }
 
-get_header();
+
 ?>
 
 <main>
