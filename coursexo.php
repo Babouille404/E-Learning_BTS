@@ -33,8 +33,11 @@ get_header();
 
   <!-- Zone centrale -->
 <section class="cours-main">
-  <h1>Exercices de Programmation</h1>
-  <div class="progress-bar thin"><div class="progress" style="width:10%"></div></div>
+  <h1 class="cours-title">Exercices de Programmation en C et PHP</h1>
+  
+  <div class="global-controls">
+    <button id="show-all-solutions-btn">🧠 Afficher toutes les réponses</button>
+  </div>
 
   <!-- Exercice 1 -->
   <div class="exo-block active" id="exo1">
@@ -45,21 +48,59 @@ get_header();
     </div>
     <div id="code1-c" class="code-block active">
       <textarea class="editor">
-Mets ton code en C !
+      Mets ton code en C !
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 5 3">
-      <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+      <div class="buttons">
+        <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+        <button class="show-solution-btn">💡 Afficher la solution</button>
+      </div>
       <pre class="output"></pre>
+
+      <div class="solution hidden">
+        <h4>✅ Solution proposée :</h4>
+        <pre>#include &lt;stdio.h&gt;
+      int main() {
+        float longueur, largeur, surface, perimetre;
+        scanf("%f %f", &longueur, &largeur);
+        surface = longueur * largeur;
+        perimetre = 2 * (longueur + largeur);
+        printf("Surface = %.2f\nPerimetre = %.2f", surface, perimetre);
+        return 0;
+      }</pre>
+      </div>
+
     </div>
     <div id="code1-php" class="code-block">
       <textarea class="editor">&lt;?php
-Mets ton code en Php !
-?&gt;</textarea>
+    Mets ton code en Php !
+    ?&gt;</textarea>
       <input type="text" class="stdin" placeholder="Entrée optionnelle">
-      <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
+
+      <div class="buttons">
+        <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
+        <button class="show-solution-btn">💡 Afficher la solution</button>
+      </div>
+
       <pre class="output"></pre>
+
+      <div class="solution hidden">
+        <h4>✅ Solution PHP :</h4>
+        <pre>&lt;?php
+    $longueur = readline("Donner la longueur : ");
+    $largeur = readline("Donner la largeur : ");
+    $surface = $longueur * $largeur;
+    $perimetre = 2 * ($longueur + $largeur);
+    echo "Surface = $surface\n";
+    echo "Perimetre = $perimetre\n";
+    ?&gt;</pre>
+      </div>
     </div>
-    <div class="exo-description"><h3>Description</h3><p>Lire longueur et largeur d’un rectangle et calculer surface et périmètre.</p></div>
+
+    <div class="exo-description">
+      <h3>Description</h3>
+      <p>Lire longueur et largeur d’un rectangle et calculer surface et périmètre.</p>
+    </div>
   </div>
 
   <!-- Exercice 2 -->
@@ -71,19 +112,65 @@ Mets ton code en Php !
     </div>
     <div id="code2-c" class="code-block active">
       <textarea class="editor">
-Mets ton code en C !
+        Mets ton code en C !
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 100 20">
-      <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+      <div class="buttons">
+        <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+        <button class="show-solution-btn">💡 Afficher la solution</button>
+      </div>
       <pre class="output"></pre>
+
+      <div class="solution hidden">
+        <h4>✅ Solution :</h4>
+        <pre>#include &lt;stdio.h&gt;
+        int main() {
+          float prixU, qte, tva, prixHT, valeurTVA, prixTTC;
+          scanf("%f %f %f", &prixU, &qte, &tva);
+          prixHT = prixU * qte;
+          valeurTVA = prixHT * tva / 100;
+          prixTTC = prixHT + valeurTVA;
+          printf("Prix TTC = %.2f\n", prixTTC);
+          return 0;
+        }</pre>
+        </div>
+
     </div>
     <div id="code2-php" class="code-block">
-      <textarea class="editor">&lt;?php
-Mets ton code en Php !
-?&gt;</textarea>
-      <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
-      <pre class="output"></pre>
-    </div>
+        <textarea class="editor">&lt;?php
+      Mets ton code en Php !
+      ?&gt;</textarea>
+
+        <input type="text" class="stdin" placeholder="Entrée ex: 100 2 20">
+
+        <div class="buttons">
+          <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
+          <button class="show-solution-btn">💡 Afficher la solution</button>
+        </div>
+
+        <pre class="output"></pre>
+
+        <div class="solution hidden">
+          <h4>✅ Solution PHP :</h4>
+          <pre>&lt;?php
+      $prixU = readline("Donner le prix unitaire : ");
+      $qte = readline("Donner la quantite : ");
+      $tva = readline("Donner le taux de TVA (%) : ");
+      $prixHT = $prixU * $qte;
+      $valeurTVA = $prixHT * $tva / 100;
+      $prixTTC = $prixHT + $valeurTVA;
+      echo "Prix HT = $prixHT\n";
+      echo "Valeur TVA = $valeurTVA\n";
+      echo "Prix TTC = $prixTTC\n";
+      ?&gt;</pre>
+        </div>
+      </div>
+
+      <div class="exo-description">
+        <h3>Description</h3>
+        <p>Lire le prix unitaire, la quantité et le taux de TVA d’un produit et calculer son prix TTC.</p>
+      </div>
+
     <div class="exo-description"><h3>Description</h3><p>Lire un prix HT et un taux de TVA et calculer le prix TTC.</p></div>
   </div>
 
@@ -99,15 +186,67 @@ Mets ton code en Php !
 Mets ton code en C !
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 2 -4">
-      <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+      <div class="buttons">
+        <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+        <button class="show-solution-btn">💡 Afficher la solution</button>
+      </div>
       <pre class="output"></pre>
+      <div class="solution hidden">
+        <h4>✅ Solution :</h4>
+        <pre>#include &lt;stdio.h&gt;
+        int main() {
+          float a, b, x;
+          scanf("%f %f", &a, &b);
+          if (a == 0) {
+            if (b == 0) printf("Solution: R\n");
+            else printf("Pas de solution.\n");
+          } else {
+            x = -b / a;
+            printf("x = %.2f\n", x);
+          }
+          return 0;
+        }</pre>
+        </div>
+
     </div>
-    <div id="code3-php" class="code-block">
-      <textarea class="editor">&lt;?php
-Mets ton code en Php !
-?&gt;</textarea>
-      <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
-      <pre class="output"></pre>
+          <div id="code3-php" class="code-block">
+        <textarea class="editor">&lt;?php
+      Mets ton code en Php !
+      ?&gt;</textarea>
+
+        <input type="text" class="stdin" placeholder="Entrée ex: 2 -4">
+
+        <div class="buttons">
+          <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
+          <button class="show-solution-btn">💡 Afficher la solution</button>
+        </div>
+
+        <pre class="output"></pre>
+
+        <div class="solution hidden">
+          <h4>✅ Solution PHP :</h4>
+          <pre>&lt;?php
+      $a = readline("Donner le coefficient a : ");
+      $b = readline("Donner le coefficient b : ");
+      if ($a == 0) {
+        if ($b == 0) {
+          echo "L’ensemble des solutions est R\n";
+        } else {
+          echo "Pas de solution.\n";
+        }
+      } else {
+        $x = -$b / $a;
+        echo "La solution est : $x\n";
+      }
+      ?&gt;</pre>
+        </div>
+      </div>
+
+      <div class="exo-description">
+        <h3>Description</h3>
+        <p>Résoudre dans R l’équation du premier degré a×x + b = 0.</p>
+      </div>
+
     </div>
     <div class="exo-description"><h3>Description</h3><p>Résoudre une équation du 1er degré ax+b=0 avec entrée des coefficients.</p></div>
   </div>
@@ -124,16 +263,71 @@ Mets ton code en Php !
 Mets ton code en C !
       </textarea>
       <input type="text" class="stdin" placeholder="Entrée ex: 28 02 2024">
-      <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+      <div class="buttons">
+        <button class="run-btn" data-lang="c">▶️ Exécuter en C</button>
+        <button class="show-solution-btn">💡 Afficher la solution</button>
+      </div>
       <pre class="output"></pre>
+      <div class="solution hidden">
+        <h4>✅ Solution :</h4>
+        <pre>#include &lt;stdio.h&gt;
+      #include &lt;time.h&gt;
+      int main() {
+        int jour, mois, annee;
+        scanf("%d %d %d", &jour, &mois, &annee);
+        struct tm date = {0};
+        date.tm_mday = jour; date.tm_mon = mois-1; date.tm_year = annee-1900;
+        if (mktime(&date) == -1) printf("Date invalide\n");
+        else printf("Date valide\n");
+        return 0;
+      }</pre>
+      </div>
+
     </div>
     <div id="code4-php" class="code-block">
       <textarea class="editor">&lt;?php
-Mets ton code en Php !
-?&gt;</textarea>
-      <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
+    Mets ton code en Php !
+    ?&gt;</textarea>
+
+      <input type="text" class="stdin" placeholder="Entrée ex: 28 02 2024">
+
+      <div class="buttons">
+        <button class="run-btn" data-lang="php">▶️ Exécuter en PHP</button>
+        <button class="show-solution-btn">💡 Afficher la solution</button>
+      </div>
+
       <pre class="output"></pre>
+
+      <div class="solution hidden">
+        <h4>✅ Solution PHP :</h4>
+        <pre>&lt;?php
+    $jour = readline("Donner le jour : ");
+    $mois = readline("Donner le mois : ");
+    $annee = readline("Donner l’annee : ");
+
+    if (!checkdate($mois, $jour, $annee)) {
+      echo "Date invalide\n";
+    } else {
+      echo "Date valide : $jour/$mois/$annee\n";
+
+      $date = new DateTime("$annee-$mois-$jour");
+      $hier = clone $date;
+      $hier->modify("-1 day");
+      $demain = clone $date;
+      $demain->modify("+1 day");
+
+      echo "Hier : " . $hier->format("d/m/Y") . "\n";
+      echo "Demain : " . $demain->format("d/m/Y") . "\n";
+    }
+    ?&gt;</pre>
+      </div>
     </div>
+
+    <div class="exo-description">
+      <h3>Description</h3>
+      <p>Lire une date, vérifier sa validité, afficher la date d’hier et celle de demain.</p>
+    </div>
+
     <div class="exo-description"><h3>Description</h3><p>Vérifier si une date est valide (jour, mois, année).</p></div>
   </div>
 
