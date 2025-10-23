@@ -350,4 +350,6 @@ Mets ton code en C !
 
 </main>
 <script src="<?php echo get_template_directory_uri(); ?>/Assets/js/coursexo.js?ver=<?php echo time(); ?>"></script>
+<?php include get_template_directory() . '/commentaires-cours.php'; ?>
+
 <?php get_footer(); ?>

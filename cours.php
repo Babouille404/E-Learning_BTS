@@ -87,5 +87,6 @@ $chapitres = [
   </aside>
 
 </main>
+<?php include get_template_directory() . '/commentaires-cours.php'; ?>
 
 <?php get_footer(); ?>
